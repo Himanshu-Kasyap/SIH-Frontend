@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/community.css">
+    <title data-translate="community.title">Community Hub - Kisan Sahayak</title>
+    <link rel="stylesheet" href="../../public/css/language-selector.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --text-color: #2d3748;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --sidebar-bg: linear-gradient(180deg, #4c51bf 0%, #667eea 100%);
+            --accent-color: #4f46e5;
+            --hover-color: #3730a3;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body.dark {
+            --bg-color: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            --text-color: #e2e8f0;
+            --card-bg: rgba(45, 55, 72, 0.95);
+            --header-bg: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            --sidebar-bg: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
+            --accent-color: #818cf8;
+            --hover-color: #6366f1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            transition: var(--transition);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            z-index: -1;
+        }
+
+        /* Override header styles to work with navigation system */
+        .dashboard-header {
+            background: var(--header-bg) !important;
+            color: #fff;
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dashboard-header h1 {
+            color: #fff !important;
+        }
+        
+        /* Integrate sidebar with navigation system */
+        .dashboard-sidebar {
+            background: var(--sidebar-bg) !important;
+            color: #fff;
+        }
+        
+        .dashboard-sidebar nav ul li a {
+            color: #fff !important;
+        }
+        
+        .dashboard-sidebar nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #fff !important;
+        }
+        
+        .dashboard-sidebar nav ul li.active a {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #fff !important;
+        }
+
+        /* Adjust main content for navigation */
+        .dashboard-main-content {
+            margin-left: 280px !important;
+            padding-top: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            overflow-x: hidden !important;
+        }
+
+        /* Remove extra margin-top from content-wrapper */
+        .content-wrapper {
+            margin-top: 0 !important;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-main-content {
+                margin-left: 0 !important;
+            }
+            
+            .content-wrapper {
+                margin-top: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="dashboard-header-top">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <h1 data-translate="community.title">Community Hub</h1>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <div class="notification-bell" id="notificationBell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="headerNotificationBadge" style="display: none;">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="profile-overlay" id="profileOverlay"></div>
+    
+    <!-- Profile Sidebar -->
+    <div class="profile-sidebar" id="profileSidebar" role="dialog" aria-labelledby="profileTitle" aria-hidden="true">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="profile-info">
+                <h3 id="profileTitle" data-translate="profile.title">Farmer</h3>
+                <p id="profileEmail"></p>
+            </div>
+            <button class="close-profile" id="closeProfile" aria-label="Close profile sidebar">×</button>
+        </div>
+        <div class="profile-menu">
+            <ul role="menu">
+                <li role="menuitem" tabindex="0" data-translate="profile.settings"><i class="fas fa-user"></i> Profile Settings</li>
+                <li role="menuitem" tabindex="0" data-translate="profile.preferences"><i class="fas fa-cog"></i> Account Preferences</li>
+                <li role="menuitem" tabindex="0" data-translate="profile.notifications"><i class="fas fa-bell"></i> Notifications</li>
+                <li role="menuitem" tabindex="0" data-translate="profile.logout"><i class="fas fa-sign-out-alt"></i> Logout</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="dashboard-sidebar" id="sidebar">
+            <nav>
+                <ul>
+                    <li data-translate="navigation.dashboard"><a href="dashboard.html"><i class="bi bi-person-lines-fill"></i> Dashboard</a></li>
+                    <li data-translate="navigation.crop_recommendation"><a href="crop_recommendation.html"><i class="bi bi-leaf"></i> Crop Recommendation</a></li>
+                    <li data-translate="navigation.government_schemes"><a href="schemes.html"><i class="fas fa-chart-bar"></i> Government Schemes</a></li>
+                    <li data-translate="navigation.ai_chatbot"><a href="chatbot.html"><i class="bi bi-discord"></i> AI Chatbot</a></li>
+                    <li data-translate="navigation.weather_alerts"><a href="weather.html"><i class="bi bi-cloud-sun-fill"></i> Weather Alerts</a></li>                  
+                    <li data-translate="navigation.knowledge_base"><a href="knowledge-base.html"><i class="bi bi-patch-question-fill"></i> Knowledge Base</a></li>
+                    <li data-translate="navigation.farm_tracker"><a href="farm-tracker.html"><i class="bi bi-calendar-check"></i> Farm Tracker</a></li>
+                    <li class="active" data-translate="navigation.community_hub"><a href="community.html"><i class="bi bi-people-fill"></i> Community Hub</a></li>
+                    <li data-translate="navigation.about"><a href="about.html"><i class="bi bi-chat-fill"></i> About</a></li>
+                </ul>
+            </nav>
+            <div class="dark-toggle" id="darkToggle" data-translate="navigation.dark_mode">🌙 Dark Mode</div>
+        </div>
+
+        <!-- Main content area -->
+        <main class="dashboard-main-content">
+            <div class="content-container">
+                <!-- Community Header -->
+                <div class="community-header">
+                    <div class="header-content">
+                        <h2 data-translate="community.header.title"><i class="fas fa-users"></i> Community Hub</h2>
+                        <p data-translate="community.header.subtitle">Connect with fellow farmers, share knowledge, and get answers to your agricultural questions</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="ask-question-btn" id="askQuestionBtn" data-translate="community.ask_question">
+                            <i class="fas fa-plus"></i>
+                            Ask Question
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Search and Filter Section -->
+                <div class="search-filter-section">
+                    <div class="search-container">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" data-translate-placeholder="community.search.placeholder" placeholder="Search questions, topics, or keywords...">
+                            <button class="search-btn" id="searchBtn" data-translate="community.search.button">Search</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-container">
+                        <div class="filter-group">
+                            <label for="categoryFilter" data-translate="community.filter.category">Category:</label>
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="" data-translate="community.filter.category.all">All Categories</option>
+                                <option value="crop-diseases" data-translate="community.filter.category.crop_diseases">Crop Diseases</option>
+                                <option value="soil-management" data-translate="community.filter.category.soil_management">Soil Management</option>
+                                <option value="weather-issues" data-translate="community.filter.category.weather_issues">Weather Issues</option>
+                                <option value="pest-control" data-translate="community.filter.category.pest_control">Pest Control</option>
+                                <option value="harvesting" data-translate="community.filter.category.harvesting">Harvesting</option>
+                                <option value="seeds-planting" data-translate="community.filter.category.seeds_planting">Seeds & Planting</option>
+                                <option value="general" data-translate="community.filter.category.general">General</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="sortFilter" data-translate="community.filter.sort">Sort by:</label>
+                            <select id="sortFilter" class="filter-select">
+                                <option value="recent" data-translate="community.filter.sort.recent">Most Recent</option>
+                                <option value="popular" data-translate="community.filter.sort.popular">Most Popular</option>
+                                <option value="solved" data-translate="community.filter.sort.solved">Solved First</option>
+                                <option value="unanswered" data-translate="community.filter.sort.unanswered">Unanswered</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <button class="filter-toggle" id="filterToggle" data-translate="community.filter.filters">
+                                <i class="fas fa-filter"></i>
+                                Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Stats -->
+                <div class="community-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalQuestions">1,247</span>
+                            <span class="stat-label" data-translate="community.stats.total_questions">Total Questions</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalAnswers">3,891</span>
+                            <span class="stat-label" data-translate="community.stats.answers_given">Answers Given</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="activeUsers">892</span>
+                            <span class="stat-label" data-translate="community.stats.active_farmers">Active Farmers</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="solvedQuestions">756</span>
+                            <span class="stat-label" data-translate="community.stats.solved_questions">Solved Questions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Questions Grid -->
+                <div class="questions-section">
+                    <div class="section-header">
+                        <h3 data-translate="community.questions.recent">Recent Questions</h3>
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="questions-grid" id="questionsGrid">
+                        <!-- Questions will be loaded here dynamically -->
+                        <div class="loading-spinner" id="loadingSpinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span data-translate="community.loading">Loading questions...</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination-container" id="paginationContainer">
+                        <button class="pagination-btn" id="prevBtn" disabled data-translate="community.pagination.previous">
+                            <i class="fas fa-chevron-left"></i>
+                            Previous
+                        </button>
+                        <div class="pagination-info">
+                            <span id="pageInfo">Page 1 of 10</span>
+                        </div>
+                        <button class="pagination-btn" id="nextBtn" data-translate="community.pagination.next">
+                            Next
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Featured Categories -->
+                <div class="featured-categories">
+                    <h3 data-translate="community.categories.popular">Popular Categories</h3>
+                    <div class="categories-grid">
+                        <div class="category-card" data-category="crop-diseases">
+                            <div class="category-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="category-info">
+                                <h4 data-translate="community.categories.crop_diseases.title">Crop Diseases</h4>
+                                <span class="question-count" data-translate="community.categories.crop_diseases.count" data-count="234">234 questions</span>
+                            </div>
+                        </div>
+                        <div class="category-card" data-category="soil-management">
+                            <div class="category-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="category-info">
+                                <h4 data-translate="community.categories.soil_management.title">Soil Management</h4>
+                                <span class="question-count" data-translate="community.categories.soil_management.count" data-count="189">189 questions</span>
+                            </div>
+                        </div>
+                        <div class="category-card" data-category="pest-control">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="category-info">
+                                <h4 data-translate="community.categories.pest_control.title">Pest Control</h4>
+                                <span class="question-count" data-translate="community.categories.pest_control.count" data-count="156">156 questions</span>
+                            </div>
+                        </div>
+                        <div class="category-card" data-category="weather-issues">
+                            <div class="category-icon">
+                                <i class="fas fa-cloud-rain"></i>
+                            </div>
+                            <div class="category-info">
+                                <h4 data-translate="community.categories.weather_issues.title">Weather Issues</h4>
+                                <span class="question-count" data-translate="community.categories.weather_issues.count" data-count="143">143 questions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Language System Scripts -->
+    <script type="module" src="../../public/js/config/languages.js"></script>
+    <script type="module" src="../../public/js/config/constants.js"></script>
+    <script type="module" src="../../public/js/utils/storage.js"></script>
+    <script type="module" src="../../public/js/utils/logger.js"></script>
+    <script type="module" src="../../public/js/languageManager.js"></script>
+    <script type="module" src="../../public/js/translationEngine.js"></script>
+    <script type="module" src="../../public/js/languageSelector.js"></script>
+    <script type="module" src="../../public/js/community-init.js"></script>
+    
+
+    
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/notifications.js"></script>
+    <script src="../assets/js/community.js"></script>
+    <script>
+        // Set user email and profile information
+        const userData = JSON.parse(localStorage.getItem('user'));
+        if (userData && userData.email) {
+            document.getElementById('profileEmail').textContent = userData.email;
+            if (userData.name && userData.name.length > 0) {
+                document.getElementById('profileTitle').textContent = userData.name;
+            }
+        }
+
+        // Logout button functionality
+        document.querySelectorAll('.profile-menu ul li').forEach(function(item) {
+            if (item.textContent.trim().toLowerCase().includes('logout')) {
+                item.addEventListener('click', function() {
+                    localStorage.removeItem('user');
+                    window.location.href = 'index.html';
+                });
+            }
+            
+            // Notifications menu item click handler
+            if (item.textContent.trim().toLowerCase().includes('notifications')) {
+                item.addEventListener('click', function() {
+                    if (window.notificationManager) {
+                        window.notificationManager.showNotificationDropdown();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

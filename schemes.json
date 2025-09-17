@@ -1,0 +1,3242 @@
+[
+   {
+      "State_ut": "Delhi",
+      "Crop": "Vegetables",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Vegetables",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Vegetables",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Vegetables",
+      "name": "Delhi State Horticulture Subsidy",
+      "Level": "UT",
+      "Category": "Input Subsidy",
+      "Benefit": "50% subsidy on seeds, drip irrigation",
+      "Eligibility": "Urban farmers & cooperatives",
+      "url": "https:\/\/delhi.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Fruits",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Fruits",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Fruits",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Fruits",
+      "name": "Delhi State Horticulture Subsidy",
+      "Level": "UT",
+      "Category": "Input Subsidy",
+      "Benefit": "50% subsidy",
+      "Eligibility": "Urban farmers & cooperatives",
+      "url": "https:\/\/delhi.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Flowers",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Flowers",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Flowers",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Delhi",
+      "Crop": "Flowers",
+      "name": "Delhi State Horticulture Subsidy",
+      "Level": "UT",
+      "Category": "Input Subsidy",
+      "Benefit": "50% subsidy",
+      "Eligibility": "Urban farmers & cooperatives",
+      "url": "https:\/\/delhi.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Apple",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Apple",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Apple",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Apple",
+      "name": "Market Intervention Scheme (MIS)",
+      "Level": "UT",
+      "Category": "Procurement",
+      "Benefit": "Govt buys apples at assured price",
+      "Eligibility": "All apple growers",
+      "url": "https:\/\/jk.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Saffron",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Saffron",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Saffron",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Saffron",
+      "name": "National Saffron Mission",
+      "Level": "UT",
+      "Category": "Crop Support",
+      "Benefit": "Replantation & irrigation support",
+      "Eligibility": "Saffron cultivators",
+      "url": "https:\/\/jk.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Wheat",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Wheat",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Wheat",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Jammu & Kashmir",
+      "Crop": "Wheat",
+      "name": "J&K Subsidy Scheme",
+      "Level": "UT",
+      "Category": "Input Support",
+      "Benefit": "Subsidy on seeds and fertilizers",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/jk.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Barley",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Barley",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Barley",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Barley",
+      "name": "Ladakh Organic Mission",
+      "Level": "UT",
+      "Category": "Organic Support",
+      "Benefit": "Promotion of organic farming",
+      "Eligibility": "Local farmers",
+      "url": "https:\/\/ladakh.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Apricot",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Apricot",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Apricot",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Apricot",
+      "name": "Ladakh Organic Mission",
+      "Level": "UT",
+      "Category": "Organic Support",
+      "Benefit": "Organic apricot production & export",
+      "Eligibility": "Local farmers",
+      "url": "https:\/\/ladakh.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Wheat",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Wheat",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Wheat",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Ladakh",
+      "Crop": "Wheat",
+      "name": "Seed Distribution Subsidy",
+      "Level": "UT",
+      "Category": "Input Support",
+      "Benefit": "50% subsidy on certified seeds",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/ladakh.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Vegetables",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Vegetables",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Vegetables",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Vegetables",
+      "name": "UT Horticulture Subsidy",
+      "Level": "UT",
+      "Category": "Input Subsidy",
+      "Benefit": "40% subsidy on seeds",
+      "Eligibility": "Farmers in peri-urban areas",
+      "url": "https:\/\/chandigarh.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Fruits",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Fruits",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Fruits",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Fruits",
+      "name": "UT Horticulture Subsidy",
+      "Level": "UT",
+      "Category": "Input Subsidy",
+      "Benefit": "40% subsidy",
+      "Eligibility": "Farmers in peri-urban areas",
+      "url": "https:\/\/chandigarh.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Flowers",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Flowers",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Flowers",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Chandigarh",
+      "Crop": "Flowers",
+      "name": "UT Horticulture Subsidy",
+      "Level": "UT",
+      "Category": "Input Subsidy",
+      "Benefit": "40% subsidy",
+      "Eligibility": "Farmers in peri-urban areas",
+      "url": "https:\/\/chandigarh.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Paddy",
+      "name": "Puducherry Paddy Procurement Scheme",
+      "Level": "UT",
+      "Category": "Procurement",
+      "Benefit": "Procurement at MSP",
+      "Eligibility": "All paddy farmers",
+      "url": "https:\/\/py.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Sugarcane",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Sugarcane",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Sugarcane",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Sugarcane",
+      "name": "Puducherry Cane Development Scheme",
+      "Level": "UT",
+      "Category": "Input Support",
+      "Benefit": "Support for cane growers",
+      "Eligibility": "Sugarcane farmers",
+      "url": "https:\/\/py.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Groundnut",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Groundnut",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Groundnut",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Puducherry",
+      "Crop": "Groundnut",
+      "name": "Oilseed Promotion Scheme",
+      "Level": "UT",
+      "Category": "Input Support",
+      "Benefit": "Subsidy on oilseed cultivation",
+      "Eligibility": "Groundnut farmers",
+      "url": "https:\/\/py.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Coconut",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Coconut",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Coconut",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Coconut",
+      "name": "Coconut Development Board Scheme",
+      "Level": "UT",
+      "Category": "Crop Development",
+      "Benefit": "Support for replanting & inputs",
+      "Eligibility": "Coconut farmers",
+      "url": "https:\/\/andaman.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Arecanut",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Arecanut",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Arecanut",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Arecanut",
+      "name": "Coconut Development Board Scheme",
+      "Level": "UT",
+      "Category": "Crop Development",
+      "Benefit": "Support for replanting & inputs",
+      "Eligibility": "Arecanut farmers",
+      "url": "https:\/\/andaman.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Spices",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Spices",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Spices",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Andaman & Nicobar Islands",
+      "Crop": "Spices",
+      "name": "Spice Board Subsidy",
+      "Level": "UT",
+      "Category": "Market & Input",
+      "Benefit": "Support for spice cultivation",
+      "Eligibility": "Spice farmers",
+      "url": "https:\/\/andaman.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Mango",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Mango",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Mango",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Mango",
+      "name": "Horticulture Mission Scheme",
+      "Level": "UT",
+      "Category": "Input Subsidy",
+      "Benefit": "Subsidy on mango orchards",
+      "Eligibility": "Fruit growers",
+      "url": "https:\/\/dnhdd.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Banana",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Banana",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Banana",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Banana",
+      "name": "Horticulture Mission Scheme",
+      "Level": "UT",
+      "Category": "Input Subsidy",
+      "Benefit": "Subsidy on banana cultivation",
+      "Eligibility": "Fruit growers",
+      "url": "https:\/\/dnhdd.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Vegetables",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Vegetables",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Vegetables",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Dadra & Nagar Haveli and Daman & Diu",
+      "Crop": "Vegetables",
+      "name": "Horticulture Mission Scheme",
+      "Level": "UT",
+      "Category": "Input Subsidy",
+      "Benefit": "Subsidy on vegetables",
+      "Eligibility": "Local farmers",
+      "url": "https:\/\/dnhdd.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Coconut",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Coconut",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Coconut",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Coconut",
+      "name": "Lakshadweep Coconut Mission",
+      "Level": "UT",
+      "Category": "Crop Support",
+      "Benefit": "Support for coconut farmers",
+      "Eligibility": "Island farmers",
+      "url": "https:\/\/lakshadweep.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Tuna-fish linked Seaweed farming",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Tuna-fish linked Seaweed farming",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Tuna-fish linked Seaweed farming",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Tuna-fish linked Seaweed farming",
+      "name": "Integrated Farming Support",
+      "Level": "UT",
+      "Category": "Diversification",
+      "Benefit": "Seaweed + coconut promotion",
+      "Eligibility": "Island farmers",
+      "url": "https:\/\/lakshadweep.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Vegetables",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Vegetables",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Vegetables",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Lakshadweep",
+      "Crop": "Vegetables",
+      "name": "Kitchen Garden Subsidy",
+      "Level": "UT",
+      "Category": "Input Support",
+      "Benefit": "Seeds for home\/kitchen gardens",
+      "Eligibility": "All households",
+      "url": "https:\/\/lakshadweep.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Paddy",
+      "name": "Rythu Bandhu",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹10,000\/acre\/year",
+      "Eligibility": "All land-owning farmers",
+      "url": "https:\/\/rythubandhu.telangana.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Cotton",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Cotton",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Cotton",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Cotton",
+      "name": "Rythu Bandhu",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹10,000\/acre\/year",
+      "Eligibility": "All land-owning farmers",
+      "url": "https:\/\/rythubandhu.telangana.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Maize",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Maize",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Maize",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Telangana",
+      "Crop": "Maize",
+      "name": "Rythu Bandhu",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹10,000\/acre\/year",
+      "Eligibility": "All land-owning farmers",
+      "url": "https:\/\/rythubandhu.telangana.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Paddy",
+      "name": "YSR Rythu Bharosa",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹13,500\/year (with PM-KISAN)",
+      "Eligibility": "Land-owning farmers",
+      "url": "https:\/\/ap.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Groundnut",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Groundnut",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Groundnut",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Groundnut",
+      "name": "YSR Rythu Bharosa",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹13,500\/year",
+      "Eligibility": "Land-owning farmers",
+      "url": "https:\/\/ap.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Pulses",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Pulses",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Pulses",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Andhra Pradesh",
+      "Crop": "Pulses",
+      "name": "YSR Rythu Bharosa",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹13,500\/year",
+      "Eligibility": "Land-owning farmers",
+      "url": "https:\/\/ap.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Paddy",
+      "name": "Krishak Bandhu",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹10,000\/acre\/year",
+      "Eligibility": "All land-owning farmers",
+      "url": "https:\/\/wb.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Jute",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Jute",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Jute",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Jute",
+      "name": "Krishak Bandhu",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹10,000\/acre\/year",
+      "Eligibility": "All land-owning farmers",
+      "url": "https:\/\/wb.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Potato",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Potato",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Potato",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "West Bengal",
+      "Crop": "Potato",
+      "name": "Krishak Bandhu",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹10,000\/acre\/year",
+      "Eligibility": "All land-owning farmers",
+      "url": "https:\/\/wb.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Cotton",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Cotton",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Cotton",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Cotton",
+      "name": "Namo Shetkari Yojana",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year (State top-up)",
+      "Eligibility": "Land-owning farmers",
+      "url": "https:\/\/maharashtra.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Soybean",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Soybean",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Soybean",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Soybean",
+      "name": "Namo Shetkari Yojana",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year (State top-up)",
+      "Eligibility": "Land-owning farmers",
+      "url": "https:\/\/maharashtra.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Sugarcane",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Sugarcane",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Sugarcane",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Maharashtra",
+      "Crop": "Sugarcane",
+      "name": "FRP Procurement Support",
+      "Level": "State",
+      "Category": "Procurement",
+      "Benefit": "Fair and Remunerative Price (FRP)",
+      "Eligibility": "Registered cane farmers",
+      "url": "https:\/\/maharashtra.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Wheat",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Wheat",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Wheat",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Wheat",
+      "name": "Bhavantar Bhugtan Yojana",
+      "Level": "State",
+      "Category": "Price Deficiency",
+      "Benefit": "Compensation if below MSP",
+      "Eligibility": "Registered farmers",
+      "url": "https:\/\/mp.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Soybean",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Soybean",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Soybean",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Soybean",
+      "name": "Bhavantar Bhugtan Yojana",
+      "Level": "State",
+      "Category": "Price Deficiency",
+      "Benefit": "Compensation if below MSP",
+      "Eligibility": "Registered farmers",
+      "url": "https:\/\/mp.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Pulses",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Pulses",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Pulses",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Madhya Pradesh",
+      "Crop": "Pulses",
+      "name": "Bhavantar Bhugtan Yojana",
+      "Level": "State",
+      "Category": "Price Deficiency",
+      "Benefit": "Compensation if below MSP",
+      "Eligibility": "Registered farmers",
+      "url": "https:\/\/mp.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Wheat",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Wheat",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Wheat",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Wheat",
+      "name": "Punjab MSP Procurement",
+      "Level": "State",
+      "Category": "Procurement",
+      "Benefit": "Procurement at MSP",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/punjab.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Paddy",
+      "name": "Punjab MSP Procurement",
+      "Level": "State",
+      "Category": "Procurement",
+      "Benefit": "Procurement at MSP",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/punjab.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Maize",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Maize",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Maize",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Punjab",
+      "Crop": "Maize",
+      "name": "Punjab MSP Procurement",
+      "Level": "State",
+      "Category": "Procurement",
+      "Benefit": "Procurement at MSP",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/punjab.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Wheat",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Wheat",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Wheat",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Wheat",
+      "name": "Bhavantar Bharpai",
+      "Level": "State",
+      "Category": "Price Deficiency",
+      "Benefit": "Price gap compensation",
+      "Eligibility": "Registered farmers",
+      "url": "https:\/\/haryana.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Mustard",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Mustard",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Mustard",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Mustard",
+      "name": "Bhavantar Bharpai",
+      "Level": "State",
+      "Category": "Price Deficiency",
+      "Benefit": "Price gap compensation",
+      "Eligibility": "Registered farmers",
+      "url": "https:\/\/haryana.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Bajra",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Bajra",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Bajra",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Haryana",
+      "Crop": "Bajra",
+      "name": "Bhavantar Bharpai",
+      "Level": "State",
+      "Category": "Price Deficiency",
+      "Benefit": "Price gap compensation",
+      "Eligibility": "Registered farmers",
+      "url": "https:\/\/haryana.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Paddy",
+      "name": "UP Procurement Scheme",
+      "Level": "State",
+      "Category": "Procurement",
+      "Benefit": "Procurement at MSP",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/up.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Wheat",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Wheat",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Wheat",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Wheat",
+      "name": "UP Procurement Scheme",
+      "Level": "State",
+      "Category": "Procurement",
+      "Benefit": "Procurement at MSP",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/up.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Sugarcane",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Sugarcane",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Sugarcane",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Uttar Pradesh",
+      "Crop": "Sugarcane",
+      "name": "E-Ganna",
+      "Level": "State",
+      "Category": "Digital Payment",
+      "Benefit": "Timely online cane dues",
+      "Eligibility": "Registered cane farmers",
+      "url": "https:\/\/up.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Paddy",
+      "name": "KALIA",
+      "Level": "State",
+      "Category": "Income & Support",
+      "Benefit": "DBT support for small\/marginal farmers",
+      "Eligibility": "Small\/landless farmers",
+      "url": "https:\/\/odisha.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Maize",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Maize",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Maize",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Maize",
+      "name": "KALIA",
+      "Level": "State",
+      "Category": "Income & Support",
+      "Benefit": "DBT support",
+      "Eligibility": "Small\/landless farmers",
+      "url": "https:\/\/odisha.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Pulses",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Pulses",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Pulses",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Odisha",
+      "Crop": "Pulses",
+      "name": "KALIA",
+      "Level": "State",
+      "Category": "Income & Support",
+      "Benefit": "DBT support",
+      "Eligibility": "Small\/landless farmers",
+      "url": "https:\/\/odisha.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Paddy",
+      "name": "Subhiksha Keralam",
+      "Level": "State",
+      "Category": "Integrated Farming",
+      "Benefit": "Support for paddy + vegetable farming",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/kerala.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Coconut",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Coconut",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Coconut",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Coconut",
+      "name": "Kerala Coconut Mission",
+      "Level": "State",
+      "Category": "Crop Development",
+      "Benefit": "Support for replanting & processing",
+      "Eligibility": "Coconut farmers",
+      "url": "https:\/\/kerala.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Banana",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Banana",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Banana",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Kerala",
+      "Crop": "Banana",
+      "name": "Kerala Karshaka Pension",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "Pension for aged farmers",
+      "Eligibility": "Eligible senior farmers",
+      "url": "https:\/\/kerala.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Paddy",
+      "name": "Krishi Ashirwad Yojana",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹5,000\/acre\/year DBT",
+      "Eligibility": "Land-owning farmers",
+      "url": "https:\/\/jharkhand.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Maize",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Maize",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Maize",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Maize",
+      "name": "Jharkhand Fasal Rahat Yojana",
+      "Level": "State",
+      "Category": "Crop Insurance",
+      "Benefit": "State insurance replacing PMFBY",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/jharkhand.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Pulses",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Pulses",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Pulses",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Jharkhand",
+      "Crop": "Pulses",
+      "name": "Birsa Harit Gram Yojana",
+      "Level": "State",
+      "Category": "Land Development",
+      "Benefit": "Tree-based farming + pulses",
+      "Eligibility": "Small farmers",
+      "url": "https:\/\/jharkhand.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Paddy",
+      "name": "Assam Fasal Suraksha Yojana",
+      "Level": "State",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium-free crop insurance",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/assam.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Tea",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Tea",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Tea",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Tea",
+      "name": "Tea Garden Welfare Scheme",
+      "Level": "State",
+      "Category": "Welfare",
+      "Benefit": "Support for small tea growers",
+      "Eligibility": "Small tea growers",
+      "url": "https:\/\/assam.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Mustard",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Mustard",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Mustard",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Assam",
+      "Crop": "Mustard",
+      "name": "Assam Fasal Suraksha Yojana",
+      "Level": "State",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium-free insurance",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/assam.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Paddy",
+      "name": "Rajya Fasal Sahayata Yojana",
+      "Level": "State",
+      "Category": "Relief Support",
+      "Benefit": "Compensation for crop loss (no premium)",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/bihar.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Wheat",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Wheat",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Wheat",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Wheat",
+      "name": "Rajya Fasal Sahayata Yojana",
+      "Level": "State",
+      "Category": "Relief Support",
+      "Benefit": "Compensation for crop loss",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/bihar.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Maize",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Maize",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Maize",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Bihar",
+      "Crop": "Maize",
+      "name": "Rajya Fasal Sahayata Yojana",
+      "Level": "State",
+      "Category": "Relief Support",
+      "Benefit": "Compensation for crop loss",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/bihar.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Paddy",
+      "name": "Uzhavan App Support Scheme",
+      "Level": "State",
+      "Category": "Digital Support",
+      "Benefit": "Online access to subsidy, insurance, market",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/tn.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Sugarcane",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Sugarcane",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Sugarcane",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Sugarcane",
+      "name": "Integrated Farmers Scheme",
+      "Level": "State",
+      "Category": "Input Subsidy",
+      "Benefit": "Support for cane cultivation",
+      "Eligibility": "Sugarcane farmers",
+      "url": "https:\/\/tn.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Millets",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Millets",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Millets",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Tamil Nadu",
+      "Crop": "Millets",
+      "name": "Millet Mission TN",
+      "Level": "State",
+      "Category": "Crop Promotion",
+      "Benefit": "Promotion of millet farming",
+      "Eligibility": "Small farmers",
+      "url": "https:\/\/tn.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Millets",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Millets",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Millets",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Millets",
+      "name": "Raitha Siri",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹2,000\/hectare millet incentive",
+      "Eligibility": "Millet farmers",
+      "url": "https:\/\/karnataka.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Paddy",
+      "name": "Raitha Belaku",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "Income support for dryland farmers",
+      "Eligibility": "Dryland farmers",
+      "url": "https:\/\/karnataka.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Sugarcane",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Sugarcane",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Sugarcane",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Karnataka",
+      "Crop": "Sugarcane",
+      "name": "Raitha Belaku",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "Income support scheme",
+      "Eligibility": "Farmers in dryland regions",
+      "url": "https:\/\/karnataka.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Groundnut",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Groundnut",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Groundnut",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Groundnut",
+      "name": "Mukhya Mantri Pak Sangrah Yojana",
+      "Level": "State",
+      "Category": "Storage Support",
+      "Benefit": "Subsidy for crop storage",
+      "Eligibility": "Farmers with warehouses",
+      "url": "https:\/\/gujarat.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Cotton",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Cotton",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Cotton",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Cotton",
+      "name": "Kisan Suryodaya Yojana",
+      "Level": "State",
+      "Category": "Energy Support",
+      "Benefit": "Solar irrigation pump support",
+      "Eligibility": "Small farmers",
+      "url": "https:\/\/gujarat.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Wheat",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Wheat",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Wheat",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Gujarat",
+      "Crop": "Wheat",
+      "name": "Mukhya Mantri Pak Sangrah Yojana",
+      "Level": "State",
+      "Category": "Storage Support",
+      "Benefit": "Subsidy for storage facilities",
+      "Eligibility": "Farmers with warehouses",
+      "url": "https:\/\/gujarat.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Wheat",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Wheat",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Wheat",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Wheat",
+      "name": "Mukhyamantri Krishak Sathi Yojana",
+      "Level": "State",
+      "Category": "Compensation & Insurance",
+      "Benefit": "Crop loss & accident insurance",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/rajasthan.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Mustard",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Mustard",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Mustard",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Mustard",
+      "name": "Mukhyamantri Krishak Sathi Yojana",
+      "Level": "State",
+      "Category": "Compensation & Insurance",
+      "Benefit": "Insurance scheme",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/rajasthan.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Bajra",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Bajra",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Bajra",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Rajasthan",
+      "Crop": "Bajra",
+      "name": "Mukhyamantri Krishak Sathi Yojana",
+      "Level": "State",
+      "Category": "Compensation & Insurance",
+      "Benefit": "Insurance scheme",
+      "Eligibility": "All farmers",
+      "url": "https:\/\/rajasthan.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Paddy",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Paddy",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Paddy",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Paddy",
+      "name": "Rajiv Gandhi Kisan Nyay Yojana",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹10,000\/acre DBT support",
+      "Eligibility": "All land-owning farmers",
+      "url": "https:\/\/cg.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Maize",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Maize",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Maize",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Maize",
+      "name": "Rajiv Gandhi Kisan Nyay Yojana",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹10,000\/acre DBT",
+      "Eligibility": "Farmers of maize",
+      "url": "https:\/\/cg.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Soybean",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Soybean",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Soybean",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "Chhattisgarh",
+      "Crop": "Soybean",
+      "name": "Rajiv Gandhi Kisan Nyay Yojana",
+      "Level": "State",
+      "Category": "Income Support",
+      "Benefit": "₹10,000\/acre DBT",
+      "Eligibility": "Soybean farmers",
+      "url": "https:\/\/cg.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Ginger",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Ginger",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Ginger",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Ginger",
+      "name": "MOVCDNER",
+      "Level": "State",
+      "Category": "Organic Support",
+      "Benefit": "Support for organic farming & exports",
+      "Eligibility": "NE farmers",
+      "url": "https:\/\/agricoop.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Turmeric",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Turmeric",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Turmeric",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Turmeric",
+      "name": "MOVCDNER",
+      "Level": "State",
+      "Category": "Organic Support",
+      "Benefit": "Support for organic farming",
+      "Eligibility": "NE farmers",
+      "url": "https:\/\/agricoop.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Pineapple",
+      "name": "PM-KISAN",
+      "Level": "Central",
+      "Category": "Income Support",
+      "Benefit": "₹6,000\/year in 3 instalments",
+      "Eligibility": "All small\/marginal farmers",
+      "url": "https:\/\/pmkisan.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Pineapple",
+      "name": "PMFBY",
+      "Level": "Central",
+      "Category": "Crop Insurance",
+      "Benefit": "Premium subsidy + yield loss coverage",
+      "Eligibility": "All notified crop farmers",
+      "url": "https:\/\/pmfby.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Pineapple",
+      "name": "eNAM",
+      "Level": "Central",
+      "Category": "Market Access",
+      "Benefit": "Online trading platform for better prices",
+      "Eligibility": "All registered farmers",
+      "url": "https:\/\/enam.gov.in"
+   },
+   {
+      "State_ut": "North Eastern States",
+      "Crop": "Pineapple",
+      "name": "MOVCDNER",
+      "Level": "State",
+      "Category": "Organic Support",
+      "Benefit": "Support for organic farming & exports",
+      "Eligibility": "NE farmers",
+      "url": "https:\/\/agricoop.gov.in"
+   }
+]

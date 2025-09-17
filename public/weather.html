@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Alerts - Kisan Sahayak</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <style>
+        :root {
+            --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --text-color: #2d3748;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --sidebar-bg: linear-gradient(180deg, #4c51bf 0%, #667eea 100%);
+            --accent-color: #4f46e5;
+            --hover-color: #3730a3;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body.dark {
+            --bg-color: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            --text-color: #e2e8f0;
+            --card-bg: rgba(45, 55, 72, 0.95);
+            --header-bg: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            --sidebar-bg: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
+            --accent-color: #818cf8;
+            --hover-color: #6366f1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            transition: var(--transition);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            z-index: -1;
+        }
+
+        .dashboard-header {
+            background: var(--header-bg) !important;
+            color: #fff;
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dashboard-header h1 {
+            color: #fff !important;
+        }
+        
+        .dashboard-sidebar {
+            background: var(--sidebar-bg) !important;
+            color: #fff;
+        }
+        
+        .dashboard-sidebar nav ul li a {
+            color: #fff !important;
+        }
+        
+        .dashboard-sidebar nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #fff !important;
+        }
+        
+        .dashboard-sidebar nav ul li.active a {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #fff !important;
+        }
+
+        .dashboard-main-content {
+            margin-left: 280px !important;
+            padding-top: 0 !important;
+            overflow-x: hidden !important;
+        }
+
+        .content-wrapper {
+            margin-top: 0 !important;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-main-content {
+                margin-left: 0 !important;
+            }
+        }
+
+    </style>
+    <style>
+        .weather-page {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .weather-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .weather-header h1 {
+            color: #4f46e5;
+            margin-bottom: 0.5rem;
+        }
+        
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .weather-detailed-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+        }
+        
+        .current-weather-detailed {
+            text-align: center;
+        }
+        
+        .weather-icon-large {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #f59e0b;
+        }
+        
+        .temperature-large {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .weather-description {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        
+        .weather-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 12px;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+        
+        .alerts-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .alerts-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        
+        .alerts-title i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .alert-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .location-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 12px;
+        }
+        
+        .refresh-btn {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 1rem auto;
+            display: block;
+        }
+        
+        .refresh-btn:hover {
+            background: #3730a3;
+            transform: translateY(-2px);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 2rem;
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="dashboard-header-top">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <h1>Weather Alerts</h1>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="profile-overlay" id="profileOverlay"></div>
+
+    <!-- Profile Sidebar -->
+    <div class="profile-sidebar" id="profileSidebar" role="dialog" aria-labelledby="profileTitle" aria-hidden="true">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="profile-info">
+                <h3 id="profileTitle">Farmer</h3>
+                <p id="profileEmail"></p>
+            </div>
+            <button class="close-profile" id="closeProfile" aria-label="Close profile sidebar">×</button>
+        </div>
+        <div class="profile-menu">
+            <ul role="menu">
+                <li role="menuitem" tabindex="0"><i class="fas fa-user"></i> Profile Settings</li>
+                <li role="menuitem" tabindex="0"><i class="fas fa-cog"></i> Account Preferences</li>
+                <li role="menuitem" tabindex="0"><i class="fas fa-bell"></i> Notifications</li>
+                <li role="menuitem" tabindex="0"><i class="fas fa-sign-out-alt"></i> Logout</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="dashboard-sidebar" id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html"><i class="bi bi-person-lines-fill"></i> Dashboard</a></li>
+                    <li><a href="crop_recommendation.html"><i class="bi bi-leaf"></i> Crop Recommendation</a></li>
+                    <li><a href="schemes.html"><i class="fas fa-chart-bar"></i> Government Schemes</a></li>
+                    <li><a href="chatbot.html"><i class="bi bi-discord"></i> AI Chatbot</a></li>
+                    <li class="active"><a href="weather.html"><i class="bi bi-cloud-sun-fill"></i> Weather Alerts</a></li>
+                    <li><a href="knowledge-base.html"><i class="bi bi-patch-question-fill"></i> Knowledge Base</a></li>
+                    <li><a href="farm-tracker.html"><i class="bi bi-calendar-check"></i> Farm Tracker</a></li>
+                    <li><a href="community.html"><i class="bi bi-people-fill"></i> Community Hub</a></li>
+                    <li><a href="about.html"><i class="bi bi-chat-fill"></i> About</a></li>
+                </ul>
+            </nav>
+            <div class="dark-toggle" id="darkToggle">🌙 Dark Mode</div>
+        </div>
+
+        <main class="dashboard-main-content">
+            <div class="weather-page">
+                <div class="weather-header">
+                    <h1><i class="fas fa-cloud-sun"></i> Weather Alerts & Forecasts</h1>
+                    <p>Real-time weather information for smart farming decisions</p>
+                </div>
+
+                <div class="location-info" id="locationInfo">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="locationText">Detecting location...</span>
+                    <button class="refresh-btn" id="refreshWeather">
+                        <i class="fas fa-sync-alt"></i> Refresh Weather
+                    </button>
+                </div>
+
+                <div id="weatherContent">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading weather data...</p>
+                    </div>
+                </div>
+
+                <div class="alerts-section" id="alertsSection" style="display: none;">
+                    <div class="alerts-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Weather Alerts</h3>
+                    </div>
+                    <div id="alertsList">
+                        <!-- Alerts will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script>
+        class WeatherPageManager {
+            constructor() {
+                this.apiBaseUrl = this.getApiBaseUrl();
+                this.defaultLocation = { lat: 28.6139, lon: 77.2090 };
+                this.weatherData = null;
+                this.init();
+            }
+
+            getApiBaseUrl() {
+                if (window.location.hostname.includes('render.com') || 
+                    window.location.hostname.includes('onrender.com')) {
+                    return 'https://smart-india-hackathon-ml.onrender.com';
+                }
+                return 'http://localhost:8000';
+            }
+
+            async init() {
+                await this.getUserLocation();
+                await this.loadWeatherData();
+                this.setupEventListeners();
+            }
+
+            async getUserLocation() {
+                return new Promise((resolve) => {
+                    if (!navigator.geolocation) {
+                        resolve(this.defaultLocation);
+                        return;
+                    }
+
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            this.defaultLocation = {
+                                lat: position.coords.latitude,
+                                lon: position.coords.longitude
+                            };
+                            resolve(this.defaultLocation);
+                        },
+                        () => resolve(this.defaultLocation),
+                        { timeout: 10000, enableHighAccuracy: false }
+                    );
+                });
+            }
+
+            async loadWeatherData() {
+                try {
+                    const { lat, lon } = this.defaultLocation;
+                    const response = await fetch(`${this.apiBaseUrl}/weather/${lat}/${lon}`);
+                    
+                    if (!response.ok) {
+                        throw new Error(`Weather API error: ${response.status}`);
+                    }
+                    
+                    this.weatherData = await response.json();
+                    this.updateUI();
+                    
+                } catch (error) {
+                    console.error('Failed to load weather data:', error);
+                    this.showError();
+                }
+            }
+
+            updateUI() {
+                if (!this.weatherData) return;
+
+                const { main, weather, wind, name, sys } = this.weatherData;
+                
+                // Update location info
+                document.getElementById('locationText').textContent = 
+                    `${name || 'Current Location'}, ${sys?.country || ''}`;
+
+                // Create detailed weather content
+                const weatherContent = document.getElementById('weatherContent');
+                weatherContent.innerHTML = `
+                    <div class="weather-grid">
+                        <div class="weather-detailed-card">
+                            <div class="current-weather-detailed">
+                                <i class="fas ${this.getWeatherIcon(weather[0].main)} weather-icon-large"></i>
+                                <div class="temperature-large">${Math.round(main.temp)}°C</div>
+                                <div class="weather-description">${weather[0].description}</div>
+                                <div class="weather-metrics">
+                                    <div class="metric">
+                                        <div class="metric-value">${main.feels_like}°C</div>
+                                        <div class="metric-label">Feels Like</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">${main.humidity}%</div>
+                                        <div class="metric-label">Humidity</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">${Math.round(wind.speed * 3.6)} km/h</div>
+                                        <div class="metric-label">Wind Speed</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">${main.pressure} hPa</div>
+                                        <div class="metric-label">Pressure</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-detailed-card">
+                            <h3><i class="fas fa-thermometer-half"></i> Temperature Details</h3>
+                            <div class="weather-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">${Math.round(main.temp_max)}°C</div>
+                                    <div class="metric-label">Max Temperature</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">${Math.round(main.temp_min)}°C</div>
+                                    <div class="metric-label">Min Temperature</div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <h4>Farming Recommendations:</h4>
+                                <ul style="text-align: left; margin-top: 0.5rem;">
+                                    ${this.getFarmingRecommendations(main.temp, main.humidity, weather[0].main)}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Update alerts
+                this.updateAlerts();
+            }
+
+            getFarmingRecommendations(temp, humidity, condition) {
+                const recommendations = [];
+                
+                if (temp > 35) {
+                    recommendations.push('<li>Increase irrigation frequency</li>');
+                    recommendations.push('<li>Provide shade for livestock</li>');
+                } else if (temp < 10) {
+                    recommendations.push('<li>Protect crops from frost</li>');
+                    recommendations.push('<li>Cover sensitive plants</li>');
+                }
+                
+                if (humidity > 80) {
+                    recommendations.push('<li>Monitor for fungal diseases</li>');
+                    recommendations.push('<li>Ensure good air circulation</li>');
+                }
+                
+                if (condition.toLowerCase().includes('rain')) {
+                    recommendations.push('<li>Postpone spraying activities</li>');
+                    recommendations.push('<li>Check drainage systems</li>');
+                }
+                
+                if (recommendations.length === 0) {
+                    recommendations.push('<li>Weather conditions are favorable for farming</li>');
+                }
+                
+                return recommendations.join('');
+            }
+
+            updateAlerts() {
+                const { main, weather } = this.weatherData;
+                const alertsSection = document.getElementById('alertsSection');
+                const alertsList = document.getElementById('alertsList');
+                
+                const alerts = [];
+                
+                if (weather[0].main.toLowerCase().includes('rain')) {
+                    alerts.push('Rain expected - secure equipment and plan indoor activities');
+                }
+                
+                if (main.temp > 35) {
+                    alerts.push('High temperature alert - ensure adequate water supply for crops and livestock');
+                }
+                
+                if (main.temp < 5) {
+                    alerts.push('Frost warning - protect sensitive crops and plants');
+                }
+                
+                if (main.humidity > 85) {
+                    alerts.push('High humidity - increased risk of plant diseases');
+                }
+                
+                if (alerts.length > 0) {
+                    alertsList.innerHTML = alerts.map(alert => 
+                        `<div class="alert-item">${alert}</div>`
+                    ).join('');
+                    alertsSection.style.display = 'block';
+                } else {
+                    alertsSection.style.display = 'none';
+                }
+            }
+
+            getWeatherIcon(condition) {
+                const iconMap = {
+                    'Clear': 'fa-sun',
+                    'Clouds': 'fa-cloud',
+                    'Rain': 'fa-cloud-rain',
+                    'Drizzle': 'fa-cloud-drizzle',
+                    'Thunderstorm': 'fa-bolt',
+                    'Snow': 'fa-snowflake',
+                    'Mist': 'fa-smog',
+                    'Fog': 'fa-smog',
+                    'Haze': 'fa-smog'
+                };
+                return iconMap[condition] || 'fa-cloud-sun';
+            }
+
+            showError() {
+                const weatherContent = document.getElementById('weatherContent');
+                weatherContent.innerHTML = `
+                    <div class="error">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Unable to load weather data</h3>
+                        <p>Please check your internet connection and try again.</p>
+                        <button class="refresh-btn" onclick="weatherManager.loadWeatherData()">
+                            <i class="fas fa-retry"></i> Try Again
+                        </button>
+                    </div>
+                `;
+            }
+
+            setupEventListeners() {
+                document.getElementById('refreshWeather').addEventListener('click', () => {
+                    this.loadWeatherData();
+                });
+            }
+        }
+
+        // Initialize weather page manager
+        const weatherManager = new WeatherPageManager();
+
+        // Set user profile info
+        const userData = JSON.parse(localStorage.getItem('user'));
+        if (userData && userData.email) {
+            document.getElementById('profileEmail').textContent = userData.email;
+            if (userData.name && userData.name.length > 0) {
+                document.getElementById('profileTitle').textContent = userData.name;
+            }
+        }
+
+        // Logout functionality
+        document.querySelectorAll('.profile-menu ul li').forEach(function (item) {
+            if (item.textContent.trim().toLowerCase().includes('logout')) {
+                item.addEventListener('click', function () {
+                    localStorage.removeItem('user');
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

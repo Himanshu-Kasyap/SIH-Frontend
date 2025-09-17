@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Kisaan Sahayak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../assets/css/signup.css">
+   <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4361EE',
+                        secondary: '#3CCFCF',
+                        accent: '#FFC857',
+                        success: '#06D6A0',
+                        warning: '#FF5A5F',
+                        purple: '#7209B7',
+                        background: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        nunito: ['Nunito', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+   
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="landing-navbar">
+        <div class="landing-navbar-container">
+            <a href="index.html" class="landing-navbar-logo">
+                🌾 Kisaan Sahayak
+            </a>
+            <div class="landing-navbar-buttons">
+                <a href="index.html" class="landing-nav-btn secondary">Home</a>
+                <a href="about.html" class="landing-nav-btn secondary">About</a>
+                <a href="login.html" class="landing-nav-btn primary">Login</a>
+            </div>
+            <button class="landing-menu-toggle" id="landingMenuToggle">☰</button>
+        </div>
+    </nav>
+
+    <div class="landing-side-menu" id="landingSideMenu">
+        <a href="index.html" class="landing-nav-btn secondary">Home</a>
+        <a href="about.html" class="landing-nav-btn secondary">About</a>
+        <a href="login.html" class="landing-nav-btn primary">Login</a>
+    </div>
+
+    <div class="signup-card" style="margin-top: 100px;">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+            </div>
+            <h1 class="text-xl font-bold">Kisaan Sahayak</h1>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Create Your Account</h2>
+        <p class="text-gray-600 mb-6">Join our community of young AI enthusiasts</p>
+        
+        <form id="signup-form">
+            <div class="form-row">
+                <div class="form-group w-full">
+                    <label for="first-name" class="form-label">First Name</label>
+                    <input type="text" id="first-name" class="form-input" placeholder="Enter your first name" required>
+                    <div id="first-name-error" class="error-message hidden"></div>
+                </div>
+                <div class="form-group w-full">
+                    <label for="last-name" class="form-label">Last Name</label>
+                    <input type="text" id="last-name" class="form-input" placeholder="Enter your last name" required>
+                    <div id="last-name-error" class="error-message hidden"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                <div id="email-error" class="error-message hidden"></div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <div class="relative">
+                    <input type="password" id="password" class="form-input" placeholder="Create a password" required>
+                    <span class="toggle-password" id="toggle-password">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="password-strength">
+                    <div class="password-strength-bar" id="password-strength-bar"></div>
+                </div>
+                <div class="password-tips" id="password-tips">Password should be at least 8 characters</div>
+                <div id="password-error" class="error-message hidden"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password" class="form-label">Confirm Password</label>
+                <div class="relative">
+                    <input type="password" id="confirm-password" class="form-input" placeholder="Confirm password" required>
+                    <span class="toggle-password" id="toggle-confirm-password">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </span>
+                </div>
+                <div id="confirm-password-error" class="error-message hidden"></div>
+            </div>
+            <div class="terms">
+                <input type="checkbox" id="terms" class="rounded text-primary focus:ring-primary" required>
+                <label for="terms">
+                    I agree to the <a href="#" class="text-primary font-semibold">Terms of Service</a> and <a href="#" class="text-primary font-semibold">Privacy Policy</a>. I understand AI Explorers will process my data as described in the Privacy Policy.
+                </label>
+            </div>
+            <button type="submit" class="signup-btn" id="signup-button">Create Account</button>
+        </form>
+        
+        
+        
+        
+        
+        <div class="login-link">
+            Already have an account? <a href="login.html">Log in</a>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle password visibility
+        function setupPasswordToggle(inputId, toggleId) {
+            const togglePassword = document.getElementById(toggleId);
+            const passwordInput = document.getElementById(inputId);
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                if (type === 'password') {
+                    this.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>`;
+                } else {
+                    this.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>`;
+                }
+            });
+        }
+        setupPasswordToggle('password', 'toggle-password');
+        setupPasswordToggle('confirm-password', 'toggle-confirm-password');
+
+        // Password strength meter
+        const passwordInput = document.getElementById('password');
+        const strengthBar = document.getElementById('password-strength-bar');
+        const passwordTips = document.getElementById('password-tips');
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            let strength = 0;
+            let tips = [];
+            if (password.length >= 8) {
+                strength += 1;
+            } else {
+                tips.push('Password should be at least 8 characters');
+            }
+            if (password.match(/[a-z]/) && password.match(/[A-Z]/)) {
+                strength += 1;
+            } else {
+                tips.push('Add both uppercase and lowercase letters');
+            }
+            if (password.match(/[0-9]/)) {
+                strength += 1;
+            } else {
+                tips.push('Add at least one number');
+            }
+            if (password.match(/[^a-zA-Z0-9]/)) {
+                strength += 1;
+            } else {
+                tips.push('Add at least one special character');
+            }
+            strengthBar.className = 'password-strength-bar';
+            if (password.length === 0) {
+                strengthBar.style.width = '0';
+                passwordTips.textContent = 'Password should be at least 8 characters';
+            } else {
+                if (strength === 1) {
+                    strengthBar.classList.add('strength-weak');
+                    passwordTips.textContent = tips.join(', ');
+                } else if (strength === 2 || strength === 3) {
+                    strengthBar.classList.add('strength-medium');
+                    passwordTips.textContent = tips.join(', ');
+                } else if (strength === 4) {
+                    strengthBar.classList.add('strength-strong');
+                    passwordTips.textContent = 'Strong password';
+                }
+            }
+        });
+
+        // Form validation and submission
+        const signupForm = document.getElementById('signup-form');
+        const firstNameInput = document.getElementById('first-name');
+        const lastNameInput = document.getElementById('last-name');
+        const emailInput = document.getElementById('email');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const termsCheckbox = document.getElementById('terms');
+        const firstNameError = document.getElementById('first-name-error');
+        const lastNameError = document.getElementById('last-name-error');
+        const emailError = document.getElementById('email-error');
+        const passwordError = document.getElementById('password-error');
+        const confirmPasswordError = document.getElementById('confirm-password-error');
+
+        signupForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            // Reset all error messages
+            const errorElements = document.querySelectorAll('.error-message');
+            errorElements.forEach(el => {
+                el.textContent = '';
+                el.classList.add('hidden');
+            });
+            const formInputs = document.querySelectorAll('.form-input');
+            formInputs.forEach(input => {
+                input.classList.remove('error');
+            });
+            let isValid = true;
+            if (!firstNameInput.value.trim()) {
+                firstNameError.textContent = 'First name is required';
+                firstNameError.classList.remove('hidden');
+                firstNameInput.classList.add('error');
+                isValid = false;
+            }
+            if (!lastNameInput.value.trim()) {
+                lastNameError.textContent = 'Last name is required';
+                lastNameError.classList.remove('hidden');
+                lastNameInput.classList.add('error');
+                isValid = false;
+            }
+            const email = emailInput.value.trim();
+            if (!email) {
+                emailError.textContent = 'Email is required';
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('error');
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('error');
+                isValid = false;
+            }
+            const password = passwordInput.value;
+            if (!password) {
+                passwordError.textContent = 'Password is required';
+                passwordError.classList.remove('hidden');
+                passwordInput.classList.add('error');
+                isValid = false;
+            } else if (password.length < 8) {
+                passwordError.textContent = 'Password must be at least 8 characters';
+                passwordError.classList.remove('hidden');
+                passwordInput.classList.add('error');
+                isValid = false;
+            }
+            const confirmPassword = confirmPasswordInput.value;
+            if (!confirmPassword) {
+                confirmPasswordError.textContent = 'Please confirm your password';
+                confirmPasswordError.classList.remove('hidden');
+                confirmPasswordInput.classList.add('error');
+                isValid = false;
+            } else if (confirmPassword !== password) {
+                confirmPasswordError.textContent = 'Passwords do not match';
+                confirmPasswordError.classList.remove('hidden');
+                confirmPasswordInput.classList.add('error');
+                isValid = false;
+            }
+            if (!termsCheckbox.checked) {
+                isValid = false;
+                alert('Please agree to the Terms of Service and Privacy Policy');
+            }
+            if (isValid) {
+                // Call backend API
+                const signupBtn = document.getElementById('signup-button');
+                const originalText = signupBtn.textContent;
+                signupBtn.textContent = 'Creating Account...';
+                signupBtn.disabled = true;
+                try {
+                    const response = await fetch('http://localhost:3001/register', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ username: email, password, name: firstNameInput.value.trim() })
+                    });
+                    const data = await response.json();
+                    if (response.ok) {
+                        // Save user info to localStorage (use backend name)
+                        localStorage.setItem('user', JSON.stringify({ email, name: data.name || firstNameInput.value.trim() }));
+                        alert('Account created successfully! You can now access all features.');
+                    } else {
+                        emailError.textContent = data.message || 'Registration failed';
+                        emailError.classList.remove('hidden');
+                        emailInput.classList.add('error');
+                    }
+                } catch (err) {
+                    emailError.textContent = 'Server error. Please try again.';
+                    emailError.classList.remove('hidden');
+                }
+                signupBtn.textContent = originalText;
+                signupBtn.disabled = false;
+            }
+        });
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        // Clear error when input changes
+        const formInputs = document.querySelectorAll('.form-input');
+        formInputs.forEach(input => {
+            input.addEventListener('input', function() {
+                const errorElement = document.getElementById(`${this.id}-error`);
+                if (errorElement) {
+                    errorElement.textContent = '';
+                    errorElement.classList.add('hidden');
+                }
+                this.classList.remove('error');
+            });
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('ring-2', 'ring-primary', 'ring-opacity-50');
+            });
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('ring-2', 'ring-primary', 'ring-opacity-50');
+            });
+        });
+    </script>
+    <script src="../assets/js/navigation.js"></script>
+</body>
+</html>
