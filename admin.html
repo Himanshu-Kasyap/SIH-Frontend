@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Kisaan Sahayak</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .admin-header h1 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .admin-nav {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 0.75rem 1.5rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background: #2980b9;
+        }
+
+        .nav-btn.active {
+            background: #27ae60;
+        }
+
+        .admin-section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .reports-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .reports-table th,
+        .reports-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .reports-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-reviewed {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status-resolved {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-dismissed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .priority-high {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .priority-urgent {
+            color: #dc3545;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .action-btn {
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }
+
+        .btn-review {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-resolve {
+            background: #28a745;
+            color: white;
+        }
+
+        .action-btn:hover {
+            opacity: 0.8;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        @media (max-width: 768px) {
+            .admin-container {
+                padding: 0 0.5rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .reports-table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-header">
+        <h1>
+            <i class="fas fa-shield-alt"></i>
+            Admin Panel - Content Moderation
+        </h1>
+    </div>
+
+    <div class="admin-container">
+        <!-- Navigation -->
+        <div class="admin-nav">
+            <div class="nav-buttons">
+                <button class="nav-btn active" onclick="showSection('dashboard')">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </button>
+                <button class="nav-btn" onclick="showSection('reports')">
+                    <i class="fas fa-flag"></i>
+                    Reports
+                </button>
+                <button class="nav-btn" onclick="showSection('moderation-logs')">
+                    <i class="fas fa-history"></i>
+                    Moderation Logs
+                </button>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="admin-section active">
+            <h2 class="section-title">Dashboard Overview</h2>
+            <div class="stats-grid" id="stats-grid">
+                <div class="loading">Loading statistics...</div>
+            </div>
+        </div>
+
+        <!-- Reports Section -->
+        <div id="reports" class="admin-section">
+            <h2 class="section-title">Content Reports</h2>
+            <div class="filters" style="margin-bottom: 1rem;">
+                <select id="status-filter" onchange="loadReports()">
+                    <option value="">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="reviewed">Reviewed</option>
+                    <option value="resolved">Resolved</option>
+                    <option value="dismissed">Dismissed</option>
+                </select>
+                <select id="priority-filter" onchange="loadReports()" style="margin-left: 1rem;">
+                    <option value="">All Priority</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                    <option value="urgent">Urgent</option>
+                </select>
+            </div>
+            <div id="reports-container">
+                <div class="loading">Loading reports...</div>
+            </div>
+        </div>
+
+        <!-- Moderation Logs Section -->
+        <div id="moderation-logs" class="admin-section">
+            <h2 class="section-title">Moderation Logs</h2>
+            <div id="logs-container">
+                <div class="loading">Loading logs...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Review Report</h3>
+                <span class="close" onclick="closeModal('reviewModal')">&times;</span>
+            </div>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="reviewStatus">Status:</label>
+                    <select id="reviewStatus" required>
+                        <option value="reviewed">Reviewed</option>
+                        <option value="resolved">Resolved</option>
+                        <option value="dismissed">Dismissed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reviewResolution">Resolution:</label>
+                    <textarea id="reviewResolution" placeholder="Explain the resolution..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="action-btn btn-resolve">Submit Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Deletion</h3>
+                <span class="close" onclick="closeModal('deleteModal')">&times;</span>
+            </div>
+            <form id="deleteForm">
+                <p id="deleteMessage"></p>
+                <div class="form-group">
+                    <label for="deleteReason">Reason for deletion:</label>
+                    <textarea id="deleteReason" placeholder="Explain why this content is being deleted..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="action-btn btn-delete">Confirm Delete</button>
+                    <button type="button" class="action-btn" onclick="closeModal('deleteModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentReportId = null;
+        let currentDeleteTarget = null;
+        const ADMIN_KEY = 'admin-secret-key'; // In production, this should be securely managed
+
+        // Initialize admin panel
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboard();
+        });
+
+        // Navigation functions
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Load section data
+            switch(sectionId) {
+                case 'dashboard':
+                    loadDashboard();
+                    break;
+                case 'reports':
+                    loadReports();
+                    break;
+                case 'moderation-logs':
+                    loadModerationLogs();
+                    break;
+            }
+        }
+
+        // Dashboard functions
+        async function loadDashboard() {
+            try {
+                const response = await fetch('/api/admin/stats', {
+                    headers: {
+                        'X-Admin-Key': ADMIN_KEY
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load dashboard stats');
+                }
+                
+                const data = await response.json();
+                displayDashboardStats(data.data);
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+                document.getElementById('stats-grid').innerHTML = 
+                    '<div class="error">Failed to load dashboard statistics</div>';
+            }
+        }
+
+        function displayDashboardStats(stats) {
+            const statsGrid = document.getElementById('stats-grid');
+            
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${stats.overview.totalQuestions}</div>
+                    <div class="stat-label">Total Questions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.overview.totalAnswers}</div>
+                    <div class="stat-label">Total Answers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.overview.totalUsers}</div>
+                    <div class="stat-label">Total Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.overview.pendingReports}</div>
+                    <div class="stat-label">Pending Reports</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.overview.recentModerationActions}</div>
+                    <div class="stat-label">Recent Actions (24h)</div>
+                </div>
+            `;
+        }
+
+        // Reports functions
+        async function loadReports() {
+            const statusFilter = document.getElementById('status-filter').value;
+            const priorityFilter = document.getElementById('priority-filter').value;
+            
+            let url = '/api/admin/reports?';
+            if (statusFilter) url += `status=${statusFilter}&`;
+            if (priorityFilter) url += `priority=${priorityFilter}&`;
+            
+            try {
+                const response = await fetch(url, {
+                    headers: {
+                        'X-Admin-Key': ADMIN_KEY
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load reports');
+                }
+                
+                const data = await response.json();
+                displayReports(data.data.reports);
+            } catch (error) {
+                console.error('Error loading reports:', error);
+                document.getElementById('reports-container').innerHTML = 
+                    '<div class="error">Failed to load reports</div>';
+            }
+        }
+
+        function displayReports(reports) {
+            const container = document.getElementById('reports-container');
+            
+            if (reports.length === 0) {
+                container.innerHTML = '<p>No reports found.</p>';
+                return;
+            }
+            
+            const table = `
+                <table class="reports-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Target</th>
+                            <th>Reporter</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${reports.map(report => `
+                            <tr>
+                                <td>${report.reportType}</td>
+                                <td>${report.targetType}</td>
+                                <td>${report.reporter ? report.reporter.firstName + ' ' + report.reporter.lastName : 'Unknown'}</td>
+                                <td>${report.reason.substring(0, 50)}...</td>
+                                <td><span class="status-badge status-${report.status}">${report.status}</span></td>
+                                <td class="priority-${report.priority}">${report.priority}</td>
+                                <td>${new Date(report.createdAt).toLocaleDateString()}</td>
+                                <td>
+                                    ${report.status === 'pending' ? `
+                                        <button class="action-btn btn-review" onclick="openReviewModal('${report._id}')">
+                                            Review
+                                        </button>
+                                        <button class="action-btn btn-delete" onclick="openDeleteModal('${report.targetType}', '${report.targetId}')">
+                                            Delete Content
+                                        </button>
+                                    ` : ''}
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = table;
+        }
+
+        // Moderation logs functions
+        async function loadModerationLogs() {
+            try {
+                const response = await fetch('/api/admin/moderation-logs', {
+                    headers: {
+                        'X-Admin-Key': ADMIN_KEY
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load moderation logs');
+                }
+                
+                const data = await response.json();
+                displayModerationLogs(data.data.logs);
+            } catch (error) {
+                console.error('Error loading moderation logs:', error);
+                document.getElementById('logs-container').innerHTML = 
+                    '<div class="error">Failed to load moderation logs</div>';
+            }
+        }
+
+        function displayModerationLogs(logs) {
+            const container = document.getElementById('logs-container');
+            
+            if (logs.length === 0) {
+                container.innerHTML = '<p>No moderation logs found.</p>';
+                return;
+            }
+            
+            const table = `
+                <table class="reports-table">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Target</th>
+                            <th>Moderator</th>
+                            <th>Reason</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${logs.map(log => `
+                            <tr>
+                                <td>${log.action.replace('_', ' ').toUpperCase()}</td>
+                                <td>${log.targetType}</td>
+                                <td>${log.moderator ? log.moderator.firstName + ' ' + log.moderator.lastName : 'System'}</td>
+                                <td>${log.reason}</td>
+                                <td>${new Date(log.createdAt).toLocaleString()}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = table;
+        }
+
+        // Modal functions
+        function openReviewModal(reportId) {
+            currentReportId = reportId;
+            document.getElementById('reviewModal').style.display = 'block';
+        }
+
+        function openDeleteModal(targetType, targetId) {
+            currentDeleteTarget = { type: targetType, id: targetId };
+            document.getElementById('deleteMessage').textContent = 
+                `Are you sure you want to delete this ${targetType}? This action cannot be undone.`;
+            document.getElementById('deleteModal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            currentReportId = null;
+            currentDeleteTarget = null;
+        }
+
+        // Form handlers
+        document.getElementById('reviewForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const status = document.getElementById('reviewStatus').value;
+            const resolution = document.getElementById('reviewResolution').value;
+            
+            try {
+                const response = await fetch(`/api/admin/reports/${currentReportId}/review`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Admin-Key': ADMIN_KEY
+                    },
+                    body: JSON.stringify({
+                        status,
+                        resolution,
+                        moderatorId: 'admin-user-id' // In production, get from session
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to review report');
+                }
+                
+                closeModal('reviewModal');
+                loadReports();
+                showMessage('Report reviewed successfully', 'success');
+            } catch (error) {
+                console.error('Error reviewing report:', error);
+                showMessage('Failed to review report', 'error');
+            }
+        });
+
+        document.getElementById('deleteForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const reason = document.getElementById('deleteReason').value;
+            const { type, id } = currentDeleteTarget;
+            
+            try {
+                const endpoint = type === 'question' ? 'questions' : 'answers';
+                const response = await fetch(`/api/admin/${endpoint}/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Admin-Key': ADMIN_KEY
+                    },
+                    body: JSON.stringify({
+                        reason,
+                        moderatorId: 'admin-user-id' // In production, get from session
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to delete ${type}`);
+                }
+                
+                closeModal('deleteModal');
+                loadReports();
+                showMessage(`${type} deleted successfully`, 'success');
+            } catch (error) {
+                console.error(`Error deleting ${type}:`, error);
+                showMessage(`Failed to delete ${type}`, 'error');
+            }
+        });
+
+        // Utility functions
+        function showMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = type;
+            messageDiv.textContent = message;
+            
+            document.querySelector('.admin-container').insertBefore(
+                messageDiv, 
+                document.querySelector('.admin-nav').nextSibling
+            );
+            
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 5000);
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

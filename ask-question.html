@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/community.css">
+    <link rel="stylesheet" href="../assets/css/ask-question.css">
+    <title>Ask Question - Kisan Sahayak</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Quill Rich Text Editor -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --text-color: #2d3748;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --sidebar-bg: linear-gradient(180deg, #4c51bf 0%, #667eea 100%);
+            --accent-color: #4f46e5;
+            --hover-color: #3730a3;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body.dark {
+            --bg-color: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            --text-color: #e2e8f0;
+            --card-bg: rgba(45, 55, 72, 0.95);
+            --header-bg: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            --sidebar-bg: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
+            --accent-color: #818cf8;
+            --hover-color: #6366f1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            transition: var(--transition);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            z-index: -1;
+        }
+
+        .dashboard-header {
+            background: var(--header-bg) !important;
+            color: #fff;
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dashboard-header h1 {
+            color: #fff !important;
+        }
+        
+        .dashboard-sidebar {
+            background: var(--sidebar-bg) !important;
+            color: #fff;
+        }
+        
+        .dashboard-sidebar nav ul li a {
+            color: #fff !important;
+        }
+        
+        .dashboard-sidebar nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #fff !important;
+        }
+        
+        .dashboard-sidebar nav ul li.active a {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #fff !important;
+        }
+
+        .dashboard-main-content {
+            margin-left: 280px !important;
+            padding-top: 0 !important;
+            overflow-x: hidden !important;
+        }
+
+        .content-wrapper {
+            margin-top: 0 !important;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-main-content {
+                margin-left: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="dashboard-header-top">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <h1>Ask Question</h1>
+        </div>
+    </header>
+
+    <script>
+        // User profile initialization (login redirect removed)
+        const user = JSON.parse(localStorage.getItem('user'));
+    </script>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="profile-overlay" id="profileOverlay"></div>
+    
+    <!-- Profile Sidebar -->
+    <div class="profile-sidebar" id="profileSidebar" role="dialog" aria-labelledby="profileTitle" aria-hidden="true">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="profile-info">
+                <h3 id="profileTitle">Farmer</h3>
+                <p id="profileEmail"></p>
+            </div>
+            <button class="close-profile" id="closeProfile" aria-label="Close profile sidebar">×</button>
+        </div>
+        <div class="profile-menu">
+            <ul role="menu">
+                <li role="menuitem" tabindex="0"><i class="fas fa-user"></i> Profile Settings</li>
+                <li role="menuitem" tabindex="0"><i class="fas fa-cog"></i> Account Preferences</li>
+                <li role="menuitem" tabindex="0"><i class="fas fa-bell"></i> Notifications</li>
+                <li role="menuitem" tabindex="0"><i class="fas fa-sign-out-alt"></i> Logout</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="dashboard-sidebar" id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html"><i class="bi bi-person-lines-fill"></i> Dashboard</a></li>
+                    <li><a href="crop_recommendation.html"><i class="bi bi-leaf"></i> Crop Recommendation</a></li>
+                    <li><a href="schemes.html"><i class="fas fa-chart-bar"></i> Government Schemes</a></li>
+                    <li><a href="chatbot.html"><i class="bi bi-discord"></i> AI Chatbot</a></li>
+                    <li><a href="weather.html"><i class="bi bi-cloud-sun-fill"></i> Weather Alerts</a></li>                  
+                    <li><a href="knowledge-base.html"><i class="bi bi-patch-question-fill"></i> Knowledge Base</a></li>
+                    <li><a href="farm-tracker.html"><i class="bi bi-calendar-check"></i> Farm Tracker</a></li>
+                    <li class="active"><a href="community.html"><i class="bi bi-people-fill"></i> Community Hub</a></li>
+                    <li><a href="about.html"><i class="bi bi-chat-fill"></i> About</a></li>
+                </ul>
+            </nav>
+            <div class="dark-toggle" id="darkToggle">🌙 Dark Mode</div>
+        </div>
+        
+
+
+        <!-- Main content area -->
+        <main class="dashboard-main-content">
+            <div class="content-container">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="header-content">
+                        <button class="back-btn" onclick="window.location.href='community.html'">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Community
+                        </button>
+                        <h2><i class="fas fa-question-circle"></i> Ask a Question</h2>
+                        <p>Share your agricultural question with the community and get expert advice from fellow farmers</p>
+                    </div>
+                </div>
+
+                <!-- Question Form -->
+                <div class="question-form-container">
+                    <form id="askQuestionForm" class="question-form" enctype="multipart/form-data">
+                        <!-- Title Field -->
+                        <div class="form-group">
+                            <label for="questionTitle" class="form-label">
+                                <i class="fas fa-heading"></i>
+                                Question Title *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="questionTitle" 
+                                name="title" 
+                                class="form-input" 
+                                placeholder="What's your agricultural question? Be specific and clear..."
+                                maxlength="200"
+                                required
+                            >
+                            <div class="field-info">
+                                <span class="char-count" id="titleCharCount">0/200</span>
+                                <span class="field-help">Make it descriptive and specific</span>
+                            </div>
+                            <div class="error-message" id="titleError"></div>
+                        </div>
+
+                        <!-- Category Field -->
+                        <div class="form-group">
+                            <label for="questionCategory" class="form-label">
+                                <i class="fas fa-tags"></i>
+                                Category *
+                            </label>
+                            <select id="questionCategory" name="category" class="form-select" required>
+                                <option value="">Select a category...</option>
+                                <option value="crop-diseases">🦠 Crop Diseases</option>
+                                <option value="soil-management">🌱 Soil Management</option>
+                                <option value="weather-issues">🌦️ Weather Issues</option>
+                                <option value="pest-control">🛡️ Pest Control</option>
+                                <option value="harvesting">🌾 Harvesting</option>
+                                <option value="seeds-planting">🌰 Seeds & Planting</option>
+                                <option value="general">📋 General</option>
+                            </select>
+                            <div class="field-info">
+                                <span class="field-help">Choose the most relevant category for better visibility</span>
+                            </div>
+                            <div class="error-message" id="categoryError"></div>
+                        </div>
+
+                        <!-- Description Field with Rich Text Editor -->
+                        <div class="form-group">
+                            <label for="questionDescription" class="form-label">
+                                <i class="fas fa-align-left"></i>
+                                Detailed Description *
+                            </label>
+                            <div class="editor-container">
+                                <div id="questionDescription" class="rich-editor"></div>
+                                <textarea id="hiddenDescription" name="description" style="display: none;" required></textarea>
+                            </div>
+                            <div class="field-info">
+                                <span class="char-count" id="descriptionCharCount">0/5000</span>
+                                <span class="field-help">Provide detailed information about your problem, what you've tried, and your farming context</span>
+                            </div>
+                            <div class="error-message" id="descriptionError"></div>
+                        </div>
+
+                        <!-- Image Upload Field -->
+                        <div class="form-group">
+                            <label for="questionImages" class="form-label">
+                                <i class="fas fa-images"></i>
+                                Add Images (Optional)
+                            </label>
+                            <div class="image-upload-container">
+                                <div class="upload-area" id="uploadArea">
+                                    <div class="upload-content">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drag and drop images here or click to browse</p>
+                                        <span class="upload-info">Supports: JPG, PNG, GIF (Max 5MB each, up to 3 images)</span>
+                                    </div>
+                                    <input 
+                                        type="file" 
+                                        id="questionImages" 
+                                        name="images" 
+                                        multiple 
+                                        accept="image/jpeg,image/png,image/gif"
+                                        class="file-input"
+                                    >
+                                </div>
+                                
+                                <!-- Image Preview Area -->
+                                <div class="image-preview-container" id="imagePreviewContainer">
+                                    <!-- Image previews will be added here dynamically -->
+                                </div>
+                            </div>
+                            <div class="error-message" id="imagesError"></div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href='community.html'">
+                                <i class="fas fa-times"></i>
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span class="btn-text">Post Question</span>
+                                <div class="btn-spinner" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tips Section -->
+                <div class="tips-section">
+                    <h3><i class="fas fa-lightbulb"></i> Tips for Getting Better Answers</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="tip-content">
+                                <h4>Search First</h4>
+                                <p>Check if your question has already been answered in the community</p>
+                            </div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="tip-content">
+                                <h4>Add Photos</h4>
+                                <p>Images of your crops, soil, or problems help others understand better</p>
+                            </div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="tip-content">
+                                <h4>Include Context</h4>
+                                <p>Mention your location, crop type, season, and farming practices</p>
+                            </div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="tip-content">
+                                <h4>Be Patient</h4>
+                                <p>Good answers take time. Check back regularly for responses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <p>Posting your question...</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/notifications.js"></script>
+    <script src="../assets/js/ask-question.js"></script>
+    <script>
+        // Set user email and profile information
+        const userData = JSON.parse(localStorage.getItem('user'));
+        if (userData && userData.email) {
+            document.getElementById('profileEmail').textContent = userData.email;
+            if (userData.name && userData.name.length > 0) {
+                document.getElementById('profileTitle').textContent = userData.name;
+            }
+        }
+
+        // Logout button functionality
+        document.querySelectorAll('.profile-menu ul li').forEach(function(item) {
+            if (item.textContent.trim().toLowerCase().includes('logout')) {
+                item.addEventListener('click', function() {
+                    localStorage.removeItem('user');
+                    window.location.href = 'index.html';
+                });
+            }
+            
+            // Notifications menu item click handler
+            if (item.textContent.trim().toLowerCase().includes('notifications')) {
+                item.addEventListener('click', function() {
+                    if (window.notificationManager) {
+                        window.notificationManager.showNotificationDropdown();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
