@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Kisaan Sahayak</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/about.css">
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
-    <link rel="stylesheet" href="../assets/css/navigation.css">
-    <link rel="stylesheet" href="../assets/css/mobile-responsive.css">
-    <link rel="stylesheet" href="../assets/css/ui-improvements.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Farmer's Marketplace</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/marketplace.css">
+    <link rel="stylesheet" href="assets/css/mobile-responsive.css">
+    <link rel="stylesheet" href="assets/css/ui-improvements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
         :root {
@@ -168,66 +166,6 @@
                 font-size: 0.9rem;
             }
         }
-            line-height: 1.6;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-color);
-            z-index: -1;
-        }
-
-        .dashboard-header {
-            background: var(--header-bg) !important;
-            color: #fff;
-            box-shadow: var(--shadow-lg);
-            backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .dashboard-header h1 {
-            color: #fff !important;
-        }
-        
-        .dashboard-sidebar {
-            background: var(--sidebar-bg) !important;
-            color: #fff;
-        }
-        
-        .dashboard-sidebar nav ul li a {
-            color: #fff !important;
-        }
-        
-        .dashboard-sidebar nav ul li a:hover {
-            background: rgba(255, 255, 255, 0.2) !important;
-            color: #fff !important;
-        }
-        
-        .dashboard-sidebar nav ul li.active a {
-            background: rgba(255, 255, 255, 0.2) !important;
-            color: #fff !important;
-        }
-
-        .dashboard-main-content {
-            margin-left: 280px !important;
-            padding-top: 0 !important;
-            overflow-x: hidden !important;
-        }
-
-        .content-wrapper {
-            margin-top: 0 !important;
-        }
-
-        @media (max-width: 1024px) {
-            .dashboard-main-content {
-                margin-left: 0 !important;
-            }
-        }
     </style>
 </head>
 <body>
@@ -270,42 +208,16 @@
     window.addEventListener('load', checkScreenSize);
     </script>
     
+    <!-- Dashboard Header -->
     <header class="dashboard-header">
         <div class="dashboard-header-top">
             <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
-            <h1>About Us</h1>
+            <h1>Farmer's Marketplace</h1>
+
         </div>
     </header>
 
-    <script>
-        // User profile initialization (login redirect removed)
-        const user = JSON.parse(localStorage.getItem('user'));
-    </script>
-
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <div class="profile-overlay" id="profileOverlay"></div>
-    
-    <!-- Profile Sidebar -->
-    <div class="profile-sidebar" id="profileSidebar" role="dialog" aria-labelledby="profileTitle" aria-hidden="true">
-        <div class="profile-header">
-            <div class="profile-avatar">
-                <i class="fas fa-user-circle"></i>
-            </div>
-            <div class="profile-info">
-                <h3 id="profileTitle">Farmer</h3>
-                <p id="profileEmail"></p>
-            </div>
-            <button class="close-profile" id="closeProfile" aria-label="Close profile sidebar">×</button>
-        </div>
-        <div class="profile-menu">
-            <ul role="menu">
-                <li role="menuitem" tabindex="0"><i class="fas fa-user"></i> Profile Settings</li>
-                <li role="menuitem" tabindex="0"><i class="fas fa-cog"></i> Account Preferences</li>
-                <li role="menuitem" tabindex="0"><i class="fas fa-bell"></i> Notifications</li>
-                <li role="menuitem" tabindex="0"><i class="fas fa-sign-out-alt"></i> Logout</li>
-            </ul>
-        </div>
-    </div>
 
     <div class="content-wrapper">
         <div class="dashboard-sidebar" id="sidebar">
@@ -317,81 +229,193 @@
                     <li><a href="chatbot.html"><i class="bi bi-discord"></i> AI Chatbot</a></li>
                     <li><a href="weather.html"><i class="bi bi-cloud-sun-fill"></i> Weather Alerts</a></li>
                     <li><a href="knowledge-base.html"><i class="bi bi-patch-question-fill"></i> Knowledge Base</a></li>
-                    <li><a href="marketplace.html"><i class="fas fa-store"></i> Marketplace</a></li>
+                    <li class="active"><a href="marketplace.html"><i class="fas fa-store"></i> Marketplace</a></li>
                     <li><a href="community.html"><i class="bi bi-people-fill"></i> Community Hub</a></li>
-                    <li class="active"><a href="about.html"><i class="bi bi-chat-fill"></i> About</a></li>
+                    <li><a href="about.html"><i class="bi bi-chat-fill"></i> About</a></li>
                 </ul>
             </nav>
             <div class="dark-toggle" id="darkToggle">🌙 Dark Mode</div>
         </div>
-        
 
-
-        <!-- Main content area -->
+        <!-- Main Content -->
         <main class="dashboard-main-content">
-            <div class="content-container">
+            <!-- Top Navigation for Categories -->
+            <nav class="marketplace-nav">
+                <div class="nav-container">
+                    <div class="nav-categories">
+                        <button class="nav-btn active" data-category="crops">
+                            <i class="fas fa-wheat-awn"></i>
+                            Crops
+                        </button>
+                        <button class="nav-btn" data-category="fertilizers">
+                            <i class="fas fa-flask"></i>
+                            Fertilizers
+                        </button>
+                        <button class="nav-btn" data-category="seeds">
+                            <i class="fas fa-seed"></i>
+                            Seeds
+                        </button>
+                        <button class="nav-btn" data-category="services">
+                            <i class="fas fa-handshake"></i>
+                            Services
+                        </button>
+                        <button class="nav-btn" data-category="machinery">
+                            <i class="fas fa-tractor"></i>
+                            Machinery
+                        </button>
+                        <button class="nav-btn" data-category="storage">
+                            <i class="fas fa-warehouse"></i>
+                            Storage
+                        </button>
+                    </div>
+                </div>
+            </nav>
 
-                <section class="about-section">
-                    <h2>About Our Project</h2>
-                    <p>
-                        <strong>Kisaan Sahayak</strong> is an innovative platform aimed at assisting farmers in making
-                        informed decisions for better farming outcomes. Our system leverages AI and data analysis
-                        to recommend crops based on <strong>weather conditions</strong>, <strong>soil type</strong>,
-                        and <strong>local mineral composition</strong> in the land. We also provide farmers with
-                        personalized information about government schemes available in their <strong>state, district,</strong>
-                        and country to maximize benefits.
-                    </p>
-                    <p>
-                        Our mission is to empower farmers with technology and knowledge, reducing guesswork in agriculture
-                        and increasing productivity while promoting sustainable farming practices.
-                    </p>
-                </section>
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for crops, fertilizers, seeds..." id="searchInput">
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i>
+                    </button>
+                </div>
+            </div>
 
-                <section class="university-section">
-                    <h2>About Our Team</h2>
-                    <p>
-                        We are a group of 6 dedicated students from <strong>Dr. Harisingh Gour Vishwavidyalaya, Madhya Pradesh</strong>.
-                        Together, we are passionate about using technology to make a positive impact in agriculture
-                        and empower the farming community with AI-driven solutions.
-                    </p>
-                </section>
+            <div class="container">
+                <!-- Category Header -->
+                <div class="category-header">
+                    <h1 id="categoryTitle">Fresh Crops</h1>
+                    <p id="categoryDescription">Discover fresh, quality crops directly from local farmers</p>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <i class="fas fa-box-open"></i>
+                    <h3>No items found</h3>
+                    <p>Be the first to list items in this category!</p>
+                </div>
             </div>
         </main>
     </div>
 
-    <script src="../assets/js/navigation.js"></script>
-    <script src="../assets/js/dashboard.js"></script>
-    <script src="../assets/js/notifications.js"></script>
-    <script src="../assets/js/mobile-responsive.js"></script>
-    <script src="../assets/js/ui-enhancements.js"></script>
+    <!-- Add Product/Service Button -->
+    <button class="add-btn" id="addBtn">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Add Product Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>List Your Product/Service</h2>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="modal-form" id="productForm">
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="crops">Crops</option>
+                        <option value="fertilizers">Fertilizers</option>
+                        <option value="seeds">Seeds</option>
+                        <option value="services">Services</option>
+                        <option value="machinery">Machinery</option>
+                        <option value="storage">Storage</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="Enter product/service title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Describe your product/service" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <div class="price-input">
+                        <input type="number" id="price" placeholder="0.00" step="0.01" required>
+                        <select id="priceUnit">
+                            <option value="per kg">per kg</option>
+                            <option value="per quintal">per quintal</option>
+                            <option value="per day">per day</option>
+                            <option value="per month">per month</option>
+                            <option value="per hour">per hour</option>
+                            <option value="fixed">fixed price</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="images">Upload Images</label>
+                    <div class="image-upload">
+                        <input type="file" id="images" multiple accept="image/*">
+                        <div class="upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Click to upload or drag and drop images</p>
+                        </div>
+                        <div class="image-preview" id="imagePreview"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Enter your location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" placeholder="Enter contact number" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="submit-btn">List Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/notifications.js"></script>
+    <script src="assets/js/marketplace.js"></script>
+    <script src="assets/js/mobile-responsive.js"></script>
+    <script src="assets/js/ui-enhancements.js"></script>
     <script>
-        // Set user email and profile information
-        const userData = JSON.parse(localStorage.getItem('user'));
-        if (userData && userData.email) {
-            document.getElementById('profileEmail').textContent = userData.email;
-            if (userData.name && userData.name.length > 0) {
-                document.getElementById('profileTitle').textContent = userData.name;
+        // Profile functionality removed from marketplace
+
+        // Dark mode toggle functionality
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            darkToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark');
+                const isDark = document.body.classList.contains('dark');
+                darkToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+                
+                // Save dark mode preference
+                localStorage.setItem('darkMode', isDark);
+            });
+
+            // Load saved dark mode preference
+            const savedDarkMode = localStorage.getItem('darkMode');
+            if (savedDarkMode === 'true') {
+                document.body.classList.add('dark');
+                darkToggle.textContent = '☀️ Light Mode';
             }
         }
-
-        // Logout button functionality
-        document.querySelectorAll('.profile-menu ul li').forEach(function(item) {
-            if (item.textContent.trim().toLowerCase().includes('logout')) {
-                item.addEventListener('click', function() {
-                    localStorage.removeItem('user');
-                    window.location.href = 'index.html';
-                });
-            }
-            
-            // Notifications menu item click handler
-            if (item.textContent.trim().toLowerCase().includes('notifications')) {
-                item.addEventListener('click', function() {
-                    if (window.notificationManager) {
-                        window.notificationManager.showNotificationDropdown();
-                    }
-                });
-            }
-        });
     </script>
 </body>
 </html>

@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Knowledge Base</title>
-  <link rel="stylesheet" href="../assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/mobile-responsive.css">
+  <link rel="stylesheet" href="assets/css/ui-improvements.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <style>
@@ -327,22 +330,27 @@
 
 
 
+    /* Dark Mode Toggle Styling - Enhanced */
     .dark-toggle {
-      margin: 20px 25px;
+      position: absolute;
+      bottom: 2rem;
+      left: 1.5rem;
+      right: 1.5rem;
       padding: 15px 25px;
       background: rgba(255, 255, 255, 0.15);
       color: #fff;
       border-radius: 30px;
       border: 2px solid rgba(255, 255, 255, 0.3);
+      text-align: center;
       cursor: pointer;
-      transition: var(--transition);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       font-weight: 600;
-      font-size: 1rem;
-      backdrop-filter: blur(10px);
+      font-size: 0.95rem;
+      backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       position: relative;
       overflow: hidden;
-      text-align: center;
-      flex-shrink: 0;
+      user-select: none;
     }
 
     .dark-toggle::before {
@@ -365,6 +373,11 @@
 
     .dark-toggle:hover::before {
       left: 100%;
+    }
+
+    .dark-toggle:active {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
 
     .main-content {
@@ -1322,49 +1335,68 @@
 </head>
 
 <body>
+  <!-- Emergency Mobile Menu Toggle - Always Visible -->
+  <div id="emergencyMobileMenu" style="position: fixed; top: 10px; left: 10px; z-index: 999999; display: block;">
+      <button onclick="toggleMobileMenu()" style="width: 60px; height: 60px; background: rgba(0,0,0,0.3); border: 2px solid white; color: white; font-size: 24px; font-weight: bold; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; font-family: Arial;">☰</button>
+  </div>
+  
+  <script>
+  function toggleMobileMenu() {
+      console.log('Emergency mobile menu clicked!');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      
+      if (sidebar) {
+          sidebar.classList.toggle('active');
+          sidebar.classList.toggle('open');
+          sidebar.style.left = sidebar.style.left === '0px' ? '-100%' : '0px';
+      }
+      
+      if (overlay) {
+          overlay.classList.toggle('active');
+      }
+      
+      // Change button appearance
+      const btn = event.target;
+      btn.innerHTML = btn.innerHTML === '☰' ? '✕' : '☰';
+      btn.style.background = btn.innerHTML === '✕' ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.3)';
+  }
+  
+  // Hide emergency menu on desktop
+  function checkScreenSize() {
+      const emergencyMenu = document.getElementById('emergencyMobileMenu');
+      if (emergencyMenu) {
+          emergencyMenu.style.display = window.innerWidth > 1023 ? 'none' : 'block';
+      }
+  }
+  
+  window.addEventListener('resize', checkScreenSize);
+  window.addEventListener('load', checkScreenSize);
+  </script>
+  
   <header class="dashboard-header">
         <div class="dashboard-header-top">
       <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
       <h1>Knowledge Base</h1>
+
     </div>
   </header>
 
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
-  <div class="profile-overlay" id="profileOverlay"></div>
   
-  <!-- Profile Sidebar -->
-  <div class="profile-sidebar" id="profileSidebar" role="dialog" aria-labelledby="profileTitle" aria-hidden="true">
-    <div class="profile-header">
-      <div class="profile-avatar">
-        <i class="fas fa-user-circle"></i>
-      </div>
-      <div class="profile-info">
-        <h3 id="profileTitle">Farmer</h3>
-        <p id="profileEmail"></p>
-      </div>
-      <button class="close-profile" id="closeProfile" aria-label="Close profile sidebar">×</button>
-    </div>
-    <div class="profile-menu">
-      <ul role="menu">
-        <li role="menuitem" tabindex="0"><i class="fas fa-user"></i> Profile Settings</li>
-        <li role="menuitem" tabindex="0"><i class="fas fa-cog"></i> Account Preferences</li>
-        <li role="menuitem" tabindex="0"><i class="fas fa-bell"></i> Notifications</li>
-        <li role="menuitem" tabindex="0"><i class="fas fa-sign-out-alt"></i> Logout</li>
-      </ul>
-    </div>
-  </div>
+
 
   <div class="content-wrapper">
     <div class="dashboard-sidebar" id="sidebar">
       <nav>
         <ul>
-          <li><a href="dashboard.html"><i class="bi bi-person-lines-fill"></i> Dashboard</a></li>
-          <li><a href="crop_recommendation.html"><i class="bi bi-leaf"></i> Crop Recommendation</a></li>
+          <li><a href="index.html"><i class="bi bi-person-lines-fill"></i> Dashboard</a></li>
+          <li><a href="crop_recommendation.html"><i class="fas fa-seedling"></i> Crop Recommendation</a></li>
           <li><a href="schemes.html"><i class="fas fa-chart-bar"></i> Government Schemes</a></li>
           <li><a href="chatbot.html"><i class="bi bi-discord"></i> AI Chatbot</a></li>
           <li><a href="weather.html"><i class="bi bi-cloud-sun-fill"></i> Weather Alerts</a></li>
           <li class="active"><a href="knowledge-base.html"><i class="bi bi-patch-question-fill"></i> Knowledge Base</a></li>
-          <li><a href="farm-tracker.html"><i class="bi bi-calendar-check"></i> Farm Tracker</a></li>
+          <li><a href="marketplace.html"><i class="fas fa-store"></i> Marketplace</a></li>
           <li><a href="community.html"><i class="bi bi-people-fill"></i> Community Hub</a></li>
           <li><a href="about.html"><i class="bi bi-chat-fill"></i> About</a></li>
         </ul>
@@ -4069,6 +4101,305 @@
           suitableFor: "Small and marginal farmers (2-10 acres)",
           investment: "₹2-5 lakhs per acre depending on enterprises",
           paybackPeriod: "2-4 years with proper planning and execution"
+        },
+        {
+          name: "Dryland Farming",
+          type: "Rain-fed Agriculture",
+          image: "🌵",
+          summary: "Agricultural practice in arid and semi-arid regions with limited water availability, relying primarily on rainfall for crop production.",
+          characteristics: [
+            "Annual rainfall less than 750mm",
+            "High temperature and evaporation rates",
+            "Irregular and uncertain rainfall patterns",
+            "Low soil moisture retention capacity",
+            "Risk of drought and crop failure"
+          ],
+          techniques: [
+            "Rainwater harvesting and conservation",
+            "Mulching to reduce evaporation",
+            "Contour farming to prevent soil erosion",
+            "Drought-resistant crop varieties",
+            "Deep plowing for moisture retention",
+            "Intercropping with legumes"
+          ],
+          suitableCrops: [
+            "Millets: Pearl millet, finger millet, sorghum",
+            "Pulses: Chickpea, pigeon pea, black gram",
+            "Oilseeds: Groundnut, sesame, safflower",
+            "Cotton: Drought-tolerant varieties",
+            "Castor: Deep-rooted drought-resistant crop"
+          ],
+          waterConservation: [
+            "Bunding and terracing for runoff control",
+            "Farm ponds for rainwater storage",
+            "Percolation tanks for groundwater recharge",
+            "Drip irrigation for efficient water use",
+            "Sprinkler systems for uniform distribution"
+          ],
+          challenges: [
+            "Unpredictable rainfall patterns",
+            "Soil erosion and degradation",
+            "Limited crop choices",
+            "Lower and unstable yields",
+            "Market price fluctuations"
+          ],
+          benefits: [
+            "Low input costs compared to irrigated farming",
+            "Environmentally sustainable practices",
+            "Suitable for marginal lands",
+            "Promotes biodiversity conservation",
+            "Reduces dependency on external inputs"
+          ],
+          investment: "₹15,000-30,000 per acre for basic infrastructure",
+          yield: "30-50% of irrigated farming yields",
+          riskMitigation: "Crop insurance and weather-based insurance schemes"
+        },
+        {
+          name: "Aquaponics",
+          type: "Integrated Agriculture-Aquaculture",
+          image: "🐟",
+          summary: "Sustainable farming system combining aquaculture (fish farming) with hydroponics (soilless plant cultivation) in a symbiotic environment.",
+          components: [
+            "Fish tanks for aquaculture production",
+            "Biofilter for converting fish waste to nutrients",
+            "Hydroponic beds for plant cultivation",
+            "Water circulation and aeration systems",
+            "Monitoring systems for water quality",
+            "Climate control for optimal conditions"
+          ],
+          process: [
+            "Fish produce ammonia-rich waste in tanks",
+            "Beneficial bacteria convert ammonia to nitrites then nitrates",
+            "Plants absorb nitrates as nutrients from water",
+            "Clean water returns to fish tanks",
+            "Continuous cycle maintains system balance"
+          ],
+          fishSpecies: [
+            "Tilapia: Hardy, fast-growing, disease-resistant",
+            "Catfish: Tolerates varying water conditions",
+            "Trout: Prefers cooler water temperatures",
+            "Carp: Adaptable to different environments",
+            "Prawns: High-value aquaculture option"
+          ],
+          plantOptions: [
+            "Leafy greens: Lettuce, spinach, kale, bok choy",
+            "Herbs: Basil, cilantro, parsley, mint",
+            "Fruiting plants: Tomatoes, peppers, cucumbers",
+            "Flowers: Marigolds, petunias for aesthetics",
+            "Microgreens: High-value specialty crops"
+          ],
+          advantages: [
+            "Produces both fish protein and vegetables",
+            "Uses 90% less water than conventional farming",
+            "No soil-borne diseases or pests",
+            "Organic production without synthetic chemicals",
+            "Year-round production capability",
+            "Higher yields in smaller spaces"
+          ],
+          requirements: [
+            "Initial setup cost: ₹5-15 lakhs per 1000 sq ft",
+            "Technical knowledge of both fish and plant cultivation",
+            "Regular monitoring of water parameters",
+            "Backup power for continuous operation",
+            "Quality fish feed and plant nutrients"
+          ],
+          waterParameters: [
+            "pH: 6.8-7.2 (optimal for both fish and plants)",
+            "Temperature: 22-28°C for tropical species",
+            "Dissolved oxygen: >5 ppm for fish health",
+            "Ammonia: <1 ppm (toxic to fish)",
+            "Nitrites: <1 ppm, Nitrates: 5-150 ppm"
+          ],
+          profitability: "₹2-4 lakhs annual income per 1000 sq ft system",
+          payback: "2-3 years with proper management"
+        },
+        {
+          name: "Urban Farming",
+          type: "City-based Agriculture",
+          image: "🏙️",
+          summary: "Practice of cultivating, processing, and distributing food in or around urban areas using innovative space-efficient techniques.",
+          methods: [
+            "Rooftop gardens on building tops",
+            "Vertical farming in buildings or containers",
+            "Community gardens in vacant lots",
+            "Balcony and window farming",
+            "Indoor farming with artificial lighting",
+            "Hydroponic and aeroponic systems"
+          ],
+          advantages: [
+            "Reduces food miles and transportation costs",
+            "Provides fresh produce to urban populations",
+            "Utilizes unused urban spaces efficiently",
+            "Creates employment opportunities in cities",
+            "Improves air quality and urban environment",
+            "Enhances food security for urban areas"
+          ],
+          suitableCrops: [
+            "Leafy vegetables: Lettuce, spinach, fenugreek",
+            "Herbs: Basil, mint, coriander, curry leaves",
+            "Microgreens: Radish, pea, sunflower shoots",
+            "Small fruits: Strawberries, cherry tomatoes",
+            "Medicinal plants: Aloe vera, tulsi, lemongrass"
+          ],
+          technologies: [
+            "Drip irrigation for water efficiency",
+            "LED grow lights for indoor cultivation",
+            "Automated monitoring systems",
+            "Vertical growing structures",
+            "Composting systems for organic waste",
+            "Rainwater harvesting systems"
+          ],
+          challenges: [
+            "Limited space and high land costs",
+            "Air pollution affecting crop quality",
+            "Water quality and availability issues",
+            "Lack of agricultural knowledge among urbanites",
+            "Regulatory and zoning restrictions",
+            "Higher setup and operational costs"
+          ],
+          investment: [
+            "Rooftop garden: ₹200-500 per sq ft",
+            "Balcony farming: ₹50-150 per sq ft",
+            "Vertical farming setup: ₹1000-2000 per sq ft",
+            "Community garden: ₹100-300 per sq ft"
+          ],
+          support: [
+            "Government schemes for urban agriculture",
+            "NGO training programs for urban farmers",
+            "Startup incubators for agri-tech solutions",
+            "Community-supported agriculture models",
+            "Online platforms for knowledge sharing"
+          ],
+          sustainability: "Reduces carbon footprint by 50-80% compared to rural farming"
+        },
+        {
+          name: "Agroforestry",
+          type: "Integrated Land Management",
+          image: "🌳",
+          summary: "Land management system combining trees or shrubs with crops and/or livestock to create sustainable and productive agricultural systems.",
+          systems: [
+            "Alley cropping: Crops grown between tree rows",
+            "Silvopasture: Trees, forage, and livestock integration",
+            "Windbreaks: Trees planted to protect crops from wind",
+            "Riparian buffers: Trees along water bodies",
+            "Forest farming: Crops grown under forest canopy",
+            "Homegardens: Mixed trees, crops, and livestock"
+          ],
+          benefits: [
+            "Improved soil fertility through leaf litter",
+            "Enhanced biodiversity and ecosystem services",
+            "Climate change mitigation through carbon sequestration",
+            "Reduced soil erosion and water runoff",
+            "Diversified income sources from multiple products",
+            "Improved microclimate for crop production"
+          ],
+          treeSpecies: [
+            "Fruit trees: Mango, guava, citrus, pomegranate",
+            "Timber trees: Teak, eucalyptus, bamboo",
+            "Fodder trees: Subabul, gliricidia, moringa",
+            "Nitrogen-fixing: Acacia, casuarina, prosopis",
+            "Medicinal: Neem, karanja, arjuna, ashwagandha"
+          ],
+          cropOptions: [
+            "Shade-tolerant: Ginger, turmeric, cardamom",
+            "Partial shade: Coffee, cocoa, black pepper",
+            "Open areas: Cereals, pulses, vegetables",
+            "Understory: Medicinal and aromatic plants",
+            "Boundary planting: Fruit and timber trees"
+          ],
+          planning: [
+            "Site assessment for soil, climate, and topography",
+            "Species selection based on compatibility",
+            "Spatial arrangement for optimal resource use",
+            "Temporal sequencing of planting and harvesting",
+            "Market analysis for tree and crop products",
+            "Long-term management planning"
+          ],
+          challenges: [
+            "Long gestation period for tree establishment",
+            "Competition between trees and crops for resources",
+            "Complex management requirements",
+            "Limited technical knowledge and support",
+            "Market uncertainties for tree products",
+            "Land tenure and ownership issues"
+          ],
+          economics: [
+            "Initial investment: ₹25,000-50,000 per acre",
+            "Break-even period: 5-8 years",
+            "Annual returns: ₹30,000-80,000 per acre after establishment",
+            "Carbon credit potential: ₹5,000-15,000 per acre annually",
+            "Government subsidies available for tree planting"
+          ],
+          environmental: "Sequesters 5-15 tons CO2 per acre annually"
+        },
+        {
+          name: "Contract Farming",
+          type: "Market-linked Agriculture",
+          image: "📋",
+          summary: "Agricultural production system based on forward contracts between farmers and buyers, ensuring guaranteed market and price for produce.",
+          structure: [
+            "Pre-season agreement between farmer and buyer",
+            "Specified crop variety, quality, and quantity",
+            "Predetermined price or pricing formula",
+            "Technical support and input supply",
+            "Quality standards and delivery schedule",
+            "Risk-sharing mechanisms"
+          ],
+          benefits: [
+            "Assured market and guaranteed price",
+            "Reduced marketing risks and costs",
+            "Access to quality inputs and technology",
+            "Technical guidance and extension services",
+            "Credit facilitation through buyer guarantee",
+            "Improved product quality and standards"
+          ],
+          models: [
+            "Centralized model: Company directly contracts farmers",
+            "Nucleus estate model: Company farm + contracted farmers",
+            "Multipartite model: Multiple stakeholders involved",
+            "Informal model: Verbal agreements with traders",
+            "Cooperative model: FPOs contracting with buyers"
+          ],
+          sectors: [
+            "Food processing: Vegetables, fruits, spices",
+            "Export crops: Basmati rice, organic produce",
+            "Poultry: Broiler and layer farming",
+            "Dairy: Milk procurement by cooperatives",
+            "Sugarcane: Sugar mills contracting farmers",
+            "Cotton: Textile companies and ginning mills"
+          ],
+          requirements: [
+            "Legal framework and contract enforcement",
+            "Quality assurance and grading systems",
+            "Transportation and logistics support",
+            "Storage and processing facilities",
+            "Insurance coverage for crop risks",
+            "Dispute resolution mechanisms"
+          ],
+          challenges: [
+            "Farmer dependency on single buyer",
+            "Price manipulation by contracting companies",
+            "Quality rejection and payment delays",
+            "Limited bargaining power of small farmers",
+            "Breach of contract by either party",
+            "Lack of legal awareness among farmers"
+          ],
+          success: [
+            "Clear contract terms and conditions",
+            "Fair pricing and transparent grading",
+            "Timely payment and input supply",
+            "Regular monitoring and support",
+            "Farmer organization and collective bargaining",
+            "Government policy support and regulation"
+          ],
+          examples: [
+            "PepsiCo potato farming in Punjab",
+            "ITC e-Choupal soybean procurement",
+            "Nestle milk procurement system",
+            "McCain potato contract farming",
+            "Godrej agrovet poultry integration"
+          ],
+          impact: "30-50% higher income compared to traditional marketing"
         }
       ],
       "Types of Worms": [
@@ -4277,6 +4608,432 @@
           ],
           monitoring: "Weekly scouting during growing season",
           economicThreshold: "5-10% plants with whorl damage in maize"
+        },
+        {
+          name: "Root-Knot Nematodes (Meloidogyne spp.)",
+          type: "Harmful Plant Parasite",
+          image: "🔴",
+          summary: "Microscopic roundworms that attack plant roots causing galls, stunted growth, and significant yield losses in crops.",
+          damage: [
+            "Form characteristic root galls and knots",
+            "Reduce water and nutrient uptake",
+            "Cause stunted plant growth and yellowing",
+            "Increase susceptibility to other diseases",
+            "Reduce crop yields by 20-80%",
+            "Create entry points for bacterial infections"
+          ],
+          affectedCrops: [
+            "Vegetables: Tomato, brinjal, okra, cucumber",
+            "Fruits: Papaya, guava, citrus, grape",
+            "Cereals: Rice, maize, wheat (in some varieties)",
+            "Cash crops: Cotton, sugarcane, tobacco",
+            "Ornamentals: Rose, marigold, chrysanthemum"
+          ],
+          symptoms: [
+            "Stunted and yellowing plants",
+            "Wilting during hot weather despite adequate moisture",
+            "Poor fruit/grain development",
+            "Root galls and swellings visible on roots",
+            "Reduced root system development",
+            "Patches of poor growth in fields"
+          ],
+          lifecycle: [
+            "Eggs laid in root tissues (400-500 per female)",
+            "Larvae hatch and penetrate root tips",
+            "Development inside roots (25-30 days)",
+            "Adults emerge and reproduce",
+            "Multiple generations per year (4-6 cycles)",
+            "Survive in soil without host for 1-2 years"
+          ],
+          management: [
+            "Crop rotation with non-host plants (marigold, mustard)",
+            "Soil solarization during summer months",
+            "Application of neem cake or castor cake",
+            "Use of resistant/tolerant crop varieties",
+            "Biological control with Trichoderma fungi",
+            "Avoid infected seedlings and contaminated tools"
+          ],
+          prevention: [
+            "Use certified disease-free planting material",
+            "Maintain proper field sanitation",
+            "Avoid overwatering and waterlogging",
+            "Remove and destroy infected plant debris",
+            "Quarantine new plants before introduction",
+            "Regular soil testing for nematode presence"
+          ],
+          biologicalControl: [
+            "Paecilomyces lilacinus (fungal bioagent)",
+            "Pochonia chlamydosporia (egg parasite)",
+            "Bacillus firmus (bacterial antagonist)",
+            "Trichoderma harzianum (soil fungus)",
+            "Pseudomonas fluorescens (rhizosphere bacteria)"
+          ],
+          economicImpact: "₹10,000-50,000 per hectare annual losses",
+          detection: "Soil sampling and laboratory analysis required"
+        },
+        {
+          name: "Cutworms (Agrotis spp.)",
+          type: "Harmful Crop Pest",
+          image: "🔴",
+          summary: "Destructive caterpillars that cut young plants at soil level during night, causing severe damage to seedlings and young crops.",
+          damage: [
+            "Cut seedlings and young plants at soil surface",
+            "Feed on leaves, stems, and growing points",
+            "Cause complete plant mortality in severe cases",
+            "Create irregular holes in leaves",
+            "Damage transplants and newly emerged seedlings",
+            "Reduce plant stand and crop establishment"
+          ],
+          affectedCrops: [
+            "Vegetables: Cabbage, cauliflower, tomato, chili",
+            "Cereals: Maize, wheat, rice seedlings",
+            "Cash crops: Cotton, sugarcane, tobacco",
+            "Pulses: Chickpea, pigeon pea, black gram",
+            "Flowers: Marigold, sunflower, chrysanthemum"
+          ],
+          identification: [
+            "Grayish-brown caterpillars, 3-5 cm long",
+            "Smooth, cylindrical body with faint stripes",
+            "Curl into C-shape when disturbed",
+            "Active during night, hide in soil during day",
+            "Found near damaged plants in morning",
+            "Leave characteristic cutting damage"
+          ],
+          lifecycle: [
+            "Adults are brown/gray moths (wingspan 3-4 cm)",
+            "Females lay 500-1000 eggs on soil or plant debris",
+            "Eggs hatch in 3-7 days depending on temperature",
+            "6 larval stages over 3-4 weeks",
+            "Pupation in soil for 2-3 weeks",
+            "2-3 generations per year"
+          ],
+          behaviorPattern: [
+            "Feed primarily at night (nocturnal)",
+            "Hide in soil cracks during day",
+            "Most active in cool, moist conditions",
+            "Prefer young, tender plant tissues",
+            "Move to new plants after cutting current host",
+            "Climb plants to feed on upper parts"
+          ],
+          management: [
+            "Manual collection during early morning",
+            "Deep plowing to expose pupae to predators",
+            "Use of poison baits (bran + insecticide)",
+            "Installation of light traps for adult moths",
+            "Application of Bacillus thuringiensis (Bt)",
+            "Soil application of chlorpyrifos granules"
+          ],
+          prevention: [
+            "Remove weeds and crop residues from field",
+            "Avoid excessive organic matter near crops",
+            "Use physical barriers around seedlings",
+            "Plant trap crops like castor around main crop",
+            "Maintain proper field drainage",
+            "Time planting to avoid peak moth activity"
+          ],
+          biologicalControl: [
+            "Trichogramma wasps (egg parasitoids)",
+            "Ground beetles and spiders (predators)",
+            "Birds like house sparrow and myna",
+            "Bacillus thuringiensis spray applications",
+            "Nuclear polyhedrosis virus (NPV)"
+          ],
+          economicThreshold: "10-15% plant cutting in vegetable crops",
+          peakSeason: "Post-monsoon period (September-November)"
+        },
+        {
+          name: "Armyworms (Spodoptera spp.)",
+          type: "Harmful Crop Destroyer",
+          image: "🔴",
+          summary: "Highly destructive caterpillars that move in large groups, completely defoliating crops and causing massive agricultural losses.",
+          damage: [
+            "Complete defoliation of crops in severe infestations",
+            "Feed on leaves, stems, flowers, and developing grains",
+            "Create large irregular holes in leaves",
+            "Damage growing points causing plant death",
+            "Move in armies from field to field",
+            "Can destroy entire crop in 2-3 days"
+          ],
+          species: [
+            "Fall Armyworm (Spodoptera frugiperda) - invasive species",
+            "Beet Armyworm (Spodoptera exigua)",
+            "Cotton Leafworm (Spodoptera littoralis)",
+            "Oriental Armyworm (Mythimna separata)",
+            "Lawn Armyworm (Spodoptera mauritia)"
+          ],
+          affectedCrops: [
+            "Cereals: Maize, rice, wheat, sorghum, millets",
+            "Vegetables: Tomato, cabbage, onion, spinach",
+            "Cash crops: Cotton, sugarcane, tobacco",
+            "Fodder crops: Napier grass, sorghum, maize",
+            "Pulses: Cowpea, soybean, groundnut"
+          ],
+          identification: [
+            "Caterpillars 3-4 cm long, variable colors",
+            "Distinctive inverted Y-mark on head capsule",
+            "Three white stripes along body length",
+            "Aggressive feeding behavior in groups",
+            "Rapid movement when disturbed",
+            "Frass (droppings) visible near feeding sites"
+          ],
+          lifecycle: [
+            "Adult moths lay 1000-1500 eggs in clusters",
+            "Eggs hatch in 2-4 days (temperature dependent)",
+            "6 larval instars over 2-3 weeks",
+            "Pupation in soil for 1-2 weeks",
+            "Adult emergence and mating",
+            "4-6 generations per year in tropical regions"
+          ],
+          behaviorPattern: [
+            "Young larvae feed in groups (gregarious)",
+            "Older larvae become cannibalistic",
+            "Feed continuously day and night",
+            "Migrate in large numbers when food depleted",
+            "Prefer young, tender plant parts",
+            "Can travel 500m per night in search of food"
+          ],
+          management: [
+            "Early detection through pheromone traps",
+            "Mass trapping of adult moths with light traps",
+            "Spray Bacillus thuringiensis (Bt) for young larvae",
+            "Use of nuclear polyhedrosis virus (NPV)",
+            "Application of neem-based insecticides",
+            "Chemical control with chlorantraniliprole"
+          ],
+          prevention: [
+            "Regular field monitoring and scouting",
+            "Destroy egg masses found on leaves",
+            "Maintain field hygiene and weed control",
+            "Use resistant/tolerant crop varieties",
+            "Intercropping with repellent plants",
+            "Avoid excessive nitrogen fertilization"
+          ],
+          biologicalControl: [
+            "Trichogramma pretiosum (egg parasitoid)",
+            "Cotesia flavipes (larval parasitoid)",
+            "Chrysoperla carnea (predatory lacewing)",
+            "Geocoris punctipes (big-eyed bug)",
+            "Spiders and ground beetles"
+          ],
+          economicImpact: "₹50,000-2,00,000 per hectare in severe outbreaks",
+          emergencyAction: "Immediate spray application within 24 hours of detection"
+        },
+        {
+          name: "Wireworms (Agriotes spp.)",
+          type: "Harmful Soil Pest",
+          image: "🔴",
+          summary: "Hard-bodied beetle larvae that live in soil and damage plant roots, tubers, and seeds, causing poor germination and plant establishment.",
+          damage: [
+            "Bore holes in seeds preventing germination",
+            "Tunnel through roots and underground stems",
+            "Damage tubers and bulbs creating entry for diseases",
+            "Cause poor plant stand and uneven growth",
+            "Reduce root system efficiency",
+            "Create wounds leading to secondary infections"
+          ],
+          affectedCrops: [
+            "Root crops: Potato, sweet potato, carrot, radish",
+            "Cereals: Wheat, barley, oats, maize",
+            "Vegetables: Onion, garlic, beetroot",
+            "Legumes: Bean, pea, groundnut",
+            "Ornamental bulbs: Tulip, daffodil, gladiolus"
+          ],
+          identification: [
+            "Yellow to brown, hard-bodied larvae",
+            "Cylindrical, wire-like appearance (2-3 cm long)",
+            "Smooth, shiny surface with few hairs",
+            "Three pairs of short legs near head",
+            "Slow movement when exposed",
+            "Found in soil around damaged plants"
+          ],
+          lifecycle: [
+            "Adult click beetles lay eggs in soil",
+            "Eggs hatch in 2-4 weeks",
+            "Larval stage lasts 2-6 years in soil",
+            "Multiple molts during larval development",
+            "Pupation in soil chambers",
+            "Adults emerge and mate (live 1 year)"
+          ],
+          favorableConditions: [
+            "Moist, well-drained soils",
+            "High organic matter content",
+            "Cool temperatures (15-20°C)",
+            "Grassland converted to cropland",
+            "Minimum tillage systems",
+            "Areas with previous grass cover"
+          ],
+          management: [
+            "Deep plowing in summer to expose larvae",
+            "Flooding fields for 2-3 weeks if possible",
+            "Use of potato trap crops to monitor population",
+            "Soil application of imidacloprid granules",
+            "Seed treatment with thiamethoxam",
+            "Biological control with entomopathogenic fungi"
+          ],
+          prevention: [
+            "Avoid planting in recently converted grassland",
+            "Use certified, treated seeds",
+            "Maintain proper field drainage",
+            "Remove crop residues and weeds",
+            "Rotate with non-susceptible crops",
+            "Monitor with bait traps before planting"
+          ],
+          biologicalControl: [
+            "Metarhizium anisopliae (entomopathogenic fungus)",
+            "Beauveria bassiana (insect pathogenic fungus)",
+            "Ground beetles (Carabidae family)",
+            "Rove beetles (Staphylinidae family)",
+            "Birds that feed on soil insects"
+          ],
+          economicThreshold: "1 wireworm per 30 cm row length",
+          peakActivity: "Spring and early summer months"
+        },
+        {
+          name: "White Grubs (Holotrichia spp.)",
+          type: "Harmful Root Feeder",
+          image: "🔴",
+          summary: "C-shaped beetle larvae that feed on plant roots underground, causing severe damage to crops and leading to plant death.",
+          damage: [
+            "Feed on roots causing plant wilting and death",
+            "Damage underground stems and tubers",
+            "Reduce plant vigor and growth",
+            "Create entry points for soil-borne diseases",
+            "Cause irregular patches of dead plants",
+            "Damage newly planted seedlings and transplants"
+          ],
+          affectedCrops: [
+            "Cereals: Wheat, rice, maize, sugarcane",
+            "Vegetables: Potato, onion, carrot, radish",
+            "Fruits: Mango, citrus, grape, pomegranate",
+            "Cash crops: Cotton, groundnut, soybean",
+            "Plantation crops: Tea, coffee, coconut"
+          ],
+          identification: [
+            "White to cream colored, C-shaped larvae",
+            "Brown head capsule with strong mandibles",
+            "Three pairs of legs near head region",
+            "Soft, fleshy body (2-4 cm long)",
+            "Found in soil around root zone",
+            "Curl into tight C-shape when disturbed"
+          ],
+          lifecycle: [
+            "Adult beetles emerge during monsoon",
+            "Mating and egg laying in moist soil",
+            "Eggs hatch in 10-15 days",
+            "Larval development takes 8-10 months",
+            "Pupation in soil during pre-monsoon",
+            "One generation per year (univoltine)"
+          ],
+          peakActivity: [
+            "Larval feeding: October to May",
+            "Maximum damage: December to February",
+            "Adult emergence: June to August",
+            "Egg laying: July to September",
+            "Pupation: April to June"
+          ],
+          management: [
+            "Deep summer plowing to expose grubs",
+            "Collection and destruction of adults during emergence",
+            "Light traps to catch adult beetles",
+            "Soil application of chlorpyrifos granules",
+            "Use of entomopathogenic nematodes",
+            "Application of neem cake as soil amendment"
+          ],
+          prevention: [
+            "Avoid planting during peak egg-laying period",
+            "Maintain field sanitation and remove debris",
+            "Use resistant crop varieties where available",
+            "Proper irrigation management (avoid waterlogging)",
+            "Intercropping with repellent plants like marigold",
+            "Regular monitoring with soil sampling"
+          ],
+          biologicalControl: [
+            "Metarhizium anisopliae (fungal pathogen)",
+            "Beauveria bassiana (entomopathogenic fungus)",
+            "Heterorhabditis indica (entomopathogenic nematode)",
+            "Ground beetles and ants (natural predators)",
+            "Birds like myna, crow, and kingfisher"
+          ],
+          culturalControl: [
+            "Deep plowing in May-June to expose pupae",
+            "Flooding fields if irrigation available",
+            "Crop rotation with non-preferred hosts",
+            "Use of trap crops like castor or marigold",
+            "Timely harvesting to reduce carryover population"
+          ],
+          economicLoss: "20-70% yield reduction in severe infestations",
+          criticalStage: "Seedling to early vegetative growth stage"
+        },
+        {
+          name: "Tobacco Caterpillars (Spodoptera litura)",
+          type: "Harmful Polyphagous Pest",
+          image: "🔴",
+          summary: "Highly destructive caterpillars that feed on a wide range of crops, causing extensive defoliation and economic losses.",
+          damage: [
+            "Extensive defoliation of plants",
+            "Feed on flowers, fruits, and growing points",
+            "Create large irregular holes in leaves",
+            "Damage reproductive parts reducing yield",
+            "Contaminate produce with frass and webbing",
+            "Cause complete crop failure in severe cases"
+          ],
+          hostRange: [
+            "Vegetables: Tomato, brinjal, cabbage, chili, okra",
+            "Cash crops: Cotton, tobacco, groundnut, castor",
+            "Cereals: Maize, rice, wheat, sorghum",
+            "Fruits: Pomegranate, citrus, guava",
+            "Ornamentals: Rose, chrysanthemum, marigold",
+            "Weeds: Parthenium, amaranthus, portulaca"
+          ],
+          identification: [
+            "Caterpillars vary from green to dark brown",
+            "Yellow stripes along sides of body",
+            "Dark spots on each body segment",
+            "Aggressive feeding behavior",
+            "Length: 3.5-4.5 cm when fully grown",
+            "Cannibalistic nature in later instars"
+          ],
+          lifecycle: [
+            "Adult moths lay eggs in clusters (300-400 eggs)",
+            "Eggs covered with grayish scales",
+            "Hatching occurs in 2-4 days",
+            "6 larval instars over 2-3 weeks",
+            "Pupation in soil for 1-2 weeks",
+            "4-6 generations per year"
+          ],
+          feedingBehavior: [
+            "Young larvae feed gregariously",
+            "Skeletonize leaves initially",
+            "Later instars feed individually",
+            "Prefer tender leaves and growing points",
+            "Active during night and early morning",
+            "Can migrate between plants"
+          ],
+          management: [
+            "Early detection through pheromone traps",
+            "Destruction of egg masses and young larvae",
+            "Spray Bacillus thuringiensis for young caterpillars",
+            "Use of nuclear polyhedrosis virus (SlNPV)",
+            "Chemical control with emamectin benzoate",
+            "Installation of bird perches for natural predation"
+          ],
+          prevention: [
+            "Regular field scouting and monitoring",
+            "Removal of alternate host weeds",
+            "Avoid excessive nitrogen fertilization",
+            "Maintain proper plant spacing for air circulation",
+            "Use of resistant/tolerant varieties",
+            "Intercropping with non-host plants"
+          ],
+          biologicalControl: [
+            "Trichogramma chilonis (egg parasitoid)",
+            "Bracon brevicornis (larval parasitoid)",
+            "Chrysoperla carnea (predatory lacewing)",
+            "Campoletis chlorideae (larval parasitoid)",
+            "Spiders and ground beetles"
+          ],
+          economicImpact: "30-80% yield loss in susceptible crops",
+          criticalPeriod: "Vegetative to flowering stage of crops"
         }
       ],
       "Organic Fertilizers": [
@@ -4719,6 +5476,33 @@
 
         // Store search state for current category
         searchState[active] = searchTerm;
+
+        // Debug: Check if data exists for the active category
+        console.log('Active category:', active);
+        console.log('Data keys:', Object.keys(data));
+        console.log('Data for active category exists:', !!data[active]);
+        console.log('Number of items in category:', data[active] ? data[active].length : 0);
+        
+        // Special debug for Types of Farming
+        if (active === 'Types of Farming') {
+          console.log('Types of Farming data:', data['Types of Farming']);
+          console.log('First item:', data['Types of Farming'] ? data['Types of Farming'][0] : 'No data');
+        }
+
+        // Check if data exists for the category
+        if (!data[active]) {
+          console.error('No data found for category:', active);
+          content.innerHTML = '<div class="card" style="text-align: center; padding: 40px;"><h3 style="color: red;">Error: Category data not found</h3><p>The "' + active + '" category data is missing or not loaded properly.</p><p>Available categories: ' + Object.keys(data).join(', ') + '</p></div>';
+          return;
+        }
+        
+        // Temporary debug for Types of Farming
+        if (active === 'Types of Farming') {
+          content.innerHTML = '<div class="card" style="text-align: center; padding: 40px; background: lightblue;"><h3>Types of Farming Debug</h3><p>Data exists: ' + (!!data[active]) + '</p><p>Number of items: ' + (data[active] ? data[active].length : 0) + '</p><p>First item name: ' + (data[active] && data[active][0] ? data[active][0].name : 'No first item') + '</p></div>';
+          return;
+        }
+
+
 
         // Filter items based on search
         const filteredItems = data[active].filter(item => searchInItem(item, searchTerm));
@@ -5441,6 +6225,8 @@
     });
   </script>
   <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/mobile-responsive.js"></script>
+  <script src="../assets/js/ui-enhancements.js"></script>
 </body>
 
 </html>

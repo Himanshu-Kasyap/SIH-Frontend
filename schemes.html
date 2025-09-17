@@ -5,7 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Government Schemes</title>
-    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/mobile-responsive.css">
+    <link rel="stylesheet" href="assets/css/ui-improvements.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
@@ -240,22 +243,27 @@
 
 
 
+        /* Dark Mode Toggle Styling - Enhanced */
         .dark-toggle {
-            margin: 20px 25px;
+            position: absolute;
+            bottom: 2rem;
+            left: 1.5rem;
+            right: 1.5rem;
             padding: 15px 25px;
             background: rgba(255, 255, 255, 0.15);
             color: #fff;
             border-radius: 30px;
             border: 2px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 600;
-            font-size: 1rem;
-            backdrop-filter: blur(10px);
+            font-size: 0.95rem;
+            backdrop-filter: blur(20px) saturate(180%);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             position: relative;
             overflow: hidden;
-            text-align: center;
-            flex-shrink: 0;
+            user-select: none;
         }
 
         .dark-toggle::before {
@@ -278,6 +286,22 @@
 
         .dark-toggle:hover::before {
             left: 100%;
+        }
+
+        .dark-toggle:active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .dark-toggle {
+                margin: 15px 20px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+            }
         }
 
         .main-content {
@@ -862,12 +886,50 @@
 </head>
 
 <body>
-
+    <!-- Emergency Mobile Menu Toggle - Always Visible -->
+    <div id="emergencyMobileMenu" style="position: fixed; top: 10px; left: 10px; z-index: 999999; display: block;">
+        <button onclick="toggleMobileMenu()" style="width: 60px; height: 60px; background: rgba(0,0,0,0.3); border: 2px solid white; color: white; font-size: 24px; font-weight: bold; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; font-family: Arial;">☰</button>
+    </div>
+    
+    <script>
+    function toggleMobileMenu() {
+        console.log('Emergency mobile menu clicked!');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        
+        if (sidebar) {
+            sidebar.classList.toggle('active');
+            sidebar.classList.toggle('open');
+            sidebar.style.left = sidebar.style.left === '0px' ? '-100%' : '0px';
+        }
+        
+        if (overlay) {
+            overlay.classList.toggle('active');
+        }
+        
+        // Change button appearance
+        const btn = event.target;
+        btn.innerHTML = btn.innerHTML === '☰' ? '✕' : '☰';
+        btn.style.background = btn.innerHTML === '✕' ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.3)';
+    }
+    
+    // Hide emergency menu on desktop
+    function checkScreenSize() {
+        const emergencyMenu = document.getElementById('emergencyMobileMenu');
+        if (emergencyMenu) {
+            emergencyMenu.style.display = window.innerWidth > 1023 ? 'none' : 'block';
+        }
+    }
+    
+    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener('load', checkScreenSize);
+    </script>
 
     <header class="dashboard-header">
         <div class="dashboard-header-top">
             <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
             <h1>Government Schemes</h1>
+
         </div>
         <div class="header-bottom">
             <select id="stateFilter">
@@ -877,42 +939,21 @@
     </header>
 
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <div class="profile-overlay" id="profileOverlay"></div>
 
-    <!-- Profile Sidebar -->
-    <div class="profile-sidebar" id="profileSidebar" role="dialog" aria-labelledby="profileTitle" aria-hidden="true">
-        <div class="profile-header">
-            <div class="profile-avatar">
-                <i class="fas fa-user-circle"></i>
-            </div>
-            <div class="profile-info">
-                <h3 id="profileTitle">Farmer</h3>
-                <p id="profileEmail"></p>
-            </div>
-            <button class="close-profile" id="closeProfile" aria-label="Close profile sidebar">×</button>
-        </div>
-        <div class="profile-menu">
-            <ul role="menu">
-                <li role="menuitem" tabindex="0"><i class="fas fa-user"></i> Profile Settings</li>
-                <li role="menuitem" tabindex="0"><i class="fas fa-cog"></i> Account Preferences</li>
-                <li role="menuitem" tabindex="0"><i class="fas fa-bell"></i> Notifications</li>
-                <li role="menuitem" tabindex="0"><i class="fas fa-sign-out-alt"></i> Logout</li>
-            </ul>
-        </div>
-    </div>
+
 
     <div class="content-wrapper">
         <div class="dashboard-sidebar" id="sidebar">
             <nav>
                 <ul>
-                    <li><a href="dashboard.html"><i class="bi bi-person-lines-fill"></i> Dashboard</a></li>
-                    <li><a href="crop_recommendation.html"><i class="bi bi-leaf"></i> Crop Recommendation</a></li>
+                    <li><a href="index.html"><i class="bi bi-person-lines-fill"></i> Dashboard</a></li>
+                    <li><a href="crop_recommendation.html"><i class="fas fa-seedling"></i> Crop Recommendation</a></li>
                     <li class="active"><a href="schemes.html"><i class="fas fa-chart-bar"></i> Government Schemes</a>
                     </li>
                     <li><a href="chatbot.html"><i class="bi bi-discord"></i> AI Chatbot</a></li>
                     <li><a href="weather.html"><i class="bi bi-cloud-sun-fill"></i> Weather Alerts</a></li>
                     <li><a href="knowledge-base.html"><i class="bi bi-patch-question-fill"></i> Knowledge Base</a></li>
-                    <li><a href="farm-tracker.html"><i class="bi bi-calendar-check"></i> Farm Tracker</a></li>
+                    <li><a href="marketplace.html"><i class="fas fa-store"></i> Marketplace</a></li>
                     <li><a href="community.html"><i class="bi bi-people-fill"></i> Community Hub</a></li>
                     <li><a href="about.html"><i class="bi bi-chat-fill"></i> About</a></li>
                 </ul>
@@ -1035,6 +1076,8 @@
         });
     </script>
     <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/mobile-responsive.js"></script>
+    <script src="../assets/js/ui-enhancements.js"></script>
 </body>
 
 </html>

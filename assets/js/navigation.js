@@ -38,12 +38,29 @@ class NavigationManager {
         const sidebarOverlay = document.getElementById('sidebarOverlay');
 
         if (mobileMenuToggle && sidebar) {
-            mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Mobile menu toggle clicked'); // Debug log
+                
+                // Toggle sidebar
                 sidebar.classList.toggle('active');
+                sidebar.classList.toggle('open'); // Add both classes for compatibility
+                
+                // Toggle button active state for animation
+                mobileMenuToggle.classList.toggle('active');
+                
+                // Toggle overlay
                 if (sidebarOverlay) {
                     sidebarOverlay.classList.toggle('active');
                 }
             });
+            
+            // Ensure the button is visible
+            mobileMenuToggle.style.display = 'flex';
+            mobileMenuToggle.style.visibility = 'visible';
+        } else {
+            console.log('Mobile menu toggle or sidebar not found'); // Debug log
         }
 
         if (sidebarOverlay) {
@@ -136,6 +153,37 @@ class NavigationManager {
     }
 
     setupMobileMenu() {
+        // Ensure mobile menu toggle exists
+        let mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        if (!mobileMenuToggle) {
+            // Create mobile menu toggle if it doesn't exist
+            const header = document.querySelector('.dashboard-header-top');
+            if (header) {
+                mobileMenuToggle = document.createElement('button');
+                mobileMenuToggle.id = 'mobileMenuToggle';
+                mobileMenuToggle.className = 'mobile-menu-toggle';
+                mobileMenuToggle.innerHTML = '☰';
+                mobileMenuToggle.setAttribute('aria-label', 'Toggle mobile menu');
+                header.insertBefore(mobileMenuToggle, header.firstChild);
+                
+                // Add event listener to the newly created button
+                const sidebar = document.getElementById('sidebar');
+                const sidebarOverlay = document.getElementById('sidebarOverlay');
+                
+                if (sidebar) {
+                    mobileMenuToggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        sidebar.classList.toggle('active');
+                        sidebar.classList.toggle('open');
+                        if (sidebarOverlay) {
+                            sidebarOverlay.classList.toggle('active');
+                        }
+                    });
+                }
+            }
+        }
+        
         // Handle responsive behavior
         const handleResize = () => {
             const sidebar = document.getElementById('sidebar');
@@ -143,6 +191,7 @@ class NavigationManager {
             
             if (window.innerWidth > 1024) {
                 sidebar?.classList.remove('active');
+                sidebar?.classList.remove('open');
                 sidebarOverlay?.classList.remove('active');
             }
         };
@@ -295,4 +344,57 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export for use in other scripts
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = NavigationManager;
-}
+}// Force mob
+ile menu toggle visibility on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure mobile menu toggle is visible on mobile devices
+    function ensureMobileMenuToggle() {
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        
+        if (mobileMenuToggle) {
+            // Force visibility styles
+            mobileMenuToggle.style.display = 'flex';
+            mobileMenuToggle.style.visibility = 'visible';
+            mobileMenuToggle.style.opacity = '1';
+            mobileMenuToggle.style.position = 'relative';
+            mobileMenuToggle.style.zIndex = '10000';
+            mobileMenuToggle.style.width = '44px';
+            mobileMenuToggle.style.height = '44px';
+            mobileMenuToggle.style.background = 'rgba(255, 255, 255, 0.2)';
+            mobileMenuToggle.style.border = '2px solid rgba(255, 255, 255, 0.3)';
+            mobileMenuToggle.style.borderRadius = '8px';
+            mobileMenuToggle.style.cursor = 'pointer';
+            mobileMenuToggle.style.alignItems = 'center';
+            mobileMenuToggle.style.justifyContent = 'center';
+            mobileMenuToggle.style.flexShrink = '0';
+            
+            // Clear any text content
+            mobileMenuToggle.innerHTML = '';
+            
+            // Add CSS hamburger icon
+            const style = document.createElement('style');
+            style.textContent = `
+                #mobileMenuToggle::before {
+                    content: "" !important;
+                    position: absolute !important;
+                    left: 50% !important;
+                    top: 50% !important;
+                    transform: translate(-50%, -50%) !important;
+                    width: 18px !important;
+                    height: 2px !important;
+                    background: #ffffff !important;
+                    box-shadow: 0 -5px 0 0 #ffffff, 0 5px 0 0 #ffffff !important;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            console.log('Mobile menu toggle visibility ensured');
+        } else {
+            console.log('Mobile menu toggle not found');
+        }
+    }
+    
+    // Run immediately and on resize
+    ensureMobileMenuToggle();
+    window.addEventListener('resize', ensureMobileMenuToggle);
+});

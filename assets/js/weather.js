@@ -56,32 +56,9 @@ class WeatherManager {
     }
 
     async getUserLocation() {
-        return new Promise((resolve, reject) => {
-            if (!navigator.geolocation) {
-                console.log('Geolocation not supported, using default location');
-                resolve(this.defaultLocation);
-                return;
-            }
-
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    this.defaultLocation = {
-                        lat: position.coords.latitude,
-                        lon: position.coords.longitude
-                    };
-                    console.log('User location obtained:', this.defaultLocation);
-                    resolve(this.defaultLocation);
-                },
-                (error) => {
-                    console.log('Geolocation error, using default location:', error.message);
-                    resolve(this.defaultLocation);
-                },
-                {
-                    timeout: 10000,
-                    enableHighAccuracy: false
-                }
-            );
-        });
+        // Always use default location (Delhi) instead of requesting user location
+        console.log('Using default location (Delhi):', this.defaultLocation);
+        return Promise.resolve(this.defaultLocation);
     }
 
     async loadWeatherData() {

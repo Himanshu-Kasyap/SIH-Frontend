@@ -1,0 +1,3772 @@
+/* Modern UI Improvements with Balanced Spacing */
+
+/* Enhanced CSS Custom Properties */
+:root {
+    /* Modern Color Palette */
+    --primary-50: #f0f9ff;
+    --primary-100: #e0f2fe;
+    --primary-200: #bae6fd;
+    --primary-300: #7dd3fc;
+    --primary-400: #38bdf8;
+    --primary-500: #0ea5e9;
+    --primary-600: #0284c7;
+    --primary-700: #0369a1;
+    --primary-800: #075985;
+    --primary-900: #0c4a6e;
+
+    --success-50: #f0fdf4;
+    --success-100: #dcfce7;
+    --success-200: #bbf7d0;
+    --success-300: #86efac;
+    --success-400: #4ade80;
+    --success-500: #22c55e;
+    --success-600: #16a34a;
+    --success-700: #15803d;
+    --success-800: #166534;
+    --success-900: #14532d;
+
+    --warning-50: #fffbeb;
+    --warning-100: #fef3c7;
+    --warning-200: #fde68a;
+    --warning-300: #fcd34d;
+    --warning-400: #fbbf24;
+    --warning-500: #f59e0b;
+    --warning-600: #d97706;
+    --warning-700: #b45309;
+    --warning-800: #92400e;
+    --warning-900: #78350f;
+
+    --error-50: #fef2f2;
+    --error-100: #fee2e2;
+    --error-200: #fecaca;
+    --error-300: #fca5a5;
+    --error-400: #f87171;
+    --error-500: #ef4444;
+    --error-600: #dc2626;
+    --error-700: #b91c1c;
+    --error-800: #991b1b;
+    --error-900: #7f1d1d;
+
+    --neutral-50: #fafafa;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #e5e5e5;
+    --neutral-300: #d4d4d4;
+    --neutral-400: #a3a3a3;
+    --neutral-500: #737373;
+    --neutral-600: #525252;
+    --neutral-700: #404040;
+    --neutral-800: #262626;
+    --neutral-900: #171717;
+
+    /* Enhanced Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+    --gradient-success: linear-gradient(135deg, var(--success-500) 0%, var(--success-600) 100%);
+    --gradient-warning: linear-gradient(135deg, var(--warning-500) 0%, var(--warning-600) 100%);
+    --gradient-hero: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 50%, var(--success-600) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+    /* Modern Shadows */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.3);
+
+    /* Enhanced Border Radius */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-2xl: 16px;
+    --radius-3xl: 24px;
+    --radius-full: 9999px;
+
+    /* Modern Typography */
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+
+    /* Enhanced Spacing Scale */
+    --space-px: 1px;
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    /* Animation & Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Dark Mode Enhanced Colors */
+body.dark {
+    --primary-50: #0c1929;
+    --primary-100: #1e293b;
+    --primary-200: #334155;
+    --primary-300: #475569;
+    --primary-400: #64748b;
+    --primary-500: #94a3b8;
+    --primary-600: #cbd5e1;
+    --primary-700: #e2e8f0;
+    --primary-800: #f1f5f9;
+    --primary-900: #f8fafc;
+
+    --gradient-hero: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-600) 50%, var(--success-400) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    --shadow-glow: 0 0 20px rgba(129, 140, 248, 0.3);
+}
+
+/* Enhanced Header Styling */
+.dashboard-header {
+    background: var(--gradient-primary) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: var(--shadow-lg) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    padding: 1rem 1.5rem !important;
+}
+
+.dashboard-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    animation: shimmer 3s infinite;
+}
+
+.dashboard-header h1 {
+    background: linear-gradient(45deg, #ffffff, #e2e8f0, #ffffff) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: var(--font-weight-bold) !important;
+    text-shadow: none !important;
+    letter-spacing: -0.025em !important;
+    margin: 0 !important;
+}
+
+/* Enhanced Sidebar Styling */
+.dashboard-sidebar {
+    background: var(--gradient-primary) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: var(--shadow-xl) !important;
+}
+
+.dashboard-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    opacity: 0.9;
+    z-index: -1;
+}
+
+.dashboard-sidebar nav {
+    padding: 1rem 0 !important;
+}
+
+.dashboard-sidebar nav ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.dashboard-sidebar nav ul li {
+    margin: 0.25rem 0 !important;
+}
+
+.dashboard-sidebar nav ul li a {
+    border-radius: 0 var(--radius-2xl) var(--radius-2xl) 0 !important;
+    margin-right: var(--space-6) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    padding: 1rem 1.5rem !important;
+}
+
+.dashboard-sidebar nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.dashboard-sidebar nav ul li a:hover::before {
+    left: 100%;
+}
+
+.dashboard-sidebar nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: translateX(8px) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.dashboard-sidebar nav ul li.active a {
+    background: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: var(--shadow-md) !important;
+    border-left: 4px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Enhanced Card Styling */
+.agri-card,
+.product-card,
+.card {
+    background: var(--gradient-card) !important;
+    backdrop-filter: blur(10px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: var(--radius-2xl) !important;
+    box-shadow: var(--shadow-lg) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    padding: 1.5rem !important;
+}
+
+.agri-card::before,
+.product-card::before,
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.agri-card:hover,
+.product-card:hover,
+.card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: var(--shadow-2xl) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.agri-card .card-header {
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Enhanced Button Styling */
+.btn,
+.nav-btn,
+button {
+    border-radius: var(--radius-lg) !important;
+    font-weight: var(--font-weight-medium) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0.75rem 1.5rem !important;
+    margin: 0 0.25rem !important;
+}
+
+.btn::before,
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::before,
+.nav-btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--gradient-primary) !important;
+    color: white !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.btn-primary:hover {
+    box-shadow: var(--shadow-lg) !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Enhanced Navigation Buttons */
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    color: var(--neutral-600) !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: var(--gradient-primary) !important;
+    color: white !important;
+    box-shadow: var(--shadow-md) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Enhanced Form Elements */
+input,
+select,
+textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: var(--radius-lg) !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all var(--transition-normal) !important;
+    padding: 0.75rem 1rem !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary-400) !important;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Enhanced Search Bar */
+.search-wrapper {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    box-shadow: var(--shadow-md) !important;
+    transition: all var(--transition-normal) !important;
+    padding: 0.75rem 1rem !important;
+}
+
+.search-wrapper:focus-within {
+    box-shadow: var(--shadow-glow) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Enhanced Modal Styling */
+.modal {
+    background: var(--gradient-card) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: var(--radius-2xl) !important;
+    box-shadow: var(--shadow-2xl) !important;
+}
+
+.modal-overlay {
+    backdrop-filter: blur(8px) !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+}
+
+.modal-header {
+    padding: 1.5rem !important;
+}
+
+.modal-form {
+    padding: 1.5rem !important;
+}
+
+/* Enhanced Add Button */
+.add-btn {
+    background: var(--gradient-success) !important;
+    box-shadow: var(--shadow-xl) !important;
+    border-radius: var(--radius-full) !important;
+    transition: all var(--transition-normal) !important;
+}
+
+.add-btn:hover {
+    transform: scale(1.1) !important;
+    box-shadow: var(--shadow-2xl) !important;
+}
+
+/* Enhanced Dark Mode Toggle */
+.dark-toggle {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border-radius: var(--radius-full) !important;
+    box-shadow: var(--shadow-lg) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    padding: 15px 25px !important;
+}
+
+.dark-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.dark-toggle:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-xl) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.dark-toggle:hover::before {
+    left: 100%;
+}
+
+/* Content Spacing - Balanced and Natural */
+.dashboard-main-content {
+    padding: 0 !important;
+}
+
+.container {
+    padding: 2rem !important;
+    margin: 0 auto !important;
+}
+
+.content-container {
+    padding: 2rem !important;
+}
+
+.category-header {
+    margin-bottom: 2rem !important;
+    text-align: center !important;
+}
+
+.category-header h1 {
+    margin-bottom: 0.5rem !important;
+}
+
+.category-header p {
+    margin: 0 !important;
+}
+
+.agricultural-cards-grid {
+    margin: 2rem 0 !important;
+    gap: 2rem !important;
+}
+
+.products-grid {
+    margin: 2rem 0 !important;
+    gap: 1.5rem !important;
+}
+
+.product-info {
+    padding: 1.5rem !important;
+}
+
+.product-title {
+    margin-bottom: 0.75rem !important;
+}
+
+.product-description {
+    margin-bottom: 1rem !important;
+}
+
+.product-meta {
+    margin-bottom: 1rem !important;
+}
+
+.product-price {
+    margin-bottom: 1rem !important;
+}
+
+.marketplace-nav {
+    padding: 0.75rem 0 !important;
+}
+
+.nav-container {
+    padding: 0 2rem !important;
+}
+
+.search-container {
+    padding: 1.5rem !important;
+}
+
+.form-group {
+    margin-bottom: 1.5rem !important;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+}
+
+.form-actions {
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem !important;
+    gap: 1rem !important;
+}
+
+/* Weather elements */
+.current-weather {
+    margin-bottom: 1.5rem !important;
+}
+
+.weather-main {
+    margin-bottom: 1rem !important;
+}
+
+.weather-forecast {
+    margin-bottom: 1rem !important;
+    gap: 1rem !important;
+}
+
+.forecast-item {
+    padding: 1rem !important;
+}
+
+/* Enhanced Animation Classes */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: var(--shadow-lg);
+    }
+
+    50% {
+        box-shadow: var(--shadow-glow);
+    }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s var(--ease-out);
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.4s var(--ease-out);
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.animate-glow {
+    animation: glow 2s infinite;
+}
+
+/* Enhanced Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-normal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced Focus States */
+*:focus {
+    outline: 2px solid var(--primary-400) !important;
+    outline-offset: 2px !important;
+}
+
+/* Enhanced Selection Styling */
+::selection {
+    background: var(--primary-200);
+    color: var(--primary-900);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem !important;
+    }
+
+    .content-container {
+        padding: 1rem !important;
+    }
+
+    .category-header {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .agricultural-cards-grid {
+        gap: 1rem !important;
+        margin: 1.5rem 0 !important;
+    }
+
+    .products-grid {
+        gap: 1rem !important;
+        margin: 1.5rem 0 !important;
+    }
+
+    .agri-card {
+        padding: 1rem !important;
+    }
+
+    .product-info {
+        padding: 1rem !important;
+    }
+
+    .nav-container {
+        padding: 0 1rem !important;
+    }
+
+    .search-container {
+        padding: 1rem !important;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem !important;
+    }
+
+    .nav-btn {
+        padding: 0.4rem 0.8rem !important;
+    }
+}
+
+/* Enhanced Glass Morphism */
+.glass {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.glass-strong {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(30px) saturate(200%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Enhanced Typography */
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Print Styles */
+@media print {
+
+    .dashboard-header,
+    .dashboard-sidebar,
+    .add-btn,
+    .dark-toggle {
+        display: none !important;
+    }
+
+    .dashboard-main-content {
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .agri-card,
+    .product-card,
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+}
+
+/*
+ Remove Gap Between Navigation and Main Content */
+
+/* Fix header and navigation positioning */
+.dashboard-header {
+    margin-bottom: 0 !important;
+}
+
+.dashboard-main-content {
+    margin-top: var(--desktop-header-height, 70px) !important;
+    padding-top: 0 !important;
+}
+
+/* Marketplace specific navigation fixes */
+.marketplace-nav {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    position: sticky !important;
+    top: var(--desktop-header-height, 70px) !important;
+}
+
+/* Search container - remove top spacing */
+.search-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Content containers - remove top margins */
+.container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+.content-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Category header - reduce top spacing */
+.category-header {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Remove any top margins from first elements */
+.dashboard-main-content>*:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.container>*:first-child {
+    margin-top: 0 !important;
+}
+
+.content-container>*:first-child {
+    margin-top: 0 !important;
+}
+
+/* Fix for all pages - ensure no gap after header */
+main:first-child,
+.dashboard-main-content:first-child {
+    margin-top: 0 !important;
+}
+
+/* Weather page specific fixes */
+.weather-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Community page fixes */
+.community-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Profile page fixes */
+.profile-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Question detail page fixes */
+.question-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Chatbot page fixes */
+.chatbot-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* About page fixes */
+.about-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Crop recommendation page fixes */
+.crop-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Knowledge base page fixes */
+.knowledge-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Schemes page fixes */
+.schemes-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Agricultural cards grid - start immediately after header */
+.agricultural-cards-grid {
+    margin-top: 1rem !important;
+}
+
+/* Products grid - start immediately after navigation */
+.products-grid {
+    margin-top: 1rem !important;
+}
+
+/* Responsive fixes for mobile */
+@media (max-width: 1024px) {
+    .dashboard-main-content {
+        margin-top: var(--tablet-header-height, 65px) !important;
+    }
+
+    .marketplace-nav {
+        top: var(--tablet-header-height, 65px) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-main-content {
+        margin-top: var(--mobile-header-height, 60px) !important;
+    }
+
+    .marketplace-nav {
+        top: var(--mobile-header-height, 60px) !important;
+    }
+
+    .container {
+        padding-top: 0.5rem !important;
+    }
+
+    .content-container {
+        padding-top: 0.5rem !important;
+    }
+
+    .category-header {
+        padding-top: 0.5rem !important;
+    }
+}
+
+/* Ensure content flows immediately after navigation */
+.nav-container+* {
+    margin-top: 0 !important;
+}
+
+.search-container+* {
+    margin-top: 0 !important;
+}
+}
+
+/* Fix any inherited spacing that creates gaps */
+*+.container,
+*+.content-container,
+*+.category-header {
+    margin-top: 0 !important;
+}
+
+/* Override any CSS that might add unwanted top spacing */
+body>*,
+.dashboard-main-content>*,
+main>* {
+    margin-top: 0 !important;
+}
+
+/* Restore only minimal spacing where absolutely necessary */
+.category-header+.agricultural-cards-grid,
+.category-header+.products-grid,
+.search-container+.container {
+    margin-top: 1rem !important;
+}
+
+* Fix Content Alignment - Left Align All Content */
+
+/* Reset all text alignment to left */
+* {
+    text-align: left !important;
+}
+
+/* Main content positioning fixes */
+.dashboard-main-content {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    float: none !important;
+}
+
+/* Container alignment fixes */
+.container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+    right: auto !important;
+}
+
+.content-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+    right: auto !important;
+}
+
+/* Category header alignment */
+.category-header {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+.category-header h1 {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.category-header p {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+/* Agricultural cards grid alignment */
+.agricultural-cards-grid {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+/* Individual cards alignment */
+.agri-card {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    position: relative !important;
+    left: 0 !important;
+    right: auto !important;
+    float: none !important;
+}
+
+.agri-card .card-header {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.agri-card .card-content {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+/* Products grid alignment */
+.products-grid {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.product-card {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    position: relative !important;
+    left: 0 !important;
+    right: auto !important;
+    float: none !important;
+}
+
+.product-info {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.product-title {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.product-description {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.product-meta {
+    text-align: left !important;
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+}
+
+.product-price {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.product-actions {
+    text-align: left !important;
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+}
+
+/* Navigation alignment */
+.marketplace-nav {
+    text-align: left !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+.nav-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+.nav-categories {
+    text-align: left !important;
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+}
+
+/* Search container alignment */
+.search-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+.search-wrapper {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* Form elements alignment */
+.form-group {
+    text-align: left !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+.form-group label {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    text-align: left !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* Button alignment */
+.btn {
+    text-align: center !important;
+    margin-left: 0 !important;
+    position: relative !important;
+    left: 0 !important;
+    float: none !important;
+}
+
+.form-actions {
+    text-align: left !important;
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* Weather page alignment */
+.weather-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+.current-weather {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.weather-main {
+    text-align: left !important;
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+}
+
+.weather-details {
+    text-align: left !important;
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+}
+
+.weather-forecast {
+    text-align: left !important;
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+}
+
+.forecast-item {
+    text-align: center !important;
+    margin-left: 0 !important;
+}
+
+/* Community page alignment */
+.community-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+.community-stats {
+    text-align: left !important;
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+}
+
+.stat {
+    text-align: center !important;
+    margin-left: 0 !important;
+}
+
+/* Profile page alignment */
+.profile-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* Question detail page alignment */
+.question-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* Chatbot page alignment */
+.chatbot-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* About page alignment */
+.about-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* Crop recommendation page alignment */
+.crop-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* Knowledge base page alignment */
+.knowledge-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* Schemes page alignment */
+.schemes-container {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+}
+
+/* Modal alignment */
+.modal {
+    text-align: left !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.modal-header {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.modal-form {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+/* Grid system fixes */
+.grid,
+.flex {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+/* Override any center alignment */
+.text-center {
+    text-align: left !important;
+}
+
+/* Flexbox alignment fixes */
+.d-flex,
+.flex {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+/* Ensure all headings are left aligned */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+/* Ensure all paragraphs are left aligned */
+p {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+/* Ensure all divs are left aligned */
+div {
+    text-align: left !important;
+    margin-left: 0 !important;
+    position: relative !important;
+    left: 0 !important;
+    right: auto !important;
+}
+
+/* Fix any float issues */
+* {
+    float: none !important;
+}
+
+/* Reset any transform that might shift content */
+* {
+    transform: none !important;
+}
+
+/* Responsive alignment fixes */
+@media (max-width: 1024px) {
+    .dashboard-main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        left: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container,
+    .content-container {
+        width: 100% !important;
+        margin-left: 0 !important;
+        left: 0 !important;
+    }
+
+    .agricultural-cards-grid,
+    .products-grid {
+        width: 100% !important;
+        margin-left: 0 !important;
+        left: 0 !important;
+    }
+}
+
+/* Specific exceptions for elements that should be centered */
+.category-header h1,
+.modal {
+    text-align: center !important;
+}
+
+.forecast-item,
+.stat,
+.score-circle {
+    text-align: center !important;
+}
+
+/* Button text should be centered within buttons */
+.btn,
+.nav-btn {
+    text-align: center !important;
+}
+
+/ * Adjust Content Position - Slight Right Shift and Top Positioning */
+/* Main content positioning adjustments */
+.dashboard-main-content {
+    margin-top: var(--desktop-header-height, 70px) !important;
+    margin-left: calc(var(--desktop-sidebar-width, 280px) + 1rem) !important;
+    padding-top: 0 !important;
+    padding-left: 1rem !important;
+    width: calc(100% - var(--desktop-sidebar-width, 280px) - 2rem) !important;
+}
+
+/* Container positioning - slight right shift */
+.container {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    padding-left: 1rem !important;
+    padding-top: 0.5rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+.content-container {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    padding-left: 1rem !important;
+    padding-top: 0.5rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Category header positioning */
+.category-header {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+}
+
+/* Agricultural cards grid positioning */
+.agricultural-cards-grid {
+    margin-left: 1rem !important;
+    margin-top: 0.5rem !important;
+    padding-left: 0 !important;
+    width: calc(100% - 1rem) !important;
+}
+
+/* Products grid positioning */
+.products-grid {
+    margin-left: 1rem !important;
+    margin-top: 0.5rem !important;
+    padding-left: 0 !important;
+    width: calc(100% - 1rem) !important;
+}
+
+/* Navigation positioning - keep full width but content shifted */
+.marketplace-nav {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    position: sticky !important;
+    top: var(--desktop-header-height, 70px) !important;
+}
+
+.nav-container {
+    margin-left: 1rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Search container positioning */
+.search-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+.search-wrapper {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 600px !important;
+}
+
+/* Weather page positioning */
+.weather-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Community page positioning */
+.community-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Profile page positioning */
+.profile-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Question detail page positioning */
+.question-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Chatbot page positioning */
+.chatbot-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* About page positioning */
+.about-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Crop recommendation page positioning */
+.crop-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Knowledge base page positioning */
+.knowledge-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Schemes page positioning */
+.schemes-container {
+    margin-left: 1rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+}
+
+/* Form elements positioning */
+.form-group {
+    margin-left: 0 !important;
+    width: 100% !important;
+}
+
+/* Ensure content starts immediately after header */
+.dashboard-main-content>*:first-child {
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+}
+
+/* Weather specific elements positioning */
+.current-weather {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+}
+
+.weather-main {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Community stats positioning */
+.community-stats {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .dashboard-main-content {
+        margin-left: 1rem !important;
+        margin-top: var(--tablet-header-height, 65px) !important;
+        width: calc(100% - 2rem) !important;
+        padding-left: 1rem !important;
+    }
+
+    .marketplace-nav {
+        top: var(--tablet-header-height, 65px) !important;
+    }
+
+    .container,
+    .content-container {
+        margin-left: 0.5rem !important;
+        padding-left: 0.5rem !important;
+        width: calc(100% - 1rem) !important;
+    }
+
+    .category-header {
+        margin-left: 0.5rem !important;
+        padding-left: 0.5rem !important;
+    }
+
+    .agricultural-cards-grid,
+    .products-grid {
+        margin-left: 0.5rem !important;
+        width: calc(100% - 0.5rem) !important;
+    }
+
+    .nav-container {
+        margin-left: 0.5rem !important;
+        padding-left: 0.5rem !important;
+        width: calc(100% - 1rem) !important;
+    }
+
+    .search-container {
+        margin-left: 0.5rem !important;
+        padding-left: 0.5rem !important;
+        width: calc(100% - 1rem) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-main-content {
+        margin-left: 0.5rem !important;
+        margin-top: var(--mobile-header-height, 60px) !important;
+        width: calc(100% - 1rem) !important;
+        padding-left: 0.5rem !important;
+    }
+
+    .marketplace-nav {
+        top: var(--mobile-header-height, 60px) !important;
+    }
+
+    .container,
+    .content-container {
+        margin-left: 0.25rem !important;
+        padding-left: 0.25rem !important;
+        width: calc(100% - 0.5rem) !important;
+        padding-top: 0.25rem !important;
+    }
+
+    .category-header {
+        margin-left: 0.25rem !important;
+        padding-left: 0.25rem !important;
+        padding-top: 0.25rem !important;
+    }
+
+    .agricultural-cards-grid,
+    .products-grid {
+        margin-left: 0.25rem !important;
+        width: calc(100% - 0.25rem) !important;
+        margin-top: 0.25rem !important;
+    }
+
+    .nav-container {
+        margin-left: 0.25rem !important;
+        padding-left: 0.25rem !important;
+        width: calc(100% - 0.5rem) !important;
+    }
+
+    .search-container {
+        margin-left: 0.25rem !important;
+        padding-left: 0.25rem !important;
+        width: calc(100% - 0.5rem) !important;
+        padding-top: 0.25rem !important;
+    }
+
+    /* Page containers for mobile */
+    .weather-container,
+    .community-container,
+    .profile-container,
+    .question-container,
+    .chatbot-container,
+    .about-container,
+    .crop-container,
+    .knowledge-container,
+    .schemes-container {
+        margin-left: 0.25rem !important;
+        padding-left: 0.25rem !important;
+        width: calc(100% - 0.5rem) !important;
+        padding-top: 0.25rem !important;
+    }
+}
+
+/* Ensure proper spacing from sidebar on desktop */
+@media (min-width: 1024px) {
+    .dashboard-main-content {
+        margin-left: calc(var(--desktop-sidebar-width, 280px) + 1rem) !important;
+        width: calc(100% - var(--desktop-sidebar-width, 280px) - 2rem) !important;
+    }
+}
+
+/* Fine-tune top positioning to be immediately below header */
+.dashboard-main-content {
+    position: relative !important;
+    top: 0 !important;
+}
+
+/* Ensure no extra spacing at the very top */
+.dashboard-main-content>*:first-child,
+.container>*:first-child,
+.content-container>*:first-child {
+    margin-top: 0 !important;
+}
+
+/* Override any previous alignment that might conflict */
+.dashboard-main-content * {
+    position: relative !important;
+}
+
+/* Ensure grids start properly positioned */
+.agricultural-cards-grid,
+.products-grid {
+    position: relative !important;
+    top: 0 !important;
+}
+
+/*
+ Fix Navigation Bar Visibility on All Pages */
+
+/* Ensure dashboard header is always visible */
+.dashboard-header {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    height: var(--desktop-header-height, 70px) !important;
+}
+
+.dashboard-header-top {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+/* Ensure sidebar is always visible on desktop */
+.dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    top: var(--desktop-header-height, 70px) !important;
+    left: 0 !important;
+    width: var(--desktop-sidebar-width, 280px) !important;
+    height: calc(100vh - var(--desktop-header-height, 70px)) !important;
+    z-index: 999 !important;
+    flex-direction: column !important;
+}
+
+.dashboard-sidebar nav {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 1 !important;
+}
+
+.dashboard-sidebar nav ul {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.dashboard-sidebar nav ul li {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.dashboard-sidebar nav ul li a {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+}
+
+/* Ensure mobile menu toggle is visible on mobile */
+@media (max-width: 1023px) {
+    .mobile-menu-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+}
+
+/* Ensure header actions are visible */
+.header-actions {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    gap: 1rem !important;
+}
+
+.user-profile {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.notification-bell {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure dark mode toggle is visible */
+.dark-toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Fix for pages that might have navigation hidden */
+header,
+.header,
+.dashboard-header,
+.navigation,
+.nav,
+.navbar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure content wrapper doesn't hide navigation */
+.content-wrapper {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Fix marketplace navigation visibility */
+.marketplace-nav {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: sticky !important;
+    top: var(--desktop-header-height, 70px) !important;
+    z-index: 90 !important;
+}
+
+.nav-container {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.nav-categories {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.nav-btn {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Override any CSS that might hide navigation elements */
+* {
+    visibility: visible !important;
+}
+
+/* Specific fixes for different page types */
+
+/* Knowledge base page navigation fix */
+.knowledge-base .dashboard-header,
+.knowledge-base .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Weather page navigation fix */
+.weather-page .dashboard-header,
+.weather-page .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Community page navigation fix */
+.community-page .dashboard-header,
+.community-page .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Profile page navigation fix */
+.profile-page .dashboard-header,
+.profile-page .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Chatbot page navigation fix */
+.chatbot-page .dashboard-header,
+.chatbot-page .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* About page navigation fix */
+.about-page .dashboard-header,
+.about-page .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Crop recommendation page navigation fix */
+.crop-page .dashboard-header,
+.crop-page .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Schemes page navigation fix */
+.schemes-page .dashboard-header,
+.schemes-page .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Question detail page navigation fix */
+.question-page .dashboard-header,
+.question-page .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ask question page navigation fix */
+.ask-question-page .dashboard-header,
+.ask-question-page .dashboard-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure navigation is above content */
+.dashboard-header {
+    z-index: 1000 !important;
+}
+
+.dashboard-sidebar {
+    z-index: 999 !important;
+}
+
+.marketplace-nav {
+    z-index: 90 !important;
+}
+
+/* Fix any overflow issues that might hide navigation */
+body {
+    overflow-x: visible !important;
+}
+
+html {
+    overflow-x: visible !important;
+}
+
+/* Ensure navigation elements are not clipped */
+.dashboard-header,
+.dashboard-sidebar {
+    clip: none !important;
+    clip-path: none !important;
+}
+
+/* Mobile responsive navigation visibility */
+@media (max-width: 1023px) {
+    .mobile-menu-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 1001 !important;
+        opacity: 1 !important;
+    }
+
+    .dashboard-sidebar {
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .dashboard-sidebar.open {
+        transform: translateX(0) !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .dashboard-header {
+        height: var(--tablet-header-height, 65px) !important;
+    }
+
+    .dashboard-sidebar {
+        top: var(--tablet-header-height, 65px) !important;
+        height: calc(100vh - var(--tablet-header-height, 65px)) !important;
+    }
+
+    .marketplace-nav {
+        top: var(--tablet-header-height, 65px) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        height: var(--mobile-header-height, 60px) !important;
+    }
+
+    .dashboard-sidebar {
+        top: var(--mobile-header-height, 60px) !important;
+        height: calc(100vh - var(--mobile-header-height, 60px)) !important;
+        width: 100% !important;
+        right: -100% !important;
+        left: auto !important;
+    }
+
+    .dashboard-sidebar.open {
+        right: 0 !important;
+        transform: none !important;
+    }
+
+    .marketplace-nav {
+        top: var(--mobile-header-height, 60px) !important;
+    }
+}
+
+/* Force visibility for any hidden elements */
+.dashboard-header *,
+.dashboard-sidebar *,
+.marketplace-nav * {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure proper display for flex containers */
+.dashboard-header,
+.dashboard-header-top,
+.header-actions,
+.dashboard-sidebar,
+.dashboard-sidebar nav,
+.marketplace-nav,
+.nav-container,
+.nav-categories {
+    display: flex !important;
+}
+
+/* Ensure proper display for block elements */
+.dashboard-sidebar nav ul,
+.dashboard-sidebar nav ul li {
+    display: block !important;
+}
+
+/* Override any CSS that might set display: none */
+.dashboard-header,
+.dashboard-sidebar,
+.marketplace-nav {
+    display: flex !important;
+}
+
+/* Ensure navigation text is visible */
+.dashboard-header h1,
+.dashboard-sidebar nav ul li a,
+.nav-btn {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+/* Fix for any transform issues */
+.dashboard-header,
+.dashboard-sidebar {
+    transform: none !important;
+}
+
+/* Ensure proper positioning context */
+body {
+    position: relative !important;
+}
+
+/* Override any styles that might interfere with navigation visibility */
+.dashboard-header,
+.dashboard-sidebar,
+.marketplace-nav,
+.nav-container,
+.nav-categories,
+.header-actions {
+    max-height: none !important;
+    height: auto !important;
+    min-height: auto !important;
+}
+
+.dashboard-header {
+    height: var(--desktop-header-height, 70px) !important;
+}
+
+.dashboard-sidebar {
+    height: calc(100vh - var(--desktop-header-height, 70px)) !important;
+}
+
+/* App
+ly Knowledge Base Styling to All Pages */
+
+/* Universal page styling - match knowledge base */
+* {
+    box-sizing: border-box !important;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    transition: var(--transition) !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+body::before {
+    content: '' !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--bg-color) !important;
+    z-index: -1 !important;
+}
+
+/* Header styling - consistent across all pages */
+.dashboard-header {
+    background: var(--header-bg) !important;
+    color: #fff !important;
+    box-shadow: var(--shadow-lg) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 2rem !important;
+}
+
+.dashboard-header h1 {
+    color: #fff !important;
+    margin: 0 !important;
+    flex: 1 !important;
+    text-align: center !important;
+}
+
+.dashboard-header-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+/* Sidebar styling - consistent across all pages */
+.dashboard-sidebar {
+    background: var(--sidebar-bg) !important;
+    color: #fff !important;
+    position: fixed !important;
+    top: 80px !important;
+    left: 0 !important;
+    width: 280px !important;
+    height: calc(100vh - 80px) !important;
+    z-index: 999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+}
+
+.dashboard-sidebar nav ul li a {
+    color: #fff !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+    text-decoration: none !important;
+    transition: var(--transition) !important;
+}
+
+.dashboard-sidebar nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+}
+
+.dashboard-sidebar nav ul li.active a {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+}
+
+/* Main content styling - consistent across all pages */
+.dashboard-main-content,
+.main-content {
+    margin-left: 280px !important;
+    height: calc(100vh - 80px) !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 80px !important;
+    overflow-y: auto !important;
+}
+
+/* Content wrapper - remove extra margins */
+.content-wrapper {
+    margin-top: 0 !important;
+    display: flex !important;
+    flex: 1 !important;
+}
+
+/* Container styling */
+.container {
+    padding: 2rem !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+}
+
+.content-container {
+    padding: 2rem !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+}
+
+/* Navigation elements - consistent positioning */
+.marketplace-nav,
+.content-nav {
+    margin-top: 0 !important;
+    padding-top: 15px !important;
+    top: 0 !important;
+    position: sticky !important;
+    background: var(--card-bg) !important;
+    z-index: 90 !important;
+}
+
+/* Remove extra spacing from main content */
+.dashboard-main-content>*,
+.main-content>* {
+    margin-top: 0 !important;
+}
+
+/* Page-specific container adjustments */
+.weather-container,
+.community-container,
+.profile-container,
+.question-container,
+.chatbot-container,
+.about-container,
+.crop-container,
+.knowledge-container,
+.schemes-container {
+    padding: 2rem !important;
+    margin: 0 !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+}
+
+/* Category header styling */
+.category-header {
+    margin: 0 0 2rem 0 !important;
+    padding: 1rem 0 !important;
+    text-align: center !important;
+}
+
+/* Cards and grids styling */
+.agricultural-cards-grid,
+.products-grid {
+    margin: 1rem 0 !important;
+    gap: 2rem !important;
+    display: grid !important;
+}
+
+.agri-card,
+.product-card {
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-md) !important;
+    padding: 1.5rem !important;
+    transition: var(--transition) !important;
+}
+
+.agri-card:hover,
+.product-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 1.5rem !important;
+}
+
+.form-group label {
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 500 !important;
+    color: var(--text-color) !important;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100% !important;
+    padding: 0.75rem 1rem !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: var(--border-radius) !important;
+    background: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    transition: var(--transition) !important;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+}
+
+/* Button styling */
+.btn {
+    padding: 0.75rem 1.5rem !important;
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: var(--transition) !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+}
+
+.btn-primary {
+    background: var(--accent-color) !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: var(--hover-color) !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-secondary {
+    background: transparent !important;
+    color: var(--accent-color) !important;
+    border: 2px solid var(--accent-color) !important;
+}
+
+.btn-secondary:hover {
+    background: var(--accent-color) !important;
+    color: white !important;
+}
+
+/* Navigation buttons */
+.nav-btn {
+    padding: 0.5rem 1rem !important;
+    border: none !important;
+    background: transparent !important;
+    color: var(--text-color) !important;
+    border-radius: var(--border-radius) !important;
+    cursor: pointer !important;
+    transition: var(--transition) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: var(--accent-color) !important;
+    color: white !important;
+}
+
+/* Search styling */
+.search-container {
+    padding: 1.5rem !important;
+    margin: 0 !important;
+}
+
+.search-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 0.75rem 1rem !important;
+    box-shadow: var(--shadow-sm) !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+.search-wrapper input {
+    flex: 1 !important;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    color: var(--text-color) !important;
+    font-size: 1rem !important;
+}
+
+/* Modal styling */
+.modal {
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-xl) !important;
+    max-width: 500px !important;
+    width: 90% !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+}
+
+.modal-header {
+    padding: 1.5rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.modal-form {
+    padding: 1.5rem !important;
+}
+
+/* Dark mode toggle */
+.dark-toggle {
+    position: absolute !important;
+    bottom: 2rem !important;
+    left: 1.5rem !important;
+    right: 1.5rem !important;
+    padding: 15px 25px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+    border-radius: 30px !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Responsive adjustments - match knowledge base */
+@media (max-width: 1024px) {
+
+    .dashboard-main-content,
+    .main-content {
+        margin-left: 0 !important;
+    }
+
+    .dashboard-sidebar {
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .dashboard-sidebar.open {
+        transform: translateX(0) !important;
+    }
+
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        height: 70px !important;
+        padding: 0 1rem !important;
+    }
+
+    .dashboard-sidebar {
+        top: 70px !important;
+        height: calc(100vh - 70px) !important;
+        width: 100% !important;
+    }
+
+    .dashboard-main-content,
+    .main-content {
+        margin-top: 70px !important;
+        height: calc(100vh - 70px) !important;
+    }
+
+    .container,
+    .content-container {
+        padding: 1rem !important;
+    }
+
+    .category-header {
+        padding: 0.5rem 0 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .agricultural-cards-grid,
+    .products-grid {
+        gap: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header {
+        height: 60px !important;
+    }
+
+    .dashboard-sidebar {
+        top: 60px !important;
+        height: calc(100vh - 60px) !important;
+    }
+
+    .dashboard-main-content,
+    .main-content {
+        margin-top: 60px !important;
+        height: calc(100vh - 60px) !important;
+    }
+}
+
+/* Ensure all pages have consistent overflow behavior */
+html {
+    overflow: hidden !important;
+}
+
+body {
+    overflow: hidden !important;
+}
+
+.dashboard-main-content,
+.main-content {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* Fix any content that might break the layout */
+* {
+    max-width: 100% !important;
+}
+
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Ensure proper text alignment */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color) !important;
+    margin-bottom: 1rem !important;
+}
+
+p {
+    color: var(--text-color) !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* R
+emove Profile Section from All Pages */
+
+/* Hide user profile icon and related elements */
+.user-profile,
+.user-profile i,
+#userProfileIcon,
+.profile-icon {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile sidebar */
+.profile-sidebar,
+#profileSidebar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile overlay */
+.profile-overlay,
+#profileOverlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile header elements */
+.profile-header {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile menu */
+.profile-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile avatar */
+.profile-avatar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile info */
+.profile-info {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide close profile button */
+.close-profile,
+#closeProfile {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide any profile-related buttons */
+.profile-btn,
+.profile-button,
+button[data-profile],
+a[href*="profile"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile containers */
+.profile-container,
+.profile-section,
+.user-section {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Adjust header actions to remove profile space */
+.header-actions {
+    gap: 0.5rem !important;
+}
+
+/* Remove profile-related spacing */
+.header-actions .user-profile+* {
+    margin-left: 0 !important;
+}
+
+/* Hide notification bell if it's profile-related */
+.notification-bell {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Adjust header layout without profile elements */
+.dashboard-header-top {
+    justify-content: space-between !important;
+}
+
+/* Ensure header title takes available space */
+.dashboard-header h1 {
+    flex: 1 !important;
+    text-align: center !important;
+}
+
+/* Hide any profile links in navigation */
+.dashboard-sidebar nav ul li a[href*="profile"],
+.dashboard-sidebar nav ul li a[href="profile.html"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile menu items */
+.dashboard-sidebar nav ul li:has(a[href*="profile"]) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Remove profile-related JavaScript elements */
+[id*="profile"],
+[class*="profile"],
+[data-profile] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Exception: Keep profile.html page content if viewing profile page */
+body.profile-page .profile-container,
+body.profile-page .profile-section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Hide profile-related form elements */
+input[name*="profile"],
+select[name*="profile"],
+textarea[name*="profile"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile settings */
+.profile-settings,
+.user-settings,
+.account-settings {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile dropdown menus */
+.profile-dropdown,
+.user-dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide profile badges or indicators */
+.profile-badge,
+.user-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Adjust mobile menu without profile */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        margin-right: 0 !important;
+    }
+
+    .dashboard-header-top {
+        padding-right: 1rem !important;
+    }
+}
+
+/* Remove profile from all specific pages */
+
+/* Dashboard page */
+.dashboard-page .user-profile,
+.dashboard-page .profile-sidebar {
+    display: none !important;
+}
+
+/* Marketplace page */
+.marketplace-page .user-profile,
+.marketplace-page .profile-sidebar {
+    display: none !important;
+}
+
+/* Weather page */
+.weather-page .user-profile,
+.weather-page .profile-sidebar {
+    display: none !important;
+}
+
+/* Community page */
+.community-page .user-profile,
+.community-page .profile-sidebar {
+    display: none !important;
+}
+
+/* Chatbot page */
+.chatbot-page .user-profile,
+.chatbot-page .profile-sidebar {
+    display: none !important;
+}
+
+/* About page */
+.about-page .user-profile,
+.about-page .profile-sidebar {
+    display: none !important;
+}
+
+/* Crop recommendation page */
+.crop-page .user-profile,
+.crop-page .profile-sidebar {
+    display: none !important;
+}
+
+/* Knowledge base page */
+.knowledge-page .user-profile,
+.knowledge-page .profile-sidebar {
+    display: none !important;
+}
+
+/* Schemes page */
+.schemes-page .user-profile,
+.schemes-page .profile-sidebar {
+    display: none !important;
+}
+
+/* Question pages */
+.question-page .user-profile,
+.question-page .profile-sidebar,
+.ask-question-page .user-profile,
+.ask-question-page .profile-sidebar {
+    display: none !important;
+}
+
+/* Hide profile-related CSS animations */
+@keyframes profile-slide,
+@keyframes profile-fade {
+    display: none !important;
+}
+
+/* Remove profile-related hover effects */
+.user-profile:hover,
+.profile-icon:hover {
+    display: none !important;
+}
+
+/* Ensure no profile elements are accidentally shown */
+*[class*="profile"]:not(.profile-container):not(.profile-section),
+*[id*="profile"]:not(#profileContainer):not(#profileSection) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Clean up header spacing without profile */
+.header-actions:empty {
+    display: none !important;
+}
+
+/* If header actions only contained profile elements, hide the container */
+.header-actions:not(:has(*:not([style*="display: none"]))) {
+    display: none !important;
+}
+
+/* Adjust header layout for cleaner look */
+.dashboard-header-top {
+    gap: 1rem !important;
+}
+
+/* Remove profile-related event listeners (CSS can't do this, but helps with styling) */
+.user-profile,
+.profile-sidebar,
+.profile-overlay {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+/* Hide any remaining profile tooltips or popups */
+.profile-tooltip,
+.user-tooltip,
+[data-tooltip*="profile"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Remove profile from breadcrumbs if any */
+.breadcrumb a[href*="profile"],
+.breadcrumb-item[data-profile] {
+    display: none !important;
+}
+
+/* Clean header appearance */
+.dashboard-header {
+    justify-content: center !important;
+}
+
+.dashboard-header h1 {
+    margin: 0 auto !important;
+}
+
+/*
+ Center Weather Page Content */
+
+/* Weather page specific centering */
+.weather-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+}
+
+/* Weather page main content centering */
+.dashboard-main-content .weather-container {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+}
+
+/* Weather cards and sections centering */
+.weather-card,
+.current-weather,
+.weather-forecast,
+.weather-alerts {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 800px !important;
+}
+
+/* Weather main section centering */
+.weather-main {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto 2rem auto !important;
+    gap: 1rem !important;
+}
+
+/* Weather temperature and condition centering */
+.weather-main .temp {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+.weather-main .condition {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+.weather-main-icon {
+    margin: 0 auto !important;
+    display: block !important;
+    text-align: center !important;
+}
+
+/* Weather details centering */
+.weather-details {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    margin: 1rem auto !important;
+    flex-wrap: wrap !important;
+}
+
+.detail-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 0.5rem !important;
+}
+
+/* Weather forecast centering */
+.weather-forecast {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    margin: 2rem auto !important;
+    flex-wrap: wrap !important;
+}
+
+.forecast-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    min-width: 120px !important;
+}
+
+.forecast-item .day {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+.forecast-item i {
+    text-align: center !important;
+    margin: 0.5rem auto !important;
+}
+
+.forecast-item .temp {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+/* Weather alerts centering */
+.weather-alert {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 1rem auto !important;
+    gap: 0.5rem !important;
+    max-width: 600px !important;
+}
+
+/* Weather page headings centering */
+.weather-container h1,
+.weather-container h2,
+.weather-container h3 {
+    text-align: center !important;
+    margin: 0 auto 1rem auto !important;
+    width: 100% !important;
+}
+
+/* Weather page paragraphs centering */
+.weather-container p {
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 600px !important;
+}
+
+/* Weather grid layout centering */
+.weather-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    justify-content: center !important;
+    align-items: start !important;
+    margin: 2rem auto !important;
+    max-width: 1000px !important;
+}
+
+/* Weather sections centering */
+.weather-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 2rem auto !important;
+    max-width: 800px !important;
+}
+
+/* Weather buttons centering */
+.weather-container .btn,
+.weather-container button {
+    margin: 1rem auto !important;
+    display: block !important;
+    text-align: center !important;
+}
+
+/* Weather form elements centering */
+.weather-container form {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin: 2rem auto !important;
+    max-width: 400px !important;
+}
+
+.weather-container .form-group {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.weather-container input,
+.weather-container select {
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+/* Weather page responsive centering */
+@media (max-width: 1024px) {
+    .weather-container {
+        padding: 1.5rem !important;
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+    }
+
+    .weather-details {
+        gap: 1rem !important;
+    }
+
+    .weather-forecast {
+        gap: 0.5rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .weather-container {
+        padding: 1rem !important;
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
+    }
+
+    .weather-details {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+
+    .weather-forecast {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+
+    .forecast-item {
+        min-width: 100px !important;
+        width: 100% !important;
+        max-width: 200px !important;
+    }
+
+    .weather-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+}
+
+/* Weather page specific layout fixes */
+.weather-page .dashboard-main-content {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+}
+
+/* Weather content wrapper centering */
+.weather-content-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Weather page title centering */
+.weather-page-title {
+    text-align: center !important;
+    margin: 0 auto 2rem auto !important;
+    width: 100% !important;
+}
+
+/* Weather statistics centering */
+.weather-stats {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    margin: 2rem auto !important;
+    flex-wrap: wrap !important;
+}
+
+.weather-stat {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    min-width: 100px !important;
+}
+
+/* Weather icons centering */
+.weather-icon {
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+/* Weather data tables centering */
+.weather-table {
+    margin: 2rem auto !important;
+    text-align: center !important;
+    max-width: 800px !important;
+}
+
+.weather-table th,
+.weather-table td {
+    text-align: center !important;
+}
+
+/* Weather loading states centering */
+.weather-loading {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 2rem auto !important;
+    text-align: center !important;
+}
+
+/* Weather error messages centering */
+.weather-error {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 2rem auto !important;
+    max-width: 600px !important;
+}
+
+/* Override any left alignment for weather page */
+.weather-container *,
+.weather-page * {
+    text-align: center !important;
+}
+
+/* Exception for weather page - center everything */
+.weather-container .category-header,
+.weather-container .content-container {
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* Weather page specific grid centering */
+.weather-container .agricultural-cards-grid,
+.weather-container .products-grid {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Weather cards in grid centering */
+.weather-container .agri-card,
+.weather-container .product-card {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+/ * Reduce Dashboard Card Gaps */
+/* Dashboard agricultural cards grid - reduced gaps */
+.agricultural-cards-grid {
+    gap: 1rem !important;
+    margin: 1rem 0 !important;
+}
+
+/* Dashboard page specific card spacing */
+.dashboard-page .agricultural-cards-grid,
+body:has(.agricultural-cards-grid) .agricultural-cards-grid {
+    gap: 1rem !important;
+    row-gap: 1rem !important;
+    column-gap: 1rem !important;
+}
+
+/* Individual dashboard cards - tighter spacing */
+.agri-card {
+    margin: 0 !important;
+    padding: 1.25rem !important;
+}
+
+/* Dashboard card content spacing */
+.agri-card .card-header {
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+.agri-card .card-content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Dashboard card elements spacing */
+.agri-card .card-title {
+    margin-bottom: 0.5rem !important;
+}
+
+.agri-card .card-title h3 {
+    margin-bottom: 0.25rem !important;
+}
+
+.agri-card .card-title p {
+    margin: 0 !important;
+}
+
+/* Soil health card spacing */
+.soil-metrics {
+    gap: 0.75rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.metric-item {
+    gap: 0.25rem !important;
+}
+
+/* Weather card spacing */
+.current-weather {
+    margin-bottom: 1rem !important;
+}
+
+.weather-main {
+    margin-bottom: 0.75rem !important;
+}
+
+.weather-details {
+    gap: 0.75rem !important;
+}
+
+.weather-forecast {
+    margin-bottom: 0.75rem !important;
+    gap: 0.75rem !important;
+}
+
+/* Crop recommendation card spacing */
+.recommendation-item {
+    margin-bottom: 0.75rem !important;
+}
+
+.other-recommendations {
+    gap: 0.5rem !important;
+}
+
+/* Disease detection card spacing */
+.image-upload-section {
+    margin-bottom: 1rem !important;
+}
+
+.recent-detection {
+    margin-top: 1rem !important;
+}
+
+/* Community hub card spacing */
+.community-quick-access {
+    gap: 0.75rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.community-stats {
+    gap: 0.75rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.recent-activity {
+    margin-bottom: 1rem !important;
+}
+
+.activity-item {
+    margin-bottom: 0.5rem !important;
+}
+
+.learning-resources {
+    margin-top: 1rem !important;
+}
+
+.tutorial-item {
+    margin-bottom: 0.5rem !important;
+}
+
+/* Dashboard grid responsive adjustments */
+@media (min-width: 1200px) {
+    .agricultural-cards-grid {
+        gap: 1.25rem !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .agricultural-cards-grid {
+        gap: 0.75rem !important;
+    }
+
+    .agri-card {
+        padding: 1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .agricultural-cards-grid {
+        gap: 0.5rem !important;
+        margin: 0.75rem 0 !important;
+    }
+
+    .agri-card {
+        padding: 0.75rem !important;
+    }
+
+    .agri-card .card-header {
+        margin-bottom: 0.75rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+}
+
+/* Ensure dashboard cards are compact */
+.dashboard-main-content .agricultural-cards-grid {
+    gap: 1rem !important;
+}
+
+/* Override any larger gaps from other CSS */
+.content-container .agricultural-cards-grid {
+    gap: 1rem !important;
+}
+
+/* Dashboard specific overrides */
+.dashboard-page .agri-card,
+body:not(.marketplace-page):not(.weather-page):not(.community-page) .agri-card {
+    margin: 0 !important;
+}
+
+/* Tighter spacing for dashboard elements */
+.dashboard-page .card-content>*,
+.agri-card .card-content>* {
+    margin-bottom: 0.75rem !important;
+}
+
+.dashboard-page .card-content>*:last-child,
+.agri-card .card-content>*:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Reduce spacing in specific dashboard card types */
+
+/* Soil health metrics tighter spacing */
+.soil-health-card .soil-metrics {
+    gap: 0.5rem !important;
+}
+
+.soil-health-card .metric-item {
+    gap: 0.25rem !important;
+}
+
+/* Weather card tighter spacing */
+.weather-card .weather-details {
+    gap: 0.5rem !important;
+}
+
+.weather-card .weather-forecast {
+    gap: 0.5rem !important;
+}
+
+/* Crop recommendation tighter spacing */
+.crop-recommendation-card .recommendation-item {
+    margin-bottom: 0.5rem !important;
+}
+
+.crop-recommendation-card .other-recommendations {
+    gap: 0.25rem !important;
+}
+
+/* Community hub tighter spacing */
+.community-hub-card .community-quick-access {
+    gap: 0.5rem !important;
+}
+
+.community-hub-card .community-stats {
+    gap: 0.5rem !important;
+}
+
+/* Disease detection tighter spacing */
+.disease-detection-card .image-upload-section {
+    margin-bottom: 0.75rem !important;
+}
+
+/* Dashboard card internal element spacing */
+.agri-card h4 {
+    margin-bottom: 0.5rem !important;
+}
+
+.agri-card p {
+    margin-bottom: 0.5rem !important;
+}
+
+.agri-card .btn {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0 !important;
+}
+
+/* Score circles and metrics tighter spacing */
+.score-circle {
+    margin: 0.5rem auto !important;
+}
+
+.metric-bar {
+    margin: 0.25rem 0 !important;
+}
+
+/* NPK values tighter spacing */
+.npk-values {
+    gap: 0.5rem !important;
+}
+
+/* Weather forecast items tighter spacing */
+.forecast-item {
+    padding: 0.75rem !important;
+}
+
+/* Activity items tighter spacing */
+.activity-item {
+    padding: 0.5rem 0 !important;
+}
+
+/* Tutorial items tighter spacing */
+.tutorial-item {
+    padding: 0.25rem 0 !important;
+}
+
+/* Override default card spacing for dashboard only */
+.dashboard-main-content .agri-card>*+* {
+    margin-top: 0.75rem !important;
+}
+
+/* Ensure consistent reduced spacing */
+.agricultural-cards-grid .agri-card {
+    margin: 0 !important;
+}
+
+/* Final override for dashboard card gaps */
+.dashboard-page .agricultural-cards-grid,
+.content-container:has(.agricultural-cards-grid) .agricultural-cards-grid {
+    gap: 1rem !important;
+}/
+* Critical mobile menu toggle fixes */
+@media (max-width: 1023px) {
+    /* Override any conflicting styles */
+    .mobile-menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 9999 !important;
+        width: 44px !important;
+        height: 44px !important;
+        background: rgba(0, 0, 0, 0.1) !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        color: #ffffff !important;
+        font-size: 18px !important;
+        font-weight: bold !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+        backdrop-filter: blur(10px) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    .mobile-menu-toggle:hover,
+    .mobile-menu-toggle:focus {
+        background: rgba(255, 255, 255, 0.2) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        transform: scale(1.05) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .mobile-menu-toggle:active {
+        transform: scale(0.95) !important;
+    }
+    
+    /* Ensure it's positioned correctly in header */
+    .dashboard-header-top .mobile-menu-toggle {
+        order: -1 !important;
+        margin-right: 12px !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* Force visibility on all mobile devices */
+@media screen and (max-width: 1023px) {
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+}/* Ultimate
+ mobile menu toggle visibility fix */
+.mobile-menu-toggle {
+    /* Force visibility on mobile */
+    display: none !important;
+}
+
+@media screen and (max-width: 1023px) {
+    .mobile-menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10000 !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        background: rgba(255, 255, 255, 0.2) !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+        backdrop-filter: blur(10px) !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 0 !important;
+        text-indent: -9999px !important;
+        overflow: hidden !important;
+    }
+    
+    /* CSS hamburger icon */
+    .mobile-menu-toggle::before {
+        content: "" !important;
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 18px !important;
+        height: 2px !important;
+        background: #ffffff !important;
+        box-shadow: 
+            0 -5px 0 0 #ffffff,
+            0 5px 0 0 #ffffff !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Hover state */
+    .mobile-menu-toggle:hover,
+    .mobile-menu-toggle:focus {
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        transform: scale(1.05) !important;
+        outline: none !important;
+    }
+    
+    /* Active state - X animation */
+    .mobile-menu-toggle.active::before {
+        transform: translate(-50%, -50%) rotate(45deg) !important;
+        box-shadow: none !important;
+    }
+    
+    .mobile-menu-toggle.active::after {
+        content: "" !important;
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) rotate(-45deg) !important;
+        width: 18px !important;
+        height: 2px !important;
+        background: #ffffff !important;
+    }
+    
+    /* Ensure it's positioned correctly in header */
+    .dashboard-header-top .mobile-menu-toggle {
+        order: -1 !important;
+        margin-right: 12px !important;
+    }
+}
+
+/* Force show on mobile - highest specificity */
+@media screen and (max-device-width: 1023px) {
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+}
+
+@media screen and (max-width: 1023px) and (orientation: portrait) {
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+}
+
+@media screen and (max-width: 1023px) and (orientation: landscape) {
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+}
