@@ -99,13 +99,7 @@ class NavigationManager {
             });
         }
 
-        // Dark mode toggle
-        const darkToggle = document.getElementById('darkToggle');
-        if (darkToggle) {
-            darkToggle.addEventListener('click', () => {
-                this.toggleDarkMode();
-            });
-        }
+        // Dark mode toggle is now handled by universal dark mode script
     }
 
     setupUserProfile() {
@@ -237,16 +231,7 @@ class NavigationManager {
         }
     }
 
-    toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-        localStorage.setItem('darkMode', isDark);
-        
-        const darkToggle = document.getElementById('darkToggle');
-        if (darkToggle) {
-            darkToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-        }
-    }
+    // toggleDarkMode method removed - now handled by universal dark mode script
 
     // Utility method to show notifications
     showNotification(message, type = 'info') {
@@ -330,15 +315,7 @@ class NavigationManager {
 document.addEventListener('DOMContentLoaded', () => {
     window.navigationManager = new NavigationManager();
     
-    // Load dark mode preference
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (isDarkMode) {
-        document.body.classList.add('dark-mode');
-        const darkToggle = document.getElementById('darkToggle');
-        if (darkToggle) {
-            darkToggle.textContent = '☀️ Light Mode';
-        }
-    }
+    // Dark mode initialization is now handled by universal dark mode script
 });
 
 // Export for use in other scripts

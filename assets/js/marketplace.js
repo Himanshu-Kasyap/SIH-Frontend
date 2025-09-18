@@ -142,6 +142,14 @@ class FarmersMarketplace {
         const actionText = ['services', 'machinery', 'storage'].includes(product.category) ? 'Book Now' : 'Buy Now';
         const actionIcon = ['services', 'machinery', 'storage'].includes(product.category) ? 'calendar-check' : 'shopping-cart';
         
+        // Format additional information
+        const quantityInfo = product.quantity ? `${product.quantity} ${product.quantityUnit || ''}` : '';
+        const qualityBadge = product.quality ? `<span class="quality-badge">${product.quality.replace('-', ' ').toUpperCase()}</span>` : '';
+        const negotiableBadge = product.negotiable ? '<span class="negotiable-badge">Negotiable</span>' : '';
+        const deliveryBadge = product.homeDelivery ? '<span class="delivery-badge">Home Delivery</span>' : '';
+        const sellerInfo = product.sellerName ? `<span><i class="fas fa-user"></i>${product.sellerName}</span>` : '';
+        const availabilityInfo = product.availability ? `<span><i class="fas fa-clock"></i>${product.availability.replace('-', ' ')}</span>` : '';
+        
         return `
             <div class="product-card slide-up">
                 <div class="product-image">
@@ -150,15 +158,28 @@ class FarmersMarketplace {
                         `<div class="image-placeholder"><i class="fas fa-image"></i></div>`
                     }
                     <div class="product-badge">${this.getCategoryBadge(product.category)}</div>
+                    ${qualityBadge}
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">${product.title}</h3>
                     <p class="product-description">${product.description}</p>
+                    
+                    ${quantityInfo ? `<div class="quantity-info"><i class="fas fa-box"></i>Available: ${quantityInfo}</div>` : ''}
+                    
                     <div class="product-meta">
                         <span><i class="fas fa-map-marker-alt"></i>${product.location}</span>
-                        <span><i class="fas fa-phone"></i>${product.contact}</span>
+                        ${sellerInfo}
+                        ${availabilityInfo}
                     </div>
-                    <div class="product-price">₹${product.price} ${product.unit}</div>
+                    
+                    <div class="product-price-section">
+                        <div class="product-price">₹${product.price} ${product.unit}</div>
+                        <div class="price-badges">
+                            ${negotiableBadge}
+                            ${deliveryBadge}
+                        </div>
+                    </div>
+                    
                     <div class="product-actions">
                         <button class="btn btn-primary" onclick="marketplace.handlePurchase('${product.id}')">
                             <i class="fas fa-${actionIcon}"></i>
@@ -168,6 +189,10 @@ class FarmersMarketplace {
                             <i class="fas fa-phone"></i>
                             Contact
                         </button>
+                        ${product.whatsapp ? `<button class="btn btn-success" onclick="marketplace.handleWhatsApp('${product.whatsapp}')">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </button>` : ''}
                     </div>
                 </div>
             </div>
@@ -206,23 +231,81 @@ class FarmersMarketplace {
     }
 
     handleFormSubmission() {
-        const formData = new FormData(document.getElementById('productForm'));
+        const form = document.getElementById('productForm');
+        const formData = new FormData(form);
+        
+        // Collect all form data including new fields
         const productData = {
             id: Date.now().toString(),
-            category: formData.get('category') || document.getElementById('category').value,
-            title: formData.get('title') || document.getElementById('title').value,
-            description: formData.get('description') || document.getElementById('description').value,
-            price: formData.get('price') || document.getElementById('price').value,
-            unit: formData.get('priceUnit') || document.getElementById('priceUnit').value,
-            location: formData.get('location') || document.getElementById('location').value,
-            contact: formData.get('contact') || document.getElementById('contact').value,
+            category: document.getElementById('category').value,
+            title: document.getElementById('title').value,
+            description: document.getElementById('description').value,
+            price: document.getElementById('price').value,
+            unit: document.getElementById('priceUnit').value,
+            quantity: document.getElementById('quantity').value,
+            quantityUnit: document.getElementById('quantityUnit').value,
+            quality: document.getElementById('quality').value,
+            availability: document.getElementById('availability').value,
+            harvestDate: document.getElementById('harvestDate').value,
+            expiryDate: document.getElementById('expiryDate').value,
+            location: document.getElementById('location').value,
+            contact: document.getElementById('contact').value,
+            whatsapp: document.getElementById('whatsapp').value,
+            sellerName: document.getElementById('sellerName').value,
+            additionalInfo: document.getElementById('additionalInfo').value,
+            negotiable: document.getElementById('negotiable').checked,
+            homeDelivery: document.getElementById('homeDelivery').checked,
             image: null, // In real app, handle image upload to server
             dateAdded: new Date().toISOString()
         };
 
         // Validate required fields
-        if (!productData.title || !productData.description || !productData.price || !productData.location || !productData.contact) {
-            alert('Please fill in all required fields');
+        const requiredFields = {
+            category: 'Category',
+            title: 'Title',
+            description: 'Description',
+            price: 'Price',
+            quantity: 'Quantity',
+            availability: 'Availability',
+            location: 'Location',
+            contact: 'Contact Number',
+            sellerName: 'Seller Name'
+        };
+        
+        const missingFields = [];
+        for (const [field, label] of Object.entries(requiredFields)) {
+            if (!productData[field] || productData[field].trim() === '') {
+                missingFields.push(label);
+            }
+        }
+        
+        if (missingFields.length > 0) {
+            this.showNotification(`Please fill in the following required fields: ${missingFields.join(', ')}`, 'error');
+            return;
+        }
+        
+        // Validate contact number format
+        const contactRegex = /^[+]?[0-9]{10,13}$/;
+        if (!contactRegex.test(productData.contact.replace(/\s/g, ''))) {
+            this.showNotification('Please enter a valid contact number (10-13 digits)', 'error');
+            return;
+        }
+        
+        // Validate WhatsApp number if provided
+        if (productData.whatsapp && !contactRegex.test(productData.whatsapp.replace(/\s/g, ''))) {
+            this.showNotification('Please enter a valid WhatsApp number (10-13 digits)', 'error');
+            return;
+        }
+        
+        // Validate price
+        if (parseFloat(productData.price) <= 0) {
+            this.showNotification('Please enter a valid price greater than 0', 'error');
+            return;
+        }
+        
+        // Validate quantity
+        if (parseInt(productData.quantity) <= 0) {
+            this.showNotification('Please enter a valid quantity greater than 0', 'error');
             return;
         }
 
@@ -316,6 +399,14 @@ class FarmersMarketplace {
         }
     }
 
+    handleWhatsApp(phoneNumber) {
+        if (phoneNumber) {
+            const cleanNumber = phoneNumber.replace(/[^\d+]/g, '');
+            const message = encodeURIComponent('Hi, I am interested in your product listed on the marketplace.');
+            window.open(`https://wa.me/${cleanNumber}?text=${message}`, '_blank');
+        }
+    }
+
     showNotification(message, type = 'info') {
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
@@ -366,8 +457,9 @@ class FarmersMarketplace {
             return storedData;
         }
 
-        // Sample data for demonstration
+        // Sample data for demonstration - Comprehensive marketplace examples
         return [
+            // CROPS SECTION - Fresh Produce
             {
                 id: '1',
                 category: 'crops',
@@ -394,6 +486,104 @@ class FarmersMarketplace {
             },
             {
                 id: '3',
+                category: 'crops',
+                title: 'Fresh Onions',
+                description: 'Red onions, freshly harvested. Good storage quality and excellent taste.',
+                price: '25',
+                unit: 'per kg',
+                location: 'Nashik, Maharashtra',
+                contact: '+91 9876543220',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '4',
+                category: 'crops',
+                title: 'Organic Potatoes',
+                description: 'Chemical-free potatoes grown using organic farming methods. Perfect for all cooking needs.',
+                price: '30',
+                unit: 'per kg',
+                location: 'Uttar Pradesh',
+                contact: '+91 9876543221',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '5',
+                category: 'crops',
+                title: 'Fresh Wheat',
+                description: 'High-quality wheat grains, perfect for flour making. Excellent protein content.',
+                price: '2200',
+                unit: 'per quintal',
+                location: 'Punjab',
+                contact: '+91 9876543222',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '6',
+                category: 'crops',
+                title: 'Green Chillies',
+                description: 'Fresh green chillies with perfect spice level. Ideal for cooking and pickles.',
+                price: '60',
+                unit: 'per kg',
+                location: 'Andhra Pradesh',
+                contact: '+91 9876543223',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '7',
+                category: 'crops',
+                title: 'Fresh Cauliflower',
+                description: 'White, fresh cauliflower heads. Grown without harmful pesticides.',
+                price: '35',
+                unit: 'per kg',
+                location: 'Delhi',
+                contact: '+91 9876543224',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '8',
+                category: 'crops',
+                title: 'Organic Carrots',
+                description: 'Sweet and crunchy organic carrots. Rich in vitamins and minerals.',
+                price: '45',
+                unit: 'per kg',
+                location: 'Himachal Pradesh',
+                contact: '+91 9876543225',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '9',
+                category: 'crops',
+                title: 'Fresh Spinach',
+                description: 'Green leafy spinach, freshly harvested. Rich in iron and nutrients.',
+                price: '20',
+                unit: 'per kg',
+                location: 'Gujarat',
+                contact: '+91 9876543226',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '10',
+                category: 'crops',
+                title: 'Sweet Corn',
+                description: 'Fresh sweet corn cobs, perfect for boiling and grilling. Natural sweetness.',
+                price: '15',
+                unit: 'per piece',
+                location: 'Karnataka',
+                contact: '+91 9876543227',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+
+            // FERTILIZERS SECTION - Organic & Chemical
+            {
+                id: '11',
                 category: 'fertilizers',
                 title: 'Organic Compost',
                 description: 'Natural organic compost made from cow dung and kitchen waste. Rich in nutrients.',
@@ -405,7 +595,81 @@ class FarmersMarketplace {
                 dateAdded: new Date().toISOString()
             },
             {
-                id: '4',
+                id: '12',
+                category: 'fertilizers',
+                title: 'NPK Fertilizer (19:19:19)',
+                description: 'Balanced NPK fertilizer suitable for all crops. Promotes healthy growth.',
+                price: '1200',
+                unit: 'per 50kg bag',
+                location: 'Gujarat',
+                contact: '+91 9876543230',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '13',
+                category: 'fertilizers',
+                title: 'Vermicompost',
+                description: 'Premium quality vermicompost made from earthworms. 100% organic and natural.',
+                price: '25',
+                unit: 'per kg',
+                location: 'Tamil Nadu',
+                contact: '+91 9876543231',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '14',
+                category: 'fertilizers',
+                title: 'Urea Fertilizer',
+                description: 'High-quality urea fertilizer with 46% nitrogen content. Fast-acting formula.',
+                price: '800',
+                unit: 'per 50kg bag',
+                location: 'Rajasthan',
+                contact: '+91 9876543232',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '15',
+                category: 'fertilizers',
+                title: 'Bone Meal Fertilizer',
+                description: 'Organic bone meal fertilizer rich in phosphorus. Perfect for flowering plants.',
+                price: '35',
+                unit: 'per kg',
+                location: 'Punjab',
+                contact: '+91 9876543233',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '16',
+                category: 'fertilizers',
+                title: 'Liquid Seaweed Fertilizer',
+                description: 'Concentrated liquid fertilizer made from seaweed. Boosts plant immunity.',
+                price: '450',
+                unit: 'per liter',
+                location: 'Kerala',
+                contact: '+91 9876543234',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '17',
+                category: 'fertilizers',
+                title: 'Potash Fertilizer',
+                description: 'Muriate of potash fertilizer for better fruit quality and disease resistance.',
+                price: '950',
+                unit: 'per 50kg bag',
+                location: 'Haryana',
+                contact: '+91 9876543235',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+
+            // SEEDS SECTION - Various Crop Seeds
+            {
+                id: '18',
                 category: 'seeds',
                 title: 'Hybrid Corn Seeds',
                 description: 'High-yield hybrid corn seeds with disease resistance. Suitable for all seasons.',
@@ -417,7 +681,81 @@ class FarmersMarketplace {
                 dateAdded: new Date().toISOString()
             },
             {
-                id: '5',
+                id: '19',
+                category: 'seeds',
+                title: 'Tomato Seeds (Hybrid)',
+                description: 'High-yielding hybrid tomato seeds. Disease resistant and long shelf life.',
+                price: '2500',
+                unit: 'per 100g',
+                location: 'Maharashtra',
+                contact: '+91 9876543240',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '20',
+                category: 'seeds',
+                title: 'Wheat Seeds (HD-2967)',
+                description: 'High-quality wheat seeds with excellent yield potential. Drought resistant.',
+                price: '2800',
+                unit: 'per quintal',
+                location: 'Uttar Pradesh',
+                contact: '+91 9876543241',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '21',
+                category: 'seeds',
+                title: 'Onion Seeds',
+                description: 'Red onion seeds with good storage quality. Suitable for kharif season.',
+                price: '3500',
+                unit: 'per kg',
+                location: 'Karnataka',
+                contact: '+91 9876543242',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '22',
+                category: 'seeds',
+                title: 'Chilli Seeds (Hot Variety)',
+                description: 'High-quality chilli seeds producing very hot peppers. Good for commercial cultivation.',
+                price: '4000',
+                unit: 'per kg',
+                location: 'Andhra Pradesh',
+                contact: '+91 9876543243',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '23',
+                category: 'seeds',
+                title: 'Sunflower Seeds',
+                description: 'High oil content sunflower seeds. Suitable for oil extraction and bird feed.',
+                price: '120',
+                unit: 'per kg',
+                location: 'Karnataka',
+                contact: '+91 9876543244',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '24',
+                category: 'seeds',
+                title: 'Cotton Seeds (BT)',
+                description: 'Genetically modified BT cotton seeds with pest resistance. High yield variety.',
+                price: '850',
+                unit: 'per packet (450g)',
+                location: 'Gujarat',
+                contact: '+91 9876543245',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+
+            // SERVICES SECTION - Agricultural Services
+            {
+                id: '25',
                 category: 'services',
                 title: 'Farm Labor Service',
                 description: 'Experienced farm workers available for harvesting, planting, and general farm work.',
@@ -429,7 +767,81 @@ class FarmersMarketplace {
                 dateAdded: new Date().toISOString()
             },
             {
-                id: '6',
+                id: '26',
+                category: 'services',
+                title: 'Crop Harvesting Service',
+                description: 'Professional harvesting service with experienced team and modern equipment.',
+                price: '2000',
+                unit: 'per acre',
+                location: 'Punjab',
+                contact: '+91 9876543250',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '27',
+                category: 'services',
+                title: 'Soil Testing Service',
+                description: 'Complete soil analysis including pH, nutrients, and organic matter content.',
+                price: '800',
+                unit: 'per sample',
+                location: 'Delhi',
+                contact: '+91 9876543251',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '28',
+                category: 'services',
+                title: 'Irrigation System Installation',
+                description: 'Professional drip irrigation system installation and maintenance service.',
+                price: '15000',
+                unit: 'per acre',
+                location: 'Rajasthan',
+                contact: '+91 9876543252',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '29',
+                category: 'services',
+                title: 'Pest Control Service',
+                description: 'Integrated pest management service using eco-friendly methods.',
+                price: '1200',
+                unit: 'per acre',
+                location: 'Maharashtra',
+                contact: '+91 9876543253',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '30',
+                category: 'services',
+                title: 'Farm Consultation',
+                description: 'Expert agricultural consultation for crop planning and farm management.',
+                price: '2000',
+                unit: 'per visit',
+                location: 'Haryana',
+                contact: '+91 9876543254',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '31',
+                category: 'services',
+                title: 'Organic Certification',
+                description: 'Complete organic certification process assistance for your farm.',
+                price: '25000',
+                unit: 'fixed price',
+                location: 'Bangalore, Karnataka',
+                contact: '+91 9876543255',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+
+            // MACHINERY SECTION - Farm Equipment
+            {
+                id: '32',
                 category: 'machinery',
                 title: 'Tractor Rental',
                 description: 'Well-maintained tractor available for rent. Includes operator if needed.',
@@ -441,7 +853,81 @@ class FarmersMarketplace {
                 dateAdded: new Date().toISOString()
             },
             {
-                id: '7',
+                id: '33',
+                category: 'machinery',
+                title: 'Combine Harvester Rental',
+                description: 'Modern combine harvester for efficient crop harvesting. Experienced operator included.',
+                price: '8000',
+                unit: 'per day',
+                location: 'Punjab',
+                contact: '+91 9876543260',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '34',
+                category: 'machinery',
+                title: 'Rotavator Service',
+                description: 'Rotavator available for land preparation and soil mixing. Quick and efficient.',
+                price: '800',
+                unit: 'per acre',
+                location: 'Uttar Pradesh',
+                contact: '+91 9876543261',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '35',
+                category: 'machinery',
+                title: 'Seed Drill Machine',
+                description: 'Precision seed drilling machine for accurate seed placement and spacing.',
+                price: '1500',
+                unit: 'per day',
+                location: 'Haryana',
+                contact: '+91 9876543262',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '36',
+                category: 'machinery',
+                title: 'Sprayer Equipment',
+                description: 'High-capacity sprayer for pesticide and fertilizer application. Boom sprayer available.',
+                price: '600',
+                unit: 'per day',
+                location: 'Gujarat',
+                contact: '+91 9876543263',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '37',
+                category: 'machinery',
+                title: 'Threshing Machine',
+                description: 'Multi-crop threshing machine suitable for wheat, rice, and other grains.',
+                price: '2500',
+                unit: 'per day',
+                location: 'Rajasthan',
+                contact: '+91 9876543264',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '38',
+                category: 'machinery',
+                title: 'Water Pump Rental',
+                description: 'High-capacity water pump for irrigation. Diesel and electric options available.',
+                price: '400',
+                unit: 'per day',
+                location: 'Tamil Nadu',
+                contact: '+91 9876543265',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+
+            // STORAGE SECTION - Storage Solutions
+            {
+                id: '39',
                 category: 'storage',
                 title: 'Cold Storage Space',
                 description: 'Temperature-controlled storage facility for fruits and vegetables. Secure and clean.',
@@ -449,6 +935,78 @@ class FarmersMarketplace {
                 unit: 'per day per quintal',
                 location: 'Mumbai, Maharashtra',
                 contact: '+91 9876543216',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '40',
+                category: 'storage',
+                title: 'Grain Storage Warehouse',
+                description: 'Dry storage facility for grains and cereals. Pest-free environment guaranteed.',
+                price: '25',
+                unit: 'per month per quintal',
+                location: 'Punjab',
+                contact: '+91 9876543270',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '41',
+                category: 'storage',
+                title: 'Controlled Atmosphere Storage',
+                description: 'Advanced CA storage for extended shelf life of fruits. Maintains freshness for months.',
+                price: '80',
+                unit: 'per day per quintal',
+                location: 'Himachal Pradesh',
+                contact: '+91 9876543271',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '42',
+                category: 'storage',
+                title: 'Onion Storage Facility',
+                description: 'Specialized storage for onions with proper ventilation and humidity control.',
+                price: '30',
+                unit: 'per month per quintal',
+                location: 'Nashik, Maharashtra',
+                contact: '+91 9876543272',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '43',
+                category: 'storage',
+                title: 'Potato Cold Storage',
+                description: 'Temperature-controlled storage specifically designed for potato storage.',
+                price: '45',
+                unit: 'per month per quintal',
+                location: 'West Bengal',
+                contact: '+91 9876543273',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '44',
+                category: 'storage',
+                title: 'Seed Storage Facility',
+                description: 'Climate-controlled storage for seeds with moisture and temperature control.',
+                price: '100',
+                unit: 'per month per quintal',
+                location: 'Karnataka',
+                contact: '+91 9876543274',
+                image: null,
+                dateAdded: new Date().toISOString()
+            },
+            {
+                id: '45',
+                category: 'storage',
+                title: 'Multi-Purpose Warehouse',
+                description: 'Large warehouse space suitable for various agricultural products. Flexible terms.',
+                price: '15',
+                unit: 'per day per quintal',
+                location: 'Delhi',
+                contact: '+91 9876543275',
                 image: null,
                 dateAdded: new Date().toISOString()
             }
