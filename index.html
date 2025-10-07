@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
-    <link rel="stylesheet" href="../assets/css/navigation.css">
-    <link rel="stylesheet" href="../assets/css/mobile-responsive.css">
-    <link rel="stylesheet" href="../assets/css/ui-improvements.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <link rel="stylesheet" href="./assets/css/navigation.css">
+    <link rel="stylesheet" href="./assets/css/mobile-responsive.css">
+    <link rel="stylesheet" href="./assets/css/ui-improvements.css">
     <title>Dashboard</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -126,11 +126,15 @@
             color: #fff !important;
         }
 
-        .dashboard-main-content {
-            margin-left: 280px !important;
-            padding-top: 0 !important;
-            overflow-x: hidden !important;
-        }
+.dashboard-main-content {
+    flex: 1;
+    padding: 20px;
+    background: var(--bg-color);
+    transition: var(--transition);
+    min-height: 100vh; /* 🔥 ensures it fills full screen */
+    box-sizing: border-box;
+    margin-left: 250px !important;
+}
 
         .content-wrapper {
             margin-top: 0 !important;
@@ -206,7 +210,7 @@
     <!-- Emergency Mobile Menu Toggle - Always Visible -->
     <div id="emergencyMobileMenu" style="position: fixed; top: 10px; left: 10px; z-index: 999999; display: block;">
         <button onclick="toggleMobileMenu()"
-            style="width: 60px; height: 60px; background: rgba(0,0,0,0.3); border: 2px solid white; color: white; font-size: 24px; font-weight: bold; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; font-family: Arial;">☰</button>
+            style="width: 50px; height: 50px; background: rgba(0,0,0,0.3); border: 2px solid white; color: white; font-size: 22px; font-weight: bold; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; font-family: Arial;">☰</button>
     </div>
 
     <script>
@@ -572,14 +576,14 @@
         </main>
     </div>
 
-    <script src="../assets/js/dark-mode-universal.js"></script>
-    <script src="../assets/js/mobile-menu-fix.js"></script>
-    <script src="../assets/js/navigation.js"></script>
-    <script src="../assets/js/dashboard.js"></script>
-    <script src="../assets/js/notifications.js"></script>
-    <script src="../assets/js/weather.js"></script>
-    <script src="../assets/js/mobile-responsive.js"></script>
-    <script src="../assets/js/ui-enhancements.js"></script>
+    <script src="./assets/js/dark-mode-universal.js"></script>
+    <script src="./assets/js/mobile-menu-fix.js"></script>
+    <script src="./assets/js/navigation.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
+    <script src="./assets/js/notifications.js"></script>
+    <script src="./assets/js/weather.js"></script>
+    <script src="./assets/js/mobile-responsive.js"></script>
+    <script src="./assets/js/ui-enhancements.js"></script>
     <script>
         // Set user email and welcome message
         const userData = JSON.parse(localStorage.getItem('user'));
