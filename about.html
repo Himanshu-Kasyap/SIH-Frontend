@@ -105,6 +105,55 @@
             margin-top: 0 !important;
         }
 
+
+/* ---------- Base Styles (Light Mode) ---------- */
+.about-section,
+.university-section {
+    background: #ffffff;
+    color: #1a202c;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-section h2,
+.university-section h2 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.about-section p,
+.university-section p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* ---------- Dark Mode Styles ---------- */
+body.dark .about-section,
+body.dark .university-section {
+    background: rgba(45, 55, 72, 0.9); /* subtle dark card background */
+    color: #e2e8f0; /* light text */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .about-section h2,
+body.dark .university-section h2 {
+    color: #a5b4fc; /* light purple accent for titles */
+}
+
+body.dark .about-section strong,
+body.dark .university-section strong {
+    color: #c7d2fe; /* highlighted text */
+}
+
+
+
         @media (max-width: 1024px) {
             .dashboard-main-content {
                 margin-left: 0 !important;
@@ -213,9 +262,12 @@
         }
 
         .dashboard-main-content {
-            margin-left: 280px !important;
-            padding-top: 0 !important;
-            overflow-x: hidden !important;
+           margin-left: 280px !important;
+           padding-top: 0 !important;
+           overflow-x: hidden !important;
+           background: var(--bg-color);
+           color: var(--text-color);
+           transition: background 0.3s ease, color 0.3s ease;
         }
 
         .content-wrapper {
